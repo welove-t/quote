@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
+import { Textarea } from "@mantine/core";
 import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <div className="bg-blue-800">
-        <header className="container flex h-16 items-center">
+      <div className=" bg-blue-800">
+        <header className="container m-0 flex h-16 items-center">
           <span className=" text-lg text-white">Quote Card</span>
         </header>
       </div>
@@ -16,9 +17,13 @@ const Home: NextPage = () => {
         <br />
         <span>（引用イメージをカルーセルで表示させる）</span>
         <br />
-        <button className="rounded-full border bg-blue-500 px-4 py-2 text-white">
-          さっそく始める
-        </button>
+        <Textarea
+          label="Autosize with 4 rows max"
+          placeholder="Autosize with 4 rows max"
+          autosize
+          minRows={2}
+          maxRows={4}
+        />
       </div>
       <div className="bg-gray-100 pt-10 pb-24">
         <div className="container">
