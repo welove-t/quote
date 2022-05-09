@@ -1,14 +1,14 @@
 import React, { LegacyRef, useEffect, useState } from "react";
 
 type props = {
-  phrase: string;
+  quote: string;
   container: null | LegacyRef<HTMLImageElement>;
 };
 
 const width = 255;
 const height = 255;
 
-const CreateImage = ({ phrase, container }: props) => {
+const CreateImage = ({ quote, container }: props) => {
   // canvas用
   const [bgColor, setBgColor] = useState<string>("#888888");
   const [foColor, setFoColor] = useState<string>("#000000");
@@ -32,7 +32,7 @@ const CreateImage = ({ phrase, container }: props) => {
     ctx.font = fontSize + "px Hiragino Maru Gothic Pro";
     ctx.fillStyle = foColor;
 
-    for (let lines = phrase.split("\n"), i = 0, l = lines.length; l > i; i++) {
+    for (let lines = quote.split("\n"), i = 0, l = lines.length; l > i; i++) {
       let line = lines[i];
       let addY = fontSize;
       if (i) addY += fontSize * lineHeight * i;
@@ -41,7 +41,7 @@ const CreateImage = ({ phrase, container }: props) => {
     }
 
     setPng(canvasElem.toDataURL());
-  }, [bgColor, foColor, phrase]);
+  }, [bgColor, foColor, quote]);
   return (
     <div className="text-center">
       <h3>画像生成</h3>

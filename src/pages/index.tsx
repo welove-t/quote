@@ -7,13 +7,14 @@ import CreateImage from "src/components/CreateImage";
 import html2canvas from "html2canvas";
 
 const Home: NextPage = () => {
-  const [phrase, setPhrase] = useState<string>("");
+  const [quote, setQuote] = useState<string>("");
   const container = useRef(null);
+
+  //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
     let src = document.getElementById(Src);
     src &&
       html2canvas(src).then(function (canvas) {
-        document.getElementById("canvas")!.appendChild(canvas);
         canvas.toBlob(function (blob) {
           navigator.clipboard
             .write([
@@ -24,7 +25,7 @@ const Home: NextPage = () => {
                 })
               ),
             ])
-            .then(function () {
+            .then(() => {
               // do something
             });
         });
@@ -47,21 +48,19 @@ const Home: NextPage = () => {
           minRows={2}
           maxRows={4}
           onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
-            setPhrase(event.target.value);
+            setQuote(event.target.value);
           }}
         />
         <div id="canvas">
-          <CreateImage phrase={phrase} container={container} />
+          <CreateImage quote={quote} container={container} />
         </div>
         <button
           className="my-20 bg-black text-white"
-          // onClick={() => handleCopy(container.current)}
           onClick={() => getScreenShot("canvas")}
         >
           クリップボードにコピー
         </button>
       </div>
-
       <Footer />
     </div>
   );
