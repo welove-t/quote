@@ -1,16 +1,14 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { LegacyRef, useEffect, useState } from "react";
 
 type props = {
   phrase: string;
+  container: null | LegacyRef<HTMLImageElement>;
 };
 
 const width = 255;
 const height = 255;
 
-const CreateImage = ({ phrase }: props) => {
-  const container = useRef(null);
-
-  const [isAddPhrase, setIsAddPhrase] = useState(0);
+const CreateImage = ({ phrase, container }: props) => {
   // canvas用
   const [bgColor, setBgColor] = useState<string>("#888888");
   const [foColor, setFoColor] = useState<string>("#000000");
