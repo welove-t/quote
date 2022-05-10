@@ -13,9 +13,9 @@ const QuoteCard = ({ quote, container, png, width, height }: props) => {
     <div className="text-center">
       {png && (
         <div className="mx-auto mb-4 sm:h-52">
-          {/* <TweetImage png={png} width={width} height={height} ref={container} /> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
+            id="canvas"
             alt="icon"
             src={png}
             height={height}
