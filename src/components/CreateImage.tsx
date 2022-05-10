@@ -51,7 +51,7 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.blue[6]}
-          onClick={() => setChecked((c) => !c)}
+          onClick={() => setFoColor("#228BE6")}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -59,7 +59,7 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.green[6]}
-          onClick={() => setChecked((c) => !c)}
+          onClick={() => setFoColor("#40C057")}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -67,7 +67,7 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.orange[6]}
-          onClick={() => setChecked((c) => !c)}
+          onClick={() => setFoColor("#FD7E14")}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -75,7 +75,7 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.cyan[6]}
-          onClick={() => setChecked((c) => !c)}
+          onClick={() => setFoColor("#15AABF")}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -83,7 +83,7 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.grape[6]}
-          onClick={() => setChecked((c) => !c)}
+          onClick={() => setFoColor("#BE4BDB")}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -91,7 +91,7 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.red[6]}
-          onClick={() => setChecked((c) => !c)}
+          onClick={() => setFoColor("#FA5252")}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
