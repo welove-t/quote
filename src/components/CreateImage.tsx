@@ -51,7 +51,10 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.blue[6]}
-          onClick={() => setFoColor("#228BE6")}
+          onClick={() => {
+            setFoColor("#228BE6");
+            setBgColor("#E7F5FF");
+          }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -59,7 +62,10 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.green[6]}
-          onClick={() => setFoColor("#40C057")}
+          onClick={() => {
+            setFoColor("#40C057");
+            setBgColor("#EBFBEE");
+          }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -67,7 +73,10 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.orange[6]}
-          onClick={() => setFoColor("#FD7E14")}
+          onClick={() => {
+            setFoColor("#FD7E14");
+            setBgColor("#FFF4E6");
+          }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -75,7 +84,10 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.cyan[6]}
-          onClick={() => setFoColor("#15AABF")}
+          onClick={() => {
+            setFoColor("#15AABF");
+            setBgColor("#E3FAFC");
+          }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -83,7 +95,10 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.grape[6]}
-          onClick={() => setFoColor("#BE4BDB")}
+          onClick={() => {
+            setFoColor("#BE4BDB");
+            setBgColor("#F8F0FC");
+          }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
@@ -91,7 +106,10 @@ const CreateImage = ({ quote, container }: props) => {
         <ColorSwatch
           component="button"
           color={theme.colors.red[6]}
-          onClick={() => setFoColor("#FA5252")}
+          onClick={() => {
+            setFoColor("#FA5252");
+            setBgColor("#FFF5F5");
+          }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
           {checked && <div>K</div>}
