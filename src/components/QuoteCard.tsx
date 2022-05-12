@@ -1,4 +1,5 @@
 import React, { LegacyRef, useEffect, useState } from "react";
+import { Blockquote } from "@mantine/core";
 
 type props = {
   quote: string;
@@ -11,20 +12,11 @@ type props = {
 const QuoteCard = ({ quote, container, png, width, height }: props) => {
   return (
     <div className="text-center">
-      {png && (
-        <div className="mx-auto mb-4 sm:h-52">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            id="canvas"
-            alt="icon"
-            src={png}
-            height={height}
-            width={width}
-            className="rounded-lg"
-            ref={container}
-          />
-        </div>
-      )}
+      <div className="my-20 mx-auto mb-4 flex items-center border-solid sm:h-52">
+        <Blockquote cite="– Forrest Gump" id="canvas">
+          <pre>{quote}</pre>
+        </Blockquote>
+      </div>
     </div>
   );
 };

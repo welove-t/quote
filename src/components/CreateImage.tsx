@@ -21,30 +21,30 @@ const CreateImage = ({ quote, container }: props) => {
   const fontSize = 24;
   const lineHeight = 1.5;
 
-  useEffect(() => {
-    const canvasElem = document.createElement("canvas");
-    canvasElem.width = width;
-    canvasElem.height = height;
-    const ctx = canvasElem && canvasElem.getContext("2d");
+  // useEffect(() => {
+  //   const canvasElem = document.createElement("canvas");
+  //   canvasElem.width = width;
+  //   canvasElem.height = height;
+  //   const ctx = canvasElem && canvasElem.getContext("2d");
 
-    if (!canvasElem || !ctx) return;
-    // draw
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = bgColor;
-    ctx.fillRect(0, 0, width, height);
-    ctx.font = fontSize + "px Hiragino Maru Gothic Pro";
-    ctx.fillStyle = foColor;
+  //   if (!canvasElem || !ctx) return;
+  //   // draw
+  //   ctx.clearRect(0, 0, width, height);
+  //   ctx.fillStyle = bgColor;
+  //   ctx.fillRect(0, 0, width, height);
+  //   ctx.font = fontSize + "px Hiragino Maru Gothic Pro";
+  //   ctx.fillStyle = foColor;
 
-    for (let lines = quote.split("\n"), i = 0, l = lines.length; l > i; i++) {
-      let line = lines[i];
-      let addY = fontSize;
-      if (i) addY += fontSize * lineHeight * i;
+  //   for (let lines = quote.split("\n"), i = 0, l = lines.length; l > i; i++) {
+  //     let line = lines[i];
+  //     let addY = fontSize;
+  //     if (i) addY += fontSize * lineHeight * i;
 
-      ctx.fillText(line, width / 20 + 0, height / 8 + addY);
-    }
+  //     ctx.fillText(line, width / 20 + 0, height / 8 + addY);
+  //   }
 
-    setPng(canvasElem.toDataURL());
-  }, [bgColor, foColor, quote]);
+  //   setPng(canvasElem.toDataURL());
+  // }, [bgColor, foColor, quote]);
   return (
     <div className="text-center">
       <Group position="center" spacing="xs" className="mt-10">
