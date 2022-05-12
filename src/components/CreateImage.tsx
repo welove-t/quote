@@ -133,13 +133,7 @@ const CreateImage = ({ quote, container }: props) => {
         </button>
       ))}
 
-      <QuoteCard
-        quote={quote}
-        container={container}
-        png={png}
-        width={width}
-        height={height}
-      />
+      <QuoteCard quote={quote} bgColor={bgColor} foColor={foColor} />
     </div>
   );
 };
