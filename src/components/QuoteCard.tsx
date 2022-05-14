@@ -10,18 +10,19 @@ type props = {
 const QuoteCard = ({ quote, bgColor, foColor }: props) => {
   return (
     <div
-      className={`my-20 mx-auto mb-4 flex items-center border-solid text-center sm:h-52 ${bgColor}`}
+      className={`my-20 mx-auto mb-4 flex items-center whitespace-normal rounded-lg border-hidden text-center sm:h-52 ${bgColor}`}
     >
       <Blockquote
-        cite="– Forrest Gump"
         id="canvas"
+        cite="– Forrest Gump"
         styles={{
           icon: { color: foColor },
           inner: { color: foColor },
           body: { color: foColor },
         }}
       >
-        <pre>{quote}</pre>
+        {/* <pre>{quote}</pre> */}
+        {quote}
       </Blockquote>
     </div>
   );
