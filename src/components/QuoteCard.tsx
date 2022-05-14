@@ -1,4 +1,4 @@
-import React, { LegacyRef, useEffect, useState } from "react";
+import React from "react";
 import { Blockquote } from "@mantine/core";
 
 type props = {
@@ -10,10 +10,10 @@ type props = {
 const QuoteCard = ({ quote, bgColor, foColor }: props) => {
   return (
     <div
-      className={`my-20 mx-auto mb-4 flex items-center whitespace-normal rounded-lg border-hidden text-center sm:h-52 ${bgColor}`}
+      id="canvas"
+      className={`my-20 mx-auto mb-4 flex items-center whitespace-normal rounded-lg border-hidden text-center sm:h-52 sm:w-96 ${bgColor}`}
     >
       <Blockquote
-        id="canvas"
         cite="– Forrest Gump"
         styles={{
           icon: { color: foColor },
@@ -21,7 +21,6 @@ const QuoteCard = ({ quote, bgColor, foColor }: props) => {
           body: { color: foColor },
         }}
       >
-        {/* <pre>{quote}</pre> */}
         {quote}
       </Blockquote>
     </div>
