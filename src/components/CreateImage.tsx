@@ -53,7 +53,8 @@ const CreateImage = ({ quote, container }: props) => {
           color={theme.colors.blue[6]}
           onClick={() => {
             setFoColor("#228BE6");
-            setBgColor("#E7F5FF");
+            // setBgColor("#E7F5FF");
+            setBgColor("bg-blue-100");
           }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
@@ -64,7 +65,8 @@ const CreateImage = ({ quote, container }: props) => {
           color={theme.colors.green[6]}
           onClick={() => {
             setFoColor("#40C057");
-            setBgColor("#EBFBEE");
+            // setBgColor("#EBFBEE");
+            setBgColor("bg-green-100");
           }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
@@ -75,7 +77,8 @@ const CreateImage = ({ quote, container }: props) => {
           color={theme.colors.orange[6]}
           onClick={() => {
             setFoColor("#FD7E14");
-            setBgColor("#FFF4E6");
+            // setBgColor("#FFF4E6");
+            setBgColor("bg-orange-100");
           }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
@@ -86,7 +89,8 @@ const CreateImage = ({ quote, container }: props) => {
           color={theme.colors.cyan[6]}
           onClick={() => {
             setFoColor("#15AABF");
-            setBgColor("#E3FAFC");
+            // setBgColor("#E3FAFC");
+            setBgColor("bg-cyan-100");
           }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
@@ -97,7 +101,8 @@ const CreateImage = ({ quote, container }: props) => {
           color={theme.colors.grape[6]}
           onClick={() => {
             setFoColor("#BE4BDB");
-            setBgColor("#F8F0FC");
+            // setBgColor("#F8F0FC");
+            setBgColor("bg-purple-100");
           }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
@@ -108,7 +113,8 @@ const CreateImage = ({ quote, container }: props) => {
           color={theme.colors.red[6]}
           onClick={() => {
             setFoColor("#FA5252");
-            setBgColor("#FFF5F5");
+            // setBgColor("#FFF5F5");
+            setBgColor("bg-red-100");
           }}
           style={{ color: "#fff", cursor: "pointer" }}
         >
