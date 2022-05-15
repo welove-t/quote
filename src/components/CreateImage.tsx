@@ -7,6 +7,15 @@ type props = {
   container: null | LegacyRef<HTMLImageElement>;
 };
 
+const colorSwatchItem = [
+  { foColor: "#228BE6", bgColor: "bg-blue-100" },
+  { foColor: "#40C057", bgColor: "bg-green-100" },
+  { foColor: "#FD7E14", bgColor: "bg-orange-100" },
+  { foColor: "#15AABF", bgColor: "bg-cyan-100" },
+  { foColor: "#BE4BDB", bgColor: "bg-purple-100" },
+  { foColor: "#FA5252", bgColor: "bg-red-100" },
+];
+
 const CreateImage = ({ quote, container }: props) => {
   // ColorSwatch
   const theme = useMantineTheme();
@@ -21,105 +30,23 @@ const CreateImage = ({ quote, container }: props) => {
   const fontSize = 24;
   const lineHeight = 1.5;
 
-  // useEffect(() => {
-  //   const canvasElem = document.createElement("canvas");
-  //   canvasElem.width = width;
-  //   canvasElem.height = height;
-  //   const ctx = canvasElem && canvasElem.getContext("2d");
-
-  //   if (!canvasElem || !ctx) return;
-  //   // draw
-  //   ctx.clearRect(0, 0, width, height);
-  //   ctx.fillStyle = bgColor;
-  //   ctx.fillRect(0, 0, width, height);
-  //   ctx.font = fontSize + "px Hiragino Maru Gothic Pro";
-  //   ctx.fillStyle = foColor;
-
-  //   for (let lines = quote.split("\n"), i = 0, l = lines.length; l > i; i++) {
-  //     let line = lines[i];
-  //     let addY = fontSize;
-  //     if (i) addY += fontSize * lineHeight * i;
-
-  //     ctx.fillText(line, width / 20 + 0, height / 8 + addY);
-  //   }
-
-  //   setPng(canvasElem.toDataURL());
-  // }, [bgColor, foColor, quote]);
   return (
     <div className="text-center">
       <Group position="center" spacing="xs" className="mt-10">
-        <ColorSwatch
-          component="button"
-          color={theme.colors.blue[6]}
-          onClick={() => {
-            setFoColor("#228BE6");
-            // setBgColor("#E7F5FF");
-            setBgColor("bg-blue-100");
-          }}
-          style={{ color: "#fff", cursor: "pointer" }}
-        >
-          {checked && <div>K</div>}
-        </ColorSwatch>
-        <ColorSwatch
-          component="button"
-          color={theme.colors.green[6]}
-          onClick={() => {
-            setFoColor("#40C057");
-            // setBgColor("#EBFBEE");
-            setBgColor("bg-green-100");
-          }}
-          style={{ color: "#fff", cursor: "pointer" }}
-        >
-          {checked && <div>K</div>}
-        </ColorSwatch>
-        <ColorSwatch
-          component="button"
-          color={theme.colors.orange[6]}
-          onClick={() => {
-            setFoColor("#FD7E14");
-            // setBgColor("#FFF4E6");
-            setBgColor("bg-orange-100");
-          }}
-          style={{ color: "#fff", cursor: "pointer" }}
-        >
-          {checked && <div>K</div>}
-        </ColorSwatch>
-        <ColorSwatch
-          component="button"
-          color={theme.colors.cyan[6]}
-          onClick={() => {
-            setFoColor("#15AABF");
-            // setBgColor("#E3FAFC");
-            setBgColor("bg-cyan-100");
-          }}
-          style={{ color: "#fff", cursor: "pointer" }}
-        >
-          {checked && <div>K</div>}
-        </ColorSwatch>
-        <ColorSwatch
-          component="button"
-          color={theme.colors.grape[6]}
-          onClick={() => {
-            setFoColor("#BE4BDB");
-            // setBgColor("#F8F0FC");
-            setBgColor("bg-purple-100");
-          }}
-          style={{ color: "#fff", cursor: "pointer" }}
-        >
-          {checked && <div>K</div>}
-        </ColorSwatch>
-        <ColorSwatch
-          component="button"
-          color={theme.colors.red[6]}
-          onClick={() => {
-            setFoColor("#FA5252");
-            // setBgColor("#FFF5F5");
-            setBgColor("bg-red-100");
-          }}
-          style={{ color: "#fff", cursor: "pointer" }}
-        >
-          {checked && <div>K</div>}
-        </ColorSwatch>
+        {colorSwatchItem.map((item) => (
+          <ColorSwatch
+            key={item.foColor}
+            component="button"
+            color={item.foColor}
+            onClick={() => {
+              setFoColor(item.foColor);
+              setBgColor(item.bgColor);
+            }}
+            style={{ color: "#fff", cursor: "pointer" }}
+          >
+            {checked && <div>A</div>}
+          </ColorSwatch>
+        ))}
       </Group>
       <h3>画像生成</h3>
       <h4>背景色</h4>
