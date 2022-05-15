@@ -1,6 +1,7 @@
 import React, { LegacyRef, useEffect, useState } from "react";
 import QuoteCard from "src/components/QuoteCard";
 import { ColorSwatch, Group, useMantineTheme } from "@mantine/core";
+import { CheckIcon } from "@heroicons/react/solid";
 
 type props = {
   quote: string;
@@ -54,7 +55,7 @@ const CreateImage = ({ quote, container }: props) => {
             }}
             style={{ color: "#fff", cursor: "pointer" }}
           >
-            {checked[index] && <div>A</div>}
+            {checked[index] && <CheckIcon className="w-6" />}
           </ColorSwatch>
         ))}
       </Group>
