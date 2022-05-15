@@ -37,6 +37,7 @@ const CreateImage = ({ quote, container }: props) => {
           <ColorSwatch
             key={item.foColor}
             component="button"
+            size={48}
             color={item.foColor}
             onClick={() => {
               setFoColor(item.foColor);
