@@ -43,11 +43,13 @@ const Home: NextPage = () => {
         <span>（引用イメージをカルーセルで表示させる）</span>
         <br />
         <Textarea
-          label="Autosize with 4 rows max"
-          placeholder="Autosize with 4 rows max"
+          // label="Autosize with 4 rows max"
+          placeholder="引用文を書いてください！(255文字まで)"
+          className="mx-auto w-96"
           autosize
+          size="md"
           minRows={2}
-          maxRows={4}
+          maxRows={6}
           onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
             setQuote(event.target.value);
           }}
