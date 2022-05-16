@@ -8,12 +8,11 @@ type props = {
 };
 
 const colorSwatchItem = [
-  { select: true, foColor: "#228BE6", bgColor: "bg-blue-100" },
-  { select: false, foColor: "#40C057", bgColor: "bg-green-100" },
-  { select: false, foColor: "#FD7E14", bgColor: "bg-orange-100" },
-  { select: false, foColor: "#15AABF", bgColor: "bg-cyan-100" },
-  { select: false, foColor: "#BE4BDB", bgColor: "bg-purple-100" },
-  { select: false, foColor: "#FA5252", bgColor: "bg-red-100" },
+  { select: false, foColor: "#15AABF", bgColor: "bg-cyan-100" }, //ブルー
+  { select: false, foColor: "#40C057", bgColor: "bg-green-100" }, //グリーン
+  { select: false, foColor: "#FD7E14", bgColor: "bg-orange-100" }, //オレンジ
+  { select: false, foColor: "#BE4BDB", bgColor: "bg-purple-100" }, //パープル
+  { select: false, foColor: "#FFFFFF", bgColor: "bg-black" }, //ブラック
 ];
 
 const CreateImage = ({ quote }: props) => {
@@ -21,7 +20,6 @@ const CreateImage = ({ quote }: props) => {
   const theme = useMantineTheme();
   const [checked, setChecked] = useState<boolean[]>([
     true,
-    false,
     false,
     false,
     false,
