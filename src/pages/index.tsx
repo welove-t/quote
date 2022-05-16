@@ -1,15 +1,13 @@
 import type { NextPage } from "next";
 import { Textarea } from "@mantine/core";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import CreateImage from "src/components/CreateImage";
 import html2canvas from "html2canvas";
-import QuoteCard from "src/components/QuoteCard";
 
 const Home: NextPage = () => {
   const [quote, setQuote] = useState<string>("");
-  const container = useRef(null);
 
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
@@ -54,7 +52,7 @@ const Home: NextPage = () => {
             setQuote(event.target.value);
           }}
         />
-        <CreateImage quote={quote} container={container} />
+        <CreateImage quote={quote} />
         <button
           className="my-20 bg-black text-white"
           onClick={() => getScreenShot("canvas")}
