@@ -1,11 +1,10 @@
-import React, { LegacyRef, useEffect, useState } from "react";
+import React, { LegacyRef, useState } from "react";
 import QuoteCard from "src/components/QuoteCard";
 import { ColorSwatch, Group, useMantineTheme } from "@mantine/core";
 import { CheckIcon } from "@heroicons/react/solid";
 
 type props = {
   quote: string;
-  container: null | LegacyRef<HTMLImageElement>;
 };
 
 const colorSwatchItem = [
@@ -17,7 +16,7 @@ const colorSwatchItem = [
   { select: false, foColor: "#FA5252", bgColor: "bg-red-100" },
 ];
 
-const CreateImage = ({ quote, container }: props) => {
+const CreateImage = ({ quote }: props) => {
   // ColorSwatch
   const theme = useMantineTheme();
   const [checked, setChecked] = useState<boolean[]>([
@@ -49,7 +48,6 @@ const CreateImage = ({ quote, container }: props) => {
             color={item.foColor}
             onClick={() => {
               setChecked((checked) => checked.map((c, i) => index === i && !c));
-
               setFoColor(item.foColor);
               setBgColor(item.bgColor);
             }}
@@ -59,23 +57,6 @@ const CreateImage = ({ quote, container }: props) => {
           </ColorSwatch>
         ))}
       </Group>
-      <h3>画像生成</h3>
-      <h4>背景色</h4>
-      {["#f00", "#0f0", "#00f"].map((color) => (
-        <button
-          key={color}
-          style={{ background: color }}
-          onClick={() => setBgColor(color)}
-        >
-          {color}
-        </button>
-      ))}
-      <h4>文字色</h4>
-      {["#000000", "#ffffff", "#00f"].map((color) => (
-        <button key={color} style={{ color }} onClick={() => setFoColor(color)}>
-          A
-        </button>
-      ))}
 
       <QuoteCard quote={quote} bgColor={bgColor} foColor={foColor} />
     </div>
