@@ -29,13 +29,8 @@ const CreateImage = ({ quote }: props) => {
   ]);
 
   // canvas用
-  const [bgColor, setBgColor] = useState<string>("#888888");
-  const [foColor, setFoColor] = useState<string>("#000000");
-  const [png, setPng] = useState<string | null>(null);
-  const width = 480;
-  const height = 270;
-  const fontSize = 24;
-  const lineHeight = 1.5;
+  const [bgColor, setBgColor] = useState<string>(colorSwatchItem[0].bgColor);
+  const [foColor, setFoColor] = useState<string>(colorSwatchItem[0].foColor);
 
   return (
     <div className="text-center">
