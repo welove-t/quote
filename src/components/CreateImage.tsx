@@ -1,6 +1,6 @@
-import React, { LegacyRef, useState } from "react";
+import React, { useState } from "react";
 import QuoteCard from "src/components/QuoteCard";
-import { ColorSwatch, Group, useMantineTheme } from "@mantine/core";
+import { ColorSwatch, Group } from "@mantine/core";
 import { CheckIcon } from "@heroicons/react/solid";
 
 type props = {
@@ -9,16 +9,15 @@ type props = {
 };
 
 const colorSwatchItem = [
-  { select: false, foColor: "#15AABF", bgColor: "bg-cyan-100" }, //ブルー
-  { select: false, foColor: "#40C057", bgColor: "bg-green-100" }, //グリーン
-  { select: false, foColor: "#FD7E14", bgColor: "bg-orange-100" }, //オレンジ
-  { select: false, foColor: "#BE4BDB", bgColor: "bg-purple-100" }, //パープル
-  { select: false, foColor: "#FFFFFF", bgColor: "bg-black" }, //ブラック
+  { foColor: "#1098AD", bgColor: "#C5F6FA" }, //ブルー
+  { foColor: "#37B24D", bgColor: "#D3F9D8" }, //グリーン
+  { foColor: "#F76707", bgColor: "#FFE8CC" }, //オレンジ
+  { foColor: "#AE3EC9", bgColor: "#F3D9FA" }, //パープル
+  { foColor: "#FFFFFF", bgColor: "#141517" }, //ブラック
 ];
 
 const CreateImage = ({ quote, source }: props) => {
-  // ColorSwatch
-  const theme = useMantineTheme();
+  // ColorSwatch用
   const [checked, setChecked] = useState<boolean[]>([
     true,
     false,
