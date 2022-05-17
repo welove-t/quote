@@ -1,5 +1,5 @@
 import React from "react";
-import { Blockquote } from "@mantine/core";
+import { Box, Blockquote } from "@mantine/core";
 
 type props = {
   quote: string;
@@ -10,9 +10,10 @@ type props = {
 
 const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
   return (
-    <div
+    <Box
       id="canvas"
-      className={`my-20 mx-auto mb-4 flex items-center whitespace-normal rounded-lg border-hidden text-center sm:w-96 ${bgColor}`}
+      className={`my-20 mx-auto mb-4 flex items-center whitespace-normal rounded-lg border-hidden text-center sm:w-96`}
+      sx={() => ({ backgroundColor: bgColor })}
     >
       <Blockquote
         cite={`- ${source}`}
@@ -24,7 +25,7 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
       >
         {quote}
       </Blockquote>
-    </div>
+    </Box>
   );
 };
 
