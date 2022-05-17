@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Textarea, TextInput } from "@mantine/core";
+import { Modal, Textarea, TextInput } from "@mantine/core";
 import React, { ChangeEvent, useState } from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
@@ -9,6 +9,7 @@ import html2canvas from "html2canvas";
 const Home: NextPage = () => {
   const [quote, setQuote] = useState<string>("");
   const [source, setSource] = useState<string>("");
+  const [openModal, setOpenModal] = useState(false);
 
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
               ),
             ])
             .then(() => {
-              // do something
+              setOpenModal(true);
             });
         });
       });
@@ -61,6 +62,14 @@ const Home: NextPage = () => {
           }}
         />
         <CreateImage quote={quote} source={source} />
+
+        <Modal
+          opened={openModal}
+          onClose={() => setOpenModal(false)}
+          title="Introduce yourself!"
+        >
+          クリップボードにコピーされました！ 早速Twitterで共有しましょう！
+        </Modal>
         <button
           className="my-20 bg-black text-white"
           onClick={() => getScreenShot("canvas")}
