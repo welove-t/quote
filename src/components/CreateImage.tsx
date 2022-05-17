@@ -38,7 +38,7 @@ const CreateImage = ({ quote, source }: props) => {
             key={index}
             component="button"
             size={48}
-            color={item.foColor}
+            color={index === 4 ? item.bgColor : item.foColor}
             onClick={() => {
               setChecked((checked) => checked.map((c, i) => index === i && !c));
               setFoColor(item.foColor);
