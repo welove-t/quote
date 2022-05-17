@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Textarea } from "@mantine/core";
+import { Textarea, TextInput } from "@mantine/core";
 import React, { ChangeEvent, useState } from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
@@ -8,6 +8,7 @@ import html2canvas from "html2canvas";
 
 const Home: NextPage = () => {
   const [quote, setQuote] = useState<string>("");
+  const [source, setSource] = useState<string>("");
 
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
@@ -52,7 +53,14 @@ const Home: NextPage = () => {
             setQuote(event.target.value);
           }}
         />
-        <CreateImage quote={quote} />
+        <TextInput
+          placeholder="人名、書名等(50文字まで)"
+          className="mx-auto w-96"
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setSource(event.target.value);
+          }}
+        />
+        <CreateImage quote={quote} source={source} />
         <button
           className="my-20 bg-black text-white"
           onClick={() => getScreenShot("canvas")}

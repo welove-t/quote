@@ -5,6 +5,7 @@ import { CheckIcon } from "@heroicons/react/solid";
 
 type props = {
   quote: string;
+  source: string;
 };
 
 const colorSwatchItem = [
@@ -15,7 +16,7 @@ const colorSwatchItem = [
   { select: false, foColor: "#FFFFFF", bgColor: "bg-black" }, //ブラック
 ];
 
-const CreateImage = ({ quote }: props) => {
+const CreateImage = ({ quote, source }: props) => {
   // ColorSwatch
   const theme = useMantineTheme();
   const [checked, setChecked] = useState<boolean[]>([
@@ -51,7 +52,12 @@ const CreateImage = ({ quote }: props) => {
         ))}
       </Group>
 
-      <QuoteCard quote={quote} bgColor={bgColor} foColor={foColor} />
+      <QuoteCard
+        quote={quote}
+        source={source}
+        bgColor={bgColor}
+        foColor={foColor}
+      />
     </div>
   );
 };
