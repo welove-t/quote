@@ -47,28 +47,37 @@ const Home: NextPage = () => {
       <div className="container text-center">
         <span>メインコンポーネント</span>
         <br />
-        <span>あなたの琴線に触れた引用カードを作ろう！</span>
+        <span>あなたの琴線に触れた名言・名セリフをカード画像にしよう！</span>
         <br />
         <span>（引用イメージをカルーセルで表示させる）</span>
         <br />
-        <Textarea
-          // label="Autosize with 4 rows max"
-          error={errorTextquote}
-          placeholder="引用文を書いてください！(255文字まで)"
-          className="mx-auto w-96"
-          autosize
-          size="md"
-          minRows={2}
-          maxRows={6}
-          maxLength={256}
-          {...form.getInputProps("textquote")}
-        />
-        <TextInput
-          error={errorTextsource}
-          placeholder="人名、書名等(50文字まで)"
-          className="mx-auto w-96"
-          {...form.getInputProps("textsource")}
-        />
+        <div className="mt-10">
+          <label className="text-lg font-semibold">引用文</label>
+          <Textarea
+            label="お気に入りのフレーズを書いて下さい"
+            error={errorTextquote}
+            placeholder={`(例1) 吾輩は猫である。名前はまだ無い。\n(例2) 海賊王に、俺はなる!!!!`}
+            className="mx-auto w-96"
+            autosize
+            size="md"
+            minRows={2}
+            maxRows={6}
+            maxLength={256}
+            {...form.getInputProps("textquote")}
+          />
+        </div>
+        <div className="mt-10">
+          <label className="text-lg font-semibold">引用元</label>
+          <TextInput
+            label="上記の参照元(人名・書名・登場人物名等)を書いて下さい"
+            error={errorTextsource}
+            placeholder={`(例1) 夏目漱石『吾輩は猫である』より |  (例2) ワンピース / ルフィ`}
+            className="mx-auto w-96"
+            size="xs"
+            maxLength={51}
+            {...form.getInputProps("textsource")}
+          />
+        </div>
         <CreateImage
           quote={form.values.textquote}
           source={form.values.textsource}
