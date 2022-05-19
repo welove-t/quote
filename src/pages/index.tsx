@@ -6,6 +6,7 @@ import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import CreateImage from "src/components/CreateImage";
 import html2canvas from "html2canvas";
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
 const Home: NextPage = () => {
   const [source, setSource] = useState<string>("");
@@ -74,7 +75,12 @@ const Home: NextPage = () => {
           onClose={() => setOpenModal(false)}
           title="Introduce yourself!"
         >
-          クリップボードにコピーされました！ 早速Twitterで共有しましょう！
+          <p>
+            クリップボードにコピーされました！ 早速Twitterで共有しましょう！
+          </p>
+          <TwitterShareButton url="/" hashtags={["QuoteCard"]}>
+            <TwitterIcon size={32} round={true} />
+          </TwitterShareButton>
         </Modal>
         <button
           className="my-20 bg-black text-white"
