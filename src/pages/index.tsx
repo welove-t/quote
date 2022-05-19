@@ -15,9 +15,11 @@ const Home: NextPage = () => {
   const form = useForm({
     initialValues: {
       textquote: "",
+      textsource: "",
     },
   });
   const errorTextquote = form.values.textquote.length > 255 ? "error" : null;
+  const errorTextsource = form.values.textsource.length > 50 ? "error" : null;
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
     let src = document.getElementById(Src);
@@ -62,13 +64,15 @@ const Home: NextPage = () => {
           {...form.getInputProps("textquote")}
         />
         <TextInput
+          error={errorTextsource}
           placeholder="人名、書名等(50文字まで)"
           className="mx-auto w-96"
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setSource(event.target.value);
-          }}
+          {...form.getInputProps("textsource")}
         />
-        <CreateImage quote={form.values.textquote} source={source} />
+        <CreateImage
+          quote={form.values.textquote}
+          source={form.values.textsource}
+        />
 
         <Modal
           opened={openModal}
