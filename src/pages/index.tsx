@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       textsource: "",
     },
   });
-  const errorTextquote = form.values.textquote.length > 255 ? "error" : null;
+  const errorTextquote = form.values.textquote.length > 150 ? "error" : null;
   const errorTextsource = form.values.textsource.length > 50 ? "error" : null;
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             size="md"
             minRows={2}
             maxRows={6}
-            maxLength={256}
+            maxLength={151}
             {...form.getInputProps("textquote")}
           />
         </div>
