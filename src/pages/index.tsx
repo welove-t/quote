@@ -41,6 +41,41 @@ const Home: NextPage = () => {
         });
       });
   };
+
+  // カードを画像として保存
+  const saveAsImage = (uri: any) => {
+    const downloadLink = document.createElement("a");
+
+    if (typeof downloadLink.download === "string") {
+      downloadLink.href = uri;
+
+      // ファイル名
+      downloadLink.download = "component.png";
+
+      // Firefox では body の中にダウンロードリンクがないといけないので一時的に追加
+      document.body.appendChild(downloadLink);
+
+      // ダウンロードリンクが設定された a タグをクリック
+      downloadLink.click();
+
+      // Firefox 対策で追加したリンクを削除しておく
+      document.body.removeChild(downloadLink);
+    } else {
+      window.open(uri);
+    }
+  };
+  // カード画像をダウンロード
+  const saveImage = () => {
+    // 画像に変換する component の id を指定
+    const target = document.getElementById("canvas");
+    if (!target) {
+      return;
+    }
+    html2canvas(target).then((canvas) => {
+      const targetImgUri = canvas.toDataURL("img/png");
+      saveAsImage(targetImgUri);
+    });
+  };
   return (
     <div>
       <Header />
@@ -95,12 +130,22 @@ const Home: NextPage = () => {
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
         </Modal>
-        <button
-          className="my-20 bg-black text-white"
-          onClick={() => getScreenShot("canvas")}
-        >
-          クリップボードにコピー
-        </button>
+        <div className="flex flex-col items-center">
+          <button
+            className="my-20 bg-black px-4 text-white"
+            onClick={() => getScreenShot("canvas")}
+          >
+            クリップボードにコピー
+          </button>
+          <button
+            className="rounded-xl bg-green-400 px-8 py-4 font-semibold hover:bg-green-500 hover:shadow"
+            onClick={() => {
+              saveImage();
+            }}
+          >
+            画像を保存する
+          </button>
+        </div>
       </div>
       <Footer />
     </div>
