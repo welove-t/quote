@@ -32,11 +32,12 @@ const CreateImage = ({ quote, source }: props) => {
 
   return (
     <div className="text-center">
-      <Group position="center" spacing="xs" className="mt-10">
+      <Group position="center" spacing="md" className="mt-10">
         {colorSwatchItem.map((item, index) => (
           <ColorSwatch
             key={index}
             component="button"
+            radius={"md"}
             size={48}
             color={index === 4 ? item.bgColor : item.foColor}
             onClick={() => {
