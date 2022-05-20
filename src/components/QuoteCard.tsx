@@ -20,7 +20,7 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
         styles={{
           icon: { color: foColor },
           inner: { color: foColor },
-          body: { color: foColor, letterSpacing: 0.8 },
+          body: { color: foColor, letterSpacing: 0.8, width: 304 },
           cite: { marginTop: 40, paddingRight: 40 },
         }}
       >
