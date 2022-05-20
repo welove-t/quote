@@ -130,12 +130,12 @@ const Home: NextPage = () => {
             <TwitterIcon size={32} round={true} />
           </TwitterShareButton>
         </Modal>
-        <div className="flex flex-col items-center">
+        <div className="mt-8 flex flex-col items-center space-y-10">
           <button
-            className="my-20 bg-black px-4 text-white"
+            className="rounded-full border-blue-500 bg-white px-8 py-4 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
             onClick={() => getScreenShot("canvas")}
           >
-            クリップボードにコピー
+            カードをコピーする
           </button>
           <button
             className="rounded-xl bg-green-400 px-8 py-4 font-semibold hover:bg-green-500 hover:shadow"
