@@ -12,7 +12,7 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
   return (
     <Box
       id="canvas"
-      className="my-20 mx-auto mb-4 flex w-96 items-center whitespace-normal rounded-lg border-hidden pt-12 pb-4 text-center font-bold"
+      className="mx-auto mt-8 mb-4 flex w-96 items-center whitespace-normal rounded-lg border-hidden pt-12 pb-4 text-center font-bold"
       sx={() => ({ backgroundColor: bgColor })}
     >
       <Blockquote
