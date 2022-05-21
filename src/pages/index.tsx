@@ -92,7 +92,7 @@ const Home: NextPage = () => {
             label="お気に入りのフレーズを書いて下さい"
             error={errorTextquote}
             placeholder={`(例1) 吾輩は猫である。名前はまだ無い。\n(例2) 海賊王に、俺はなる!!!!`}
-            className="mx-auto w-96"
+            className="mx-auto"
             autosize
             size="md"
             minRows={2}
@@ -101,11 +101,11 @@ const Home: NextPage = () => {
             {...form.getInputProps("textquote")}
           />
           {form.values.textquote.length > 150 ? (
-            <p className="mx-auto w-96 text-right text-sm text-red-500">
+            <p className="mx-auto text-right text-sm text-red-500">
               あと {150 - form.values.textquote.length} 文字
             </p>
           ) : (
-            <p className="mx-auto w-96 text-right text-sm text-gray-500">
+            <p className="mx-auto text-right text-sm text-gray-500">
               あと {150 - form.values.textquote.length} 文字
             </p>
           )}
@@ -116,17 +116,17 @@ const Home: NextPage = () => {
             label="上記の参照元(人名・書名・登場人物名等)を書いて下さい"
             error={errorTextsource}
             placeholder={`(例1) 夏目漱石『吾輩は猫である』より |  (例2) ワンピース / ルフィ`}
-            className="mx-auto w-96"
+            className="mx-auto"
             size="xs"
             maxLength={51}
             {...form.getInputProps("textsource")}
           />
           {form.values.textsource.length > 50 ? (
-            <p className="mx-auto w-96 text-right text-sm text-red-500">
+            <p className="mx-auto text-right text-sm text-red-500">
               あと {50 - form.values.textsource.length} 文字
             </p>
           ) : (
-            <p className="mx-auto w-96 text-right text-sm text-gray-500">
+            <p className="mx-auto text-right text-sm text-gray-500">
               あと {50 - form.values.textsource.length} 文字
             </p>
           )}
