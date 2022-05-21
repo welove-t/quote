@@ -6,7 +6,9 @@ module.exports = {
       center: true,
       padding: {
         DEFAULT: "16px",
-        lg: "24px",
+        lg: "300px",
+        md: "300px",
+        sm: "300px",
       },
     },
   },
