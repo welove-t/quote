@@ -100,6 +100,15 @@ const Home: NextPage = () => {
             maxLength={151}
             {...form.getInputProps("textquote")}
           />
+          {form.values.textquote.length > 150 ? (
+            <p className="mx-auto w-96 text-right text-sm text-red-500">
+              あと {150 - form.values.textquote.length} 文字
+            </p>
+          ) : (
+            <p className="mx-auto w-96 text-right text-sm text-gray-500">
+              あと {150 - form.values.textquote.length} 文字
+            </p>
+          )}
         </div>
         <div className="mt-10">
           <label className="text-lg font-semibold">引用元</label>
@@ -112,6 +121,15 @@ const Home: NextPage = () => {
             maxLength={51}
             {...form.getInputProps("textsource")}
           />
+          {form.values.textsource.length > 50 ? (
+            <p className="mx-auto w-96 text-right text-sm text-red-500">
+              あと {50 - form.values.textsource.length} 文字
+            </p>
+          ) : (
+            <p className="mx-auto w-96 text-right text-sm text-gray-500">
+              あと {50 - form.values.textsource.length} 文字
+            </p>
+          )}
         </div>
         <CreateImage
           quote={form.values.textquote}
