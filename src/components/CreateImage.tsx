@@ -31,8 +31,9 @@ const CreateImage = ({ quote, source }: props) => {
   const [foColor, setFoColor] = useState<string>(colorSwatchItem[0].foColor);
 
   return (
-    <div className="text-center">
-      <Group position="center" spacing="md" className="mt-10">
+    <div className="mt-10 text-center">
+      <label className="text-lg font-semibold">カラーパターン</label>
+      <Group position="center" spacing="md" className="mt-4">
         {colorSwatchItem.map((item, index) => (
           <ColorSwatch
             key={index}
