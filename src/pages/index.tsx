@@ -69,7 +69,7 @@ const Home: NextPage = () => {
     }
   };
   // カード画像をダウンロード
-  const saveImage = () => {
+  const DownloadCardImage = () => {
     // 画像に変換する component の id を指定
     const target = document.getElementById("canvas");
     if (!target) {
@@ -78,6 +78,7 @@ const Home: NextPage = () => {
     html2canvas(target).then((canvas) => {
       const targetImgUri = canvas.toDataURL("img/png");
       saveAsImage(targetImgUri);
+      setOpenModal(false);
     });
   };
   return (
@@ -169,11 +170,28 @@ const Home: NextPage = () => {
           <button
             className="rounded-xl bg-green-400 px-8 py-4 font-semibold hover:bg-green-500 hover:shadow"
             onClick={() => {
-              saveImage();
+              setOpenModal(true);
             }}
           >
             画像を保存する
           </button>
+
+          <Modal
+            opened={openModal}
+            onClose={() => setOpenModal(false)}
+            title="カードを保存する"
+          >
+            <p>カードをダウンロードしますか？</p>
+            <button
+              className="rounded-lg bg-blue-600 px-8 py-4 text-white hover:shadow"
+              onClick={() => {
+                DownloadCardImage();
+              }}
+            >
+              ダウンロード
+            </button>
+            <p>※保存形式はpngです</p>
+          </Modal>
         </div>
       </div>
       <Footer />
