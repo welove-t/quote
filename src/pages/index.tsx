@@ -7,6 +7,10 @@ import Footer from "src/components/Footer";
 import CreateImage from "src/components/CreateImage";
 import html2canvas from "html2canvas";
 import { TwitterShareButton, TwitterIcon } from "react-share";
+import {
+  ClipboardCopyIcon,
+  ChevronDoubleDownIcon,
+} from "@heroicons/react/solid";
 
 const Home: NextPage = () => {
   const [source, setSource] = useState<string>("");
@@ -136,25 +140,32 @@ const Home: NextPage = () => {
           source={form.values.textsource}
         />
 
-        <Modal
-          opened={openModal}
-          onClose={() => setOpenModal(false)}
-          title="Introduce yourself!"
-        >
-          <p>
-            クリップボードにコピーされました！ 早速Twitterで共有しましょう！
-          </p>
-          <TwitterShareButton url="/" hashtags={["QuoteCard"]}>
-            <TwitterIcon size={32} round={true} />
-          </TwitterShareButton>
-        </Modal>
-        <div className="mt-8 flex flex-col items-center space-y-10">
+        <div className="mt-8 flex flex-col items-center space-y-4">
           <button
-            className="rounded-full border-blue-500 bg-white px-8 py-4 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
+            className="flex items-center space-x-2 rounded-full border-blue-500 bg-white px-8 py-2 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
             onClick={() => getScreenShot("canvas")}
           >
-            カードをコピーする
+            <ClipboardCopyIcon className="w-6" />
+            <p>カードをコピーする</p>
           </button>
+          <ChevronDoubleDownIcon className="w-6 animate-pulse text-gray-500" />
+          <TwitterShareButton
+            url="/"
+            hashtags={["QuoteCard"]}
+            className="flex items-center space-x-1"
+            style={{
+              backgroundColor: "#00ACEE",
+              paddingTop: 2,
+              paddingBottom: 2,
+              paddingLeft: 32,
+              paddingRight: 32,
+              borderRadius: 9999,
+            }}
+          >
+            <TwitterIcon size={32} round={true} />
+            <p className="font-semibold text-white">Twitterで共有する</p>
+          </TwitterShareButton>
+
           <button
             className="rounded-xl bg-green-400 px-8 py-4 font-semibold hover:bg-green-500 hover:shadow"
             onClick={() => {
