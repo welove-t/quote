@@ -32,7 +32,7 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
           cite: { marginTop: 40, paddingRight: 16 },
         }}
       >
-        {quote}
+        <div className="italic"> {quote}</div>
       </Blockquote>
     </Box>
   );
