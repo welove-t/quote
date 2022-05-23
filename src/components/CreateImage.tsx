@@ -9,10 +9,11 @@ type props = {
 };
 
 const colorSwatchItem = [
-  { foColor: "#1098AD", bgColor: "#C5F6FA" }, //ブルー
-  { foColor: "#37B24D", bgColor: "#D3F9D8" }, //グリーン
-  { foColor: "#F76707", bgColor: "#FFE8CC" }, //オレンジ
-  { foColor: "#AE3EC9", bgColor: "#F3D9FA" }, //パープル
+  { foColor: "#141517", bgColor: "#F1F3F5" }, //グレー
+  { foColor: "#1C7ED6", bgColor: "#E7F5FF" }, //ブルー
+  { foColor: "#37B24D", bgColor: "#EBFBEE" }, //グリーン
+  { foColor: "#F76707", bgColor: "#FFF4E6" }, //オレンジ
+  { foColor: "#AE3EC9", bgColor: "#F8F0FC" }, //パープル
   { foColor: "#FFFFFF", bgColor: "#141517" }, //ブラック
 ];
 
@@ -20,6 +21,7 @@ const CreateImage = ({ quote, source }: props) => {
   // ColorSwatch用
   const [checked, setChecked] = useState<boolean[]>([
     true,
+    false,
     false,
     false,
     false,
@@ -39,8 +41,8 @@ const CreateImage = ({ quote, source }: props) => {
             key={index}
             component="button"
             radius={"md"}
-            size={48}
-            color={index === 4 ? item.bgColor : item.foColor}
+            size={44}
+            color={index === 5 ? item.bgColor : item.foColor}
             onClick={() => {
               setChecked((checked) => checked.map((c, i) => index === i && !c));
               setFoColor(item.foColor);
