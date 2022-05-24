@@ -11,6 +11,7 @@ import {
   ClipboardCopyIcon,
   ChevronDoubleDownIcon,
 } from "@heroicons/react/solid";
+import { TextRemaining } from "src/components/TextRemaining";
 
 const Home: NextPage = () => {
   const [source, setSource] = useState<string>("");
@@ -106,13 +107,15 @@ const Home: NextPage = () => {
             {...form.getInputProps("textquote")}
           />
           {form.values.textquote.length > 150 ? (
-            <p className="mx-auto text-right text-sm text-red-500">
-              あと {150 - form.values.textquote.length} 文字
-            </p>
+            <TextRemaining
+              color="red-500"
+              count={150 - form.values.textquote.length}
+            />
           ) : (
-            <p className="mx-auto text-right text-sm text-gray-500">
-              あと {150 - form.values.textquote.length} 文字
-            </p>
+            <TextRemaining
+              color="gray-500"
+              count={150 - form.values.textquote.length}
+            />
           )}
         </div>
         <div className="mt-10">
@@ -127,13 +130,15 @@ const Home: NextPage = () => {
             {...form.getInputProps("textsource")}
           />
           {form.values.textsource.length > 50 ? (
-            <p className="mx-auto text-right text-sm text-red-500">
-              あと {50 - form.values.textsource.length} 文字
-            </p>
+            <TextRemaining
+              color="red-500"
+              count={50 - form.values.textsource.length}
+            />
           ) : (
-            <p className="mx-auto text-right text-sm text-gray-500">
-              あと {50 - form.values.textsource.length} 文字
-            </p>
+            <TextRemaining
+              color="gray-500"
+              count={50 - form.values.textsource.length}
+            />
           )}
         </div>
         <CreateImage
