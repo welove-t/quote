@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import QuoteCard from "src/components/QuoteCard";
-import { ColorSwatch, Group } from "@mantine/core";
-import { CheckIcon } from "@heroicons/react/solid";
+import { ColorSwatch, Group, Text } from "@mantine/core";
 
 type props = {
   quote: string;
@@ -41,16 +40,24 @@ const CreateImage = ({ quote, source }: props) => {
             key={index}
             component="button"
             radius={"md"}
-            size={44}
-            color={index === 5 ? item.bgColor : item.foColor}
+            size={checked[index] ? 48 : 40}
+            color={item.bgColor}
             onClick={() => {
-              setChecked((checked) => checked.map((c, i) => index === i && !c));
+              setChecked((checked) =>
+                !checked[index]
+                  ? checked.map((c, i) => index === i && !c)
+                  : checked
+              );
               setFoColor(item.foColor);
               setBgColor(item.bgColor);
             }}
-            style={{ color: "#fff", cursor: "pointer" }}
+            styles={() => ({
+              root: { cursor: "pointer" },
+            })}
           >
-            {checked[index] && <CheckIcon className="w-6" />}
+            <Text color={item.foColor} size={"lg"} weight={500}>
+              A
+            </Text>
           </ColorSwatch>
         ))}
       </Group>
