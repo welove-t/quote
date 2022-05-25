@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import { Modal, Textarea, TextInput } from "@mantine/core";
+import { Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import React, { ChangeEvent, useState } from "react";
+import React from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import CreateImage from "src/components/CreateImage";
@@ -16,9 +16,6 @@ import { TextRemaining } from "src/components/TextRemaining";
 import { showNotification, updateNotification } from "@mantine/notifications";
 
 const Home: NextPage = () => {
-  const [source, setSource] = useState<string>("");
-  const [openModal, setOpenModal] = useState(false);
-
   const form = useForm({
     initialValues: {
       textquote: "",
@@ -57,41 +54,6 @@ const Home: NextPage = () => {
       });
   };
 
-  // カードを画像として保存
-  const saveAsImage = (uri: any) => {
-    const downloadLink = document.createElement("a");
-
-    if (typeof downloadLink.download === "string") {
-      downloadLink.href = uri;
-
-      // ファイル名
-      downloadLink.download = "component.png";
-
-      // Firefox では body の中にダウンロードリンクがないといけないので一時的に追加
-      document.body.appendChild(downloadLink);
-
-      // ダウンロードリンクが設定された a タグをクリック
-      downloadLink.click();
-
-      // Firefox 対策で追加したリンクを削除しておく
-      document.body.removeChild(downloadLink);
-    } else {
-      window.open(uri);
-    }
-  };
-  // カード画像をダウンロード
-  const DownloadCardImage = () => {
-    // 画像に変換する component の id を指定
-    const target = document.getElementById("canvas");
-    if (!target) {
-      return;
-    }
-    html2canvas(target).then((canvas) => {
-      const targetImgUri = canvas.toDataURL("img/png");
-      saveAsImage(targetImgUri);
-      setOpenModal(false);
-    });
-  };
   return (
     <div>
       <Header />
@@ -190,32 +152,6 @@ const Home: NextPage = () => {
             <TwitterIcon size={32} round={true} />
             <p className="font-semibold text-white">Twitterで共有する</p>
           </TwitterShareButton>
-
-          <button
-            className="rounded-xl bg-green-400 px-8 py-4 font-semibold hover:bg-green-500 hover:shadow"
-            onClick={() => {
-              setOpenModal(true);
-            }}
-          >
-            画像を保存する
-          </button>
-
-          <Modal
-            opened={openModal}
-            onClose={() => setOpenModal(false)}
-            title="カードを保存する"
-          >
-            <p>カードをダウンロードしますか？</p>
-            <button
-              className="rounded-lg bg-blue-600 px-8 py-4 text-white hover:shadow"
-              onClick={() => {
-                DownloadCardImage();
-              }}
-            >
-              ダウンロード
-            </button>
-            <p>※保存形式はpngです</p>
-          </Modal>
         </div>
       </div>
       <Footer />
