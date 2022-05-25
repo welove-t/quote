@@ -10,8 +10,10 @@ import { TwitterShareButton, TwitterIcon } from "react-share";
 import {
   ClipboardCopyIcon,
   ChevronDoubleDownIcon,
+  CheckCircleIcon,
 } from "@heroicons/react/solid";
 import { TextRemaining } from "src/components/TextRemaining";
+import { showNotification, updateNotification } from "@mantine/notifications";
 
 const Home: NextPage = () => {
   const [source, setSource] = useState<string>("");
@@ -41,7 +43,15 @@ const Home: NextPage = () => {
               ),
             ])
             .then(() => {
-              setOpenModal(true);
+              setTimeout(() => {
+                updateNotification({
+                  id: "load-data",
+                  color: "blue",
+                  message: "コピーしました！",
+                  icon: <CheckCircleIcon />,
+                  autoClose: 2000,
+                });
+              }, 1000);
             });
         });
       });
@@ -149,7 +159,16 @@ const Home: NextPage = () => {
         <div className="mt-8 flex flex-col items-center space-y-4">
           <button
             className="flex items-center space-x-2 rounded-full border-blue-500 bg-white px-8 py-2 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
-            onClick={() => getScreenShot("canvas")}
+            onClick={() => {
+              showNotification({
+                id: "load-data",
+                loading: true,
+                message: "カードをコピーしています...",
+                autoClose: false,
+                disallowClose: true,
+              });
+              getScreenShot("canvas");
+            }}
           >
             <ClipboardCopyIcon className="w-6" />
             <p>カードをコピーする</p>
