@@ -12,16 +12,9 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
   return (
     <Box
       id="canvas"
-      className="mx-auto mt-8 mb-4 items-center whitespace-normal rounded-lg border-hidden pb-4 text-center font-bold sm:w-[360px] md:w-[360px]"
+      className="mx-auto mt-8 mb-4 items-center whitespace-normal rounded-lg border-hidden py-4 text-center font-bold sm:w-[360px] md:w-[360px]"
       sx={() => ({ backgroundColor: bgColor })}
     >
-      <Box
-        className="ml-6 border-blue-500 pt-6 text-left text-xl tracking-wider"
-        sx={() => ({ color: foColor })}
-      >
-        QuoteCard
-      </Box>
-      <div className="border"></div>
       <Blockquote
         cite={`- ${source}`}
         styles={{
@@ -34,6 +27,12 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
       >
         <div className="italic"> {quote}</div>
       </Blockquote>
+      <Box
+        className="mr-6 border-blue-500 pt-6 text-right text-sm font-light italic tracking-wider"
+        sx={() => ({ color: foColor })}
+      >
+        #QuoteCard
+      </Box>
     </Box>
   );
 };
