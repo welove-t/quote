@@ -11,6 +11,7 @@ import {
   ClipboardCopyIcon,
   ChevronDoubleDownIcon,
   CheckCircleIcon,
+  XCircleIcon,
 } from "@heroicons/react/solid";
 import { TextRemaining } from "src/components/TextRemaining";
 import { showNotification, updateNotification } from "@mantine/notifications";
@@ -46,6 +47,17 @@ const Home: NextPage = () => {
                   color: "blue",
                   message: "コピーしました！",
                   icon: <CheckCircleIcon />,
+                  autoClose: 2000,
+                });
+              }, 1000);
+            })
+            .catch(() => {
+              setTimeout(() => {
+                updateNotification({
+                  id: "load-data",
+                  color: "red",
+                  message: "カードのコピーに失敗しました...",
+                  icon: <XCircleIcon />,
                   autoClose: 2000,
                 });
               }, 1000);
