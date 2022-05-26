@@ -51,7 +51,8 @@ const Home: NextPage = () => {
                 });
               }, 1000);
             })
-            .catch(() => {
+            .catch((e) => {
+              alert(e);
               setTimeout(() => {
                 updateNotification({
                   id: "load-data",
