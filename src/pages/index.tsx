@@ -30,10 +30,11 @@ const Home: NextPage = () => {
 
   // WebAPIShareに対応しているかどうか検知
   useEffect(() => {
-    if (navigator.canShare && navigator.canShare({})) {
-      setIsWebAPI(true);
-    } else {
+    console.log(!navigator.canShare);
+    if (!navigator.canShare) {
       setIsWebAPI(false);
+    } else {
+      setIsWebAPI(true);
     }
   }, []);
   //  クリップボードにコピー
