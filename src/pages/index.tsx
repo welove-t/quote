@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import CreateImage from "src/components/CreateImage";
@@ -25,6 +25,17 @@ const Home: NextPage = () => {
   });
   const errorTextquote = form.values.textquote.length > 150 ? "error" : null;
   const errorTextsource = form.values.textsource.length > 50 ? "error" : null;
+
+  const [isWebAPI, setIsWebAPI] = useState(false);
+
+  // WebAPIShareに対応しているかどうか検知
+  useEffect(() => {
+    if (navigator.canShare && navigator.canShare({})) {
+      setIsWebAPI(true);
+    } else {
+      setIsWebAPI(false);
+    }
+  }, []);
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
     let src = document.getElementById(Src);
@@ -71,6 +82,13 @@ const Home: NextPage = () => {
     <div>
       <Header />
       <div className="container text-center">
+        {isWebAPI ? (
+          <div className="font-bold text-blue-500">対応</div>
+        ) : (
+          <div className="font-bold text-red-500">
+            お使いの端末・ブラウザは”Web Share API Level2”に対応していません。
+          </div>
+        )}
         <span>メインコンポーネント</span>
         <br />
         <span>あなたの琴線に触れた名言・名セリフをカード画像にしよう！</span>
