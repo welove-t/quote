@@ -30,40 +30,41 @@ const Home: NextPage = () => {
     let src = document.getElementById(Src);
     src &&
       html2canvas(src).then(function (canvas) {
-        canvas.toBlob(function (blob) {
-          navigator.clipboard
-            .write([
-              new ClipboardItem(
-                Object.defineProperty({}, blob!.type, {
-                  value: blob,
-                  enumerable: true,
-                })
-              ),
-            ])
-            .then(() => {
-              setTimeout(() => {
-                updateNotification({
-                  id: "load-data",
-                  color: "blue",
-                  message: "コピーしました！",
-                  icon: <CheckCircleIcon />,
-                  autoClose: 2000,
-                });
-              }, 1000);
-            })
-            .catch((e) => {
-              alert(e);
-              setTimeout(() => {
-                updateNotification({
-                  id: "load-data",
-                  color: "red",
-                  message: "カードのコピーに失敗しました...",
-                  icon: <XCircleIcon />,
-                  autoClose: 2000,
-                });
-              }, 1000);
-            });
-        });
+        document.getElementById("canvas")!.appendChild(canvas);
+        // canvas.toBlob(function (blob) {
+        //   navigator.clipboard
+        //     .write([
+        //       new ClipboardItem(
+        //         Object.defineProperty({}, blob!.type, {
+        //           value: blob,
+        //           enumerable: true,
+        //         })
+        //       ),
+        //     ])
+        //     .then(() => {
+        //       setTimeout(() => {
+        //         updateNotification({
+        //           id: "load-data",
+        //           color: "blue",
+        //           message: "コピーしました！",
+        //           icon: <CheckCircleIcon />,
+        //           autoClose: 2000,
+        //         });
+        //       }, 1000);
+        //     })
+        //     .catch((e) => {
+        //       alert(e);
+        //       setTimeout(() => {
+        //         updateNotification({
+        //           id: "load-data",
+        //           color: "red",
+        //           message: "カードのコピーに失敗しました...",
+        //           icon: <XCircleIcon />,
+        //           autoClose: 2000,
+        //         });
+        //       }, 1000);
+        //     });
+        // });
       });
   };
 
