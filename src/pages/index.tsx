@@ -71,6 +71,11 @@ const Home: NextPage = () => {
     <div>
       <Header />
       <div className="container text-center">
+        {navigator.canShare || (
+          <div className="font-bold text-red-500">
+            お使いの端末・ブラウザは ”web share api level2”に対応していません。
+          </div>
+        )}
         <span>メインコンポーネント</span>
         <br />
         <span>あなたの琴線に触れた名言・名セリフをカード画像にしよう！</span>
