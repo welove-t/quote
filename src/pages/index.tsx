@@ -79,6 +79,34 @@ const Home: NextPage = () => {
       });
   };
 
+  // web share api
+  const webShare = (Src: any) => {
+    let src = document.getElementById(Src);
+    src &&
+      html2canvas(src).then(function (canvas) {
+        canvas.toBlob(function (blob) {
+          if (!blob) return;
+          const image = new File([blob], "tmp.png", { type: "image/png" });
+          if (navigator.canShare && navigator.canShare({ files: [image] })) {
+            navigator
+              .share({
+                text: "アプリ連携無しで画像がシェアできました！",
+                url: "/",
+                files: [image],
+              })
+              .then(() => {
+                console.log("Share was successful.");
+              })
+              .catch((error) => {
+                console.log("Sharing failed", error);
+              });
+          } else {
+            console.log("この端末はWebShareAPIには対応していません！！！");
+          }
+        });
+      });
+  };
+
   return (
     <div>
       <Header />
@@ -184,6 +212,14 @@ const Home: NextPage = () => {
             <TwitterIcon size={32} round={true} />
             <p className="font-semibold text-white">Twitterで共有する</p>
           </TwitterShareButton>
+          <button
+            className="rounded-full border-blue-500 bg-white px-8 py-2 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
+            onClick={() => {
+              webShare("canvas");
+            }}
+          >
+            WEB SHARE！
+          </button>
         </div>
       </div>
       <Footer />
