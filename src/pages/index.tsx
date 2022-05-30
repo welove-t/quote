@@ -12,6 +12,7 @@ import {
   ChevronDoubleDownIcon,
   CheckCircleIcon,
   XCircleIcon,
+  ShareIcon,
 } from "@heroicons/react/solid";
 import { TextRemaining } from "src/components/TextRemaining";
 import { showNotification, updateNotification } from "@mantine/notifications";
@@ -213,12 +214,13 @@ const Home: NextPage = () => {
             <p className="font-semibold text-white">Twitterで共有する</p>
           </TwitterShareButton>
           <button
-            className="rounded-full border-blue-500 bg-white px-8 py-2 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
+            className="flex items-center space-x-2 rounded-full border-none bg-green-600 px-8 py-2 font-semibold text-white hover:cursor-pointer hover:bg-green-700 hover:shadow"
             onClick={() => {
               webShare("canvas");
             }}
           >
-            WEB SHARE！
+            <ShareIcon className="w-6" />
+            <p>カードをシェアする</p>
           </button>
         </div>
       </div>
