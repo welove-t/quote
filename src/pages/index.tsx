@@ -130,7 +130,7 @@ const Home: NextPage = () => {
           <Textarea
             label="お気に入りのフレーズを書いて下さい"
             error={errorTextquote}
-            placeholder={`(例1) 吾輩は猫である。名前はまだ無い。\n(例2) 海賊王に、俺はなる!!!!`}
+            placeholder="(例) 吾輩は猫である。名前はまだ無い"
             className="mx-auto"
             autosize
             size="md"
@@ -156,7 +156,7 @@ const Home: NextPage = () => {
           <TextInput
             label="上記の参照元(人名・書名・登場人物名等)を書いて下さい"
             error={errorTextsource}
-            placeholder={`(例1) 夏目漱石『吾輩は猫である』より |  (例2) ワンピース / ルフィ`}
+            placeholder="(例) 夏目漱石『吾輩は猫である』より"
             className="mx-auto"
             size="xs"
             maxLength={51}
