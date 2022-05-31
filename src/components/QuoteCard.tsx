@@ -27,7 +27,12 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
             fontSize: 16,
             paddingTop: 2,
           },
-          cite: { marginTop: 40, paddingRight: 16 },
+          cite: {
+            marginTop: 40,
+            paddingRight: 16,
+            color: foColor,
+            opacity: 0.85,
+          },
         }}
       >
         <div className="italic"> {quote}</div>

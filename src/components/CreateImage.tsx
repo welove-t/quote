@@ -7,13 +7,14 @@ type props = {
   source: string;
 };
 
+// カラーパターン（文字色：背景色）
 const colorSwatchItem = [
-  { foColor: "#141517", bgColor: "#F1F3F5" }, //グレー
-  { foColor: "#1C7ED6", bgColor: "#E7F5FF" }, //ブルー
-  { foColor: "#37B24D", bgColor: "#EBFBEE" }, //グリーン
-  { foColor: "#F76707", bgColor: "#FFF4E6" }, //オレンジ
-  { foColor: "#AE3EC9", bgColor: "#F8F0FC" }, //パープル
-  { foColor: "#FFFFFF", bgColor: "#141517" }, //ブラック
+  { foColor: "#778a99", bgColor: "#f1f4f7" }, // 薄黒：薄灰
+  { foColor: "#141517", bgColor: "#DBC47B" }, // 黒：薄黄
+  { foColor: "#141517", bgColor: "#FCA393" }, // 黒：薄赤
+  { foColor: "#FFFFFF", bgColor: "#1864AB" }, // 白：濃青
+  { foColor: "#FFFFFF", bgColor: "#087F5B" }, // 白：濃緑
+  { foColor: "#FFFFFF", bgColor: "#141517" }, // 白：黒
 ];
 
 const CreateImage = ({ quote, source }: props) => {
