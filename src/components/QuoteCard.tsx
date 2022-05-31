@@ -21,7 +21,12 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
           root: { marginTop: 8 },
           icon: { color: foColor },
           inner: { color: foColor, paddingRight: 24 },
-          body: { color: foColor, letterSpacing: 0.8, fontSize: 16 },
+          body: {
+            color: foColor,
+            letterSpacing: 0.8,
+            fontSize: 16,
+            paddingTop: 2,
+          },
           cite: { marginTop: 40, paddingRight: 16 },
         }}
       >
