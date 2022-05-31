@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { Textarea, TextInput } from "@mantine/core";
+import { Blockquote, Box, Textarea, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import React, { useEffect, useState } from "react";
 import Header from "src/components/Header";
@@ -123,7 +123,41 @@ const Home: NextPage = () => {
         <br />
         <span>あなたの琴線に触れた名言・名セリフをカード画像にしよう！</span>
         <br />
-        <span>（引用イメージをカルーセルで表示させる）</span>
+        <div className="text-lg font-semibold">今日のワード</div>
+        <Box
+          className="relative mx-auto mt-4 mb-4 flex h-96 items-center justify-center whitespace-normal rounded-lg border-hidden py-4 text-center font-bold sm:w-[360px] md:w-[360px]"
+          sx={() => ({ backgroundColor: "#f1f4f7" })}
+        >
+          <Blockquote
+            cite={`- ニーチェ`}
+            styles={{
+              root: { marginTop: 4 },
+              icon: { color: "#778a99" },
+              inner: { color: "#778a99", paddingRight: 24 },
+              body: {
+                color: "#778a99",
+                letterSpacing: 0.8,
+                fontSize: 16,
+                paddingTop: 2,
+              },
+              cite: { marginTop: 40, paddingRight: 16 },
+            }}
+          >
+            <div className="italic">{`我思う。故に我あり。`}</div>
+          </Blockquote>
+          <Box
+            className="absolute bottom-5 right-5 border-blue-500 text-right text-sm font-light italic tracking-wider"
+            sx={() => ({ color: "#778a99" })}
+          >
+            #QuoteCard
+          </Box>
+        </Box>
+        <Box
+          className="relative mx-auto mt-4 mb-4 flex h-96 items-center justify-center whitespace-normal rounded-lg bg-gray-800 py-4 text-center font-bold sm:w-[360px] md:w-[360px]"
+          sx={() => ({ backgroundColor: "#f1f4f7" })}
+        >
+          <div className="text-xl text-white">QuoteCard</div>
+        </Box>
         <br />
         <div className="mt-10">
           <label className="text-lg font-semibold">引用文</label>
