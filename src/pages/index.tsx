@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       textsource: "",
     },
   });
-  const errorTextquote = form.values.textquote.length > 150 ? "error" : null;
+  const errorTextquote = form.values.textquote.length > 120 ? "error" : null;
   const errorTextsource = form.values.textsource.length > 50 ? "error" : null;
 
   const [isWebAPI, setIsWebAPI] = useState(false);
@@ -175,18 +175,18 @@ const Home: NextPage = () => {
             size="md"
             minRows={2}
             maxRows={6}
-            maxLength={151}
+            maxLength={121}
             {...form.getInputProps("textquote")}
           />
-          {form.values.textquote.length > 150 ? (
+          {form.values.textquote.length > 120 ? (
             <TextRemaining
               color="red-500"
-              count={150 - form.values.textquote.length}
+              count={120 - form.values.textquote.length}
             />
           ) : (
             <TextRemaining
               color="gray-500"
-              count={150 - form.values.textquote.length}
+              count={120 - form.values.textquote.length}
             />
           )}
         </div>
