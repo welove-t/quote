@@ -125,7 +125,7 @@ const Home: NextPage = () => {
         <br />
         <div className="text-lg font-semibold">今日のワード</div>
 
-        <div className="group relative mx-auto mt-4 mb-4 h-96  cursor-pointer py-4 transition-all delay-700 sm:w-[360px] md:w-[360px]">
+        <div className="group relative mx-auto mt-4 mb-4 h-96 max-w-[360px] cursor-pointer py-4 transition-all delay-700 sm:w-[360px] md:w-[360px]">
           {/* カード裏 */}
           <Box
             className="absolute left-0 top-0 flex h-96 w-full items-center justify-center whitespace-normal rounded-lg bg-gray-800 text-center font-bold transition-all duration-500 backface-hidden group-hover:rotate-y-180"
@@ -164,7 +164,7 @@ const Home: NextPage = () => {
           </Box>
         </div>
         <br />
-        <div className="mt-10">
+        <div className="mx-auto mt-10 max-w-[400px]">
           <label className="text-lg font-semibold">引用文</label>
           <Textarea
             label="お気に入りのフレーズを書いて下さい"
@@ -190,7 +190,7 @@ const Home: NextPage = () => {
             />
           )}
         </div>
-        <div className="mt-10">
+        <div className="mx-auto mt-10 max-w-[400px]">
           <label className="text-lg font-semibold">引用元</label>
           <TextInput
             label="上記の参照元(人名・書名・登場人物名等)を書いて下さい"
