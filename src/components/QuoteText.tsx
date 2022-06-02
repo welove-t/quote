@@ -9,7 +9,8 @@ type props = {
 
 const QuoteText = ({ textQuote, textQuoteGetInputProps }: props) => {
   const maxTextQuote: number = 120;
-  const errorTextquote = textQuote.length > maxTextQuote ? "error" : null;
+  const errorTextquote =
+    textQuote.length > maxTextQuote ? "文字数がオーバーしています" : null;
 
   return (
     <div className="mx-auto mt-10 max-w-[400px]">
