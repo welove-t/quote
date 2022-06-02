@@ -5,8 +5,8 @@ import Header from "src/components/Header";
 import Footer from "src/components/Footer";
 import CreateImage from "src/components/CreateImage";
 import TodayWord from "src/components/TodayWord";
-import ButtonsPC from "src/components/ButtonsPC";
-import ButtonsSM from "src/components/ButtonsSM";
+import SharePC from "src/components/SharePC";
+import ShareSM from "src/components/ShareSM";
 import QuoteText from "src/components/QuoteText";
 import QuoteCite from "src/components/QuoteCite";
 
@@ -61,8 +61,8 @@ const Home: NextPage = () => {
           textCiteGetInputProps={form.getInputProps("textCite")}
         />
         <CreateImage quote={textQuote} source={textCite} />
-        <ButtonsPC />
-        <ButtonsSM />
+        <SharePC />
+        <ShareSM />
       </div>
       <Footer />
     </div>

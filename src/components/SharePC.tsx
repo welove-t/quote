@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/solid";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
-const ButtonsPC = () => {
+const SharePC = () => {
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
     let src = document.getElementById(Src);
@@ -91,4 +91,4 @@ const ButtonsPC = () => {
   );
 };
 
-export default ButtonsPC;
+export default SharePC;

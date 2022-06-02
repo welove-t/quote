@@ -2,7 +2,7 @@ import React from "react";
 import html2canvas from "html2canvas";
 import { ShareIcon } from "@heroicons/react/solid";
 
-const ButtonsSM = () => {
+const ShareSM = () => {
   // web share api
   const webShare = (Src: any) => {
     let src = document.getElementById(Src);
@@ -43,4 +43,4 @@ const ButtonsSM = () => {
   );
 };
 
-export default ButtonsSM;
+export default ShareSM;
