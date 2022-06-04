@@ -86,8 +86,8 @@ const Home: NextPage = () => {
           textCiteGetInputProps={form.getInputProps("textCite")}
         />
         <CreateImage quote={textQuote} source={textCite} />
-        <SharePC />
-        <ShareSM />
+        <SharePC isError={isCheckedLengthQuote && isCheckedLengthCite} />
+        <ShareSM isError={isCheckedLengthQuote && isCheckedLengthCite} />
       </div>
       <Footer />
     </div>

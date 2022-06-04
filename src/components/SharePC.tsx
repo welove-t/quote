@@ -9,7 +9,11 @@ import {
 } from "@heroicons/react/solid";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
-const SharePC = () => {
+type props = {
+  isError: boolean;
+};
+
+const SharePC = ({ isError }: props) => {
   //  クリップボードにコピー
   const getScreenShot = (Src: any) => {
     let src = document.getElementById(Src);
@@ -66,6 +70,7 @@ const SharePC = () => {
           });
           getScreenShot("canvas");
         }}
+        disabled={!isError}
       >
         <ClipboardCopyIcon className="w-6" />
         <p>カードをコピーする</p>
