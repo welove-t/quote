@@ -8,6 +8,7 @@ import {
   XCircleIcon,
 } from "@heroicons/react/solid";
 import { TwitterShareButton, TwitterIcon } from "react-share";
+import Buttons from "src/components/Buttons";
 
 type props = {
   isError: boolean;
@@ -56,25 +57,29 @@ const SharePC = ({ isError }: props) => {
       });
   };
 
+  const displayNotirication = () => {
+    showNotification({
+      id: "load-data",
+      loading: true,
+      message: "カードをコピーしています...",
+      autoClose: false,
+      disallowClose: true,
+    });
+    getScreenShot("canvas");
+  };
+
   return (
     <div className="hidden sm:mt-8 sm:flex sm:flex-col sm:items-center sm:space-y-4">
-      <button
-        className="flex items-center space-x-2 rounded-full border-blue-500 bg-white px-8 py-2 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
-        onClick={() => {
-          showNotification({
-            id: "load-data",
-            loading: true,
-            message: "カードをコピーしています...",
-            autoClose: false,
-            disallowClose: true,
-          });
-          getScreenShot("canvas");
+      <Buttons
+        isError={isError}
+        bgColor="blue"
+        onClickButton={() => {
+          displayNotirication();
         }}
-        disabled={!isError}
       >
         <ClipboardCopyIcon className="w-6" />
         <p>カードをコピーする</p>
-      </button>
+      </Buttons>
       <ChevronDoubleDownIcon className="w-6 animate-pulse text-gray-500" />
       <TwitterShareButton
         url="/"
@@ -88,6 +93,7 @@ const SharePC = ({ isError }: props) => {
           paddingRight: 32,
           borderRadius: 9999,
         }}
+        disabled={!isError}
       >
         <TwitterIcon size={32} round={true} />
         <p className="font-semibold text-white">Twitterで共有する</p>
