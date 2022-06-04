@@ -4,13 +4,20 @@ import { TextRemaining } from "src/components/TextRemaining";
 
 type props = {
   textCite: string;
+  textLength: number;
+  maxLength: number;
+  isLength: boolean;
   textCiteGetInputProps: object;
 };
 
-const QuoteCite = ({ textCite, textCiteGetInputProps }: props) => {
-  const maxTextCite: number = 50;
-  const errorTextsource =
-    textCite.length > maxTextCite ? "文字数がオーバーしています" : null;
+const QuoteCite = ({
+  textCite,
+  textLength,
+  maxLength,
+  isLength,
+  textCiteGetInputProps,
+}: props) => {
+  const errorTextsource = !isLength ? "文字数がオーバーしています" : null;
 
   return (
     <div className="mx-auto mt-10 max-w-[400px]">
@@ -21,13 +28,13 @@ const QuoteCite = ({ textCite, textCiteGetInputProps }: props) => {
         placeholder="(例) 夏目漱石『吾輩は猫である』より"
         className="mx-auto"
         size="md"
-        maxLength={maxTextCite + 1}
+        maxLength={maxLength + 10}
         {...textCiteGetInputProps}
       />
-      {textCite.length > maxTextCite ? (
-        <TextRemaining color="red-500" count={maxTextCite - textCite.length} />
+      {!isLength ? (
+        <TextRemaining color="red-500" count={maxLength - textLength} />
       ) : (
-        <TextRemaining color="gray-500" count={maxTextCite - textCite.length} />
+        <TextRemaining color="gray-500" count={maxLength - textLength} />
       )}
     </div>
   );

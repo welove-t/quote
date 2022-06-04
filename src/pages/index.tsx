@@ -18,8 +18,27 @@ const Home: NextPage = () => {
     },
   });
 
+  // 引用文
   const textQuote = form.values.textQuote;
+  const textQuoteLength = textQuote.length;
+  const maxTextQuote: number = 120;
+  const [isCheckedLengthQuote, setIsCheckedLengthQuote] = useState(true);
+
+  // 引用元
   const textCite = form.values.textCite;
+  const textCiteLength = textCite.length;
+  const maxTextCite: number = 50;
+  const [isCheckedLengthCite, setIsCheckedLengthCite] = useState(true);
+
+  // 引用文・引用元の文字数チェック
+  useEffect(() => {
+    textQuoteLength > maxTextQuote
+      ? setIsCheckedLengthQuote(() => false)
+      : setIsCheckedLengthQuote(() => true);
+    textCiteLength > maxTextCite
+      ? setIsCheckedLengthCite(() => false)
+      : setIsCheckedLengthCite(() => true);
+  }, [textQuoteLength, textCiteLength]);
 
   const [isWebAPI, setIsWebAPI] = useState(false);
 
@@ -54,10 +73,16 @@ const Home: NextPage = () => {
         <br />
         <QuoteText
           textQuote={textQuote}
+          textLength={textQuoteLength}
+          maxLength={maxTextQuote}
+          isLength={isCheckedLengthQuote}
           textQuoteGetInputProps={form.getInputProps("textQuote")}
         />
         <QuoteCite
           textCite={textCite}
+          textLength={textCiteLength}
+          maxLength={maxTextCite}
+          isLength={isCheckedLengthCite}
           textCiteGetInputProps={form.getInputProps("textCite")}
         />
         <CreateImage quote={textQuote} source={textCite} />
