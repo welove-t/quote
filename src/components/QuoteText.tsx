@@ -4,13 +4,20 @@ import { TextRemaining } from "src/components/TextRemaining";
 
 type props = {
   textQuote: string;
+  textLength: number;
+  maxLength: number;
+  isLength: boolean;
   textQuoteGetInputProps: object;
 };
 
-const QuoteText = ({ textQuote, textQuoteGetInputProps }: props) => {
-  const maxTextQuote: number = 120;
-  const errorTextquote =
-    textQuote.length > maxTextQuote ? "文字数がオーバーしています" : null;
+const QuoteText = ({
+  textQuote,
+  textLength,
+  maxLength,
+  isLength,
+  textQuoteGetInputProps,
+}: props) => {
+  const errorTextquote = !isLength ? "文字数がオーバーしています" : null;
 
   return (
     <div className="mx-auto mt-10 max-w-[400px]">
@@ -24,19 +31,13 @@ const QuoteText = ({ textQuote, textQuoteGetInputProps }: props) => {
         size="md"
         minRows={2}
         maxRows={6}
-        maxLength={maxTextQuote + 1}
+        maxLength={maxLength + 30}
         {...textQuoteGetInputProps}
       />
-      {textQuote.length > maxTextQuote ? (
-        <TextRemaining
-          color="red-500"
-          count={maxTextQuote - textQuote.length}
-        />
+      {!isLength ? (
+        <TextRemaining color="red-500" count={maxLength - textLength} />
       ) : (
-        <TextRemaining
-          color="gray-500"
-          count={maxTextQuote - textQuote.length}
-        />
+        <TextRemaining color="gray-500" count={maxLength - textLength} />
       )}
     </div>
   );

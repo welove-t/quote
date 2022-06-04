@@ -2,7 +2,11 @@ import React from "react";
 import html2canvas from "html2canvas";
 import { ShareIcon } from "@heroicons/react/solid";
 
-const ShareSM = () => {
+type props = {
+  isError: boolean;
+};
+
+const ShareSM = ({ isError }: props) => {
   // web share api
   const webShare = (Src: any) => {
     let src = document.getElementById(Src);
@@ -37,6 +41,7 @@ const ShareSM = () => {
         onClick={() => {
           webShare("canvas");
         }}
+        disabled={!isError}
       >
         <ShareIcon className="w-6" />
         <p>カードをシェアする</p>
