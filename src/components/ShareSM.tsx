@@ -37,7 +37,7 @@ const ShareSM = ({ isError }: props) => {
   return (
     <div className="mt-8 flex flex-col sm:hidden">
       <button
-        className="mx-auto flex items-center justify-center space-x-2 rounded-full border-none bg-green-600 px-8 py-2 font-semibold text-white hover:cursor-pointer hover:bg-green-700 hover:shadow"
+        className="mx-auto flex items-center justify-center space-x-2 rounded-full border-none bg-green-600 px-8 py-2 font-semibold text-white hover:cursor-pointer hover:bg-green-700 hover:shadow disabled:cursor-not-allowed disabled:bg-gray-500"
         onClick={() => {
           webShare("canvas");
         }}

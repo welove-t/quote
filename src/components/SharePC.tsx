@@ -59,7 +59,7 @@ const SharePC = ({ isError }: props) => {
   return (
     <div className="hidden sm:mt-8 sm:flex sm:flex-col sm:items-center sm:space-y-4">
       <button
-        className="flex items-center space-x-2 rounded-full border-blue-500 bg-white px-8 py-2 font-semibold text-blue-700 hover:bg-blue-500 hover:text-white"
+        className="mx-auto flex items-center justify-center space-x-2 rounded-full border-none bg-blue-600 px-8 py-2 font-semibold text-white hover:cursor-pointer hover:bg-blue-700 hover:shadow disabled:cursor-not-allowed disabled:bg-gray-500"
         onClick={() => {
           showNotification({
             id: "load-data",
@@ -88,6 +88,7 @@ const SharePC = ({ isError }: props) => {
           paddingRight: 32,
           borderRadius: 9999,
         }}
+        disabled={!isError}
       >
         <TwitterIcon size={32} round={true} />
         <p className="font-semibold text-white">Twitterで共有する</p>
