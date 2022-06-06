@@ -19,12 +19,12 @@ const QuoteCard = ({ quote, source, bgColor, foColor }: props) => {
         cite={`- ${source}`}
         styles={{
           root: { marginTop: 8 },
-          icon: { color: foColor },
+          icon: { color: foColor, marginRight: 16 },
           inner: { color: foColor, paddingRight: 24 },
           body: {
             color: foColor,
             letterSpacing: 0.8,
-            fontSize: 16,
+            fontSize: 15,
             paddingTop: 2,
           },
           cite: {

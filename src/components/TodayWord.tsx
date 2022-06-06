@@ -46,12 +46,12 @@ const TodayWord = () => {
             cite={todayWords[todayWordsId].cite || "ニーチェ"}
             styles={{
               root: { marginTop: 4 },
-              icon: { color: "#778a99" },
+              icon: { color: "#778a99", marginRight: 16 },
               inner: { color: "#778a99", paddingRight: 24 },
               body: {
                 color: "#778a99",
                 letterSpacing: 0.8,
-                fontSize: 16,
+                fontSize: 15,
                 paddingTop: 2,
               },
               cite: { marginTop: 40, paddingRight: 16 },
