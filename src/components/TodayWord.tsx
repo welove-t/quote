@@ -53,6 +53,7 @@ const TodayWord = () => {
                 letterSpacing: 0.8,
                 fontSize: 15,
                 paddingTop: 2,
+                minWidth: 258,
               },
               cite: { marginTop: 40, paddingRight: 16 },
             }}
