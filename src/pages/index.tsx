@@ -53,7 +53,7 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="bg-[#daecec]">
       <Header />
       <div className="container text-center">
         {isWebAPI ? (

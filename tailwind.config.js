@@ -39,7 +39,11 @@ const transform3d = plugin(function ({ addUtilities }) {
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        np: "5px 5px 10px #b1bfbf,-5px -5px 10px #ffffff;",
+      },
+    },
     container: {
       center: true,
       padding: {
