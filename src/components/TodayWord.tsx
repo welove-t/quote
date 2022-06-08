@@ -12,6 +12,7 @@ const standartDay = format(new Date(2021, 12, 1), "yyyy/MM/dd");
 // 日付差分
 const days: string = formatDistanceToNowStrict(new Date(2021, 12, 1), {
   unit: "day",
+  roundingMethod: "ceil",
 });
 const distanceDay: number = Number(days.substring(0, days.indexOf(" ")));
 
