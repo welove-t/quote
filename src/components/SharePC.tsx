@@ -84,9 +84,9 @@ const SharePC = ({ isError }: props) => {
       <TwitterShareButton
         url="/"
         hashtags={["QuoteCard"]}
-        className="flex items-center space-x-1"
+        className="flex items-center space-x-1 shadow-npConvexButton hover:shadow-npConcaveButton"
         style={{
-          backgroundColor: "#00ACEE",
+          backgroundColor: "#daecec",
           paddingTop: 2,
           paddingBottom: 2,
           paddingLeft: 32,
@@ -96,7 +96,7 @@ const SharePC = ({ isError }: props) => {
         disabled={!isError}
       >
         <TwitterIcon size={32} round={true} />
-        <p className="font-semibold text-white">Twitterで共有する</p>
+        <p className="font-semibold text-gray-400">Twitterで共有する</p>
       </TwitterShareButton>
     </div>
   );

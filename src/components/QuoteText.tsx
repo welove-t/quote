@@ -33,6 +33,10 @@ const QuoteText = ({
         maxRows={6}
         maxLength={maxLength + 30}
         {...textQuoteGetInputProps}
+        classNames={{
+          input:
+            "shadow-npConcaveText bg-[#daecec] focus:border-[#daecec] font-semibold text-gray-600",
+        }}
       />
       {!isLength ? (
         <TextRemaining color="red-500" count={maxLength - textLength} />

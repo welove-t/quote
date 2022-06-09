@@ -33,15 +33,15 @@ const TodayWord = () => {
       {/* カード裏 */}
       <ReactCardFlip isFlipped={isOpened}>
         <Box
-          className="flex h-96 w-full items-center justify-center whitespace-normal rounded-xl bg-gray-800 text-center font-bold shadow-sm shadow-slate-400"
-          sx={() => ({ backgroundColor: "#f1f4f7" })}
+          className="flex h-96 w-full items-center justify-center whitespace-normal rounded-xl bg-[#daecec] text-center font-bold shadow-npConvexCard"
+          sx={() => ({ backgroundColor: "#daecec" })}
         >
-          <div className="text-xl text-white">QuoteCard</div>
+          <div className="text-xl text-gray-400">QuoteCard</div>
         </Box>
         {/* カード表 */}
         <Box
-          className="flex h-96 w-full cursor-auto items-center justify-center whitespace-pre-wrap rounded-xl border-hidden text-center font-bold shadow-sm shadow-slate-400"
-          sx={() => ({ backgroundColor: "#f1f4f7" })}
+          className="flex h-96 w-full cursor-auto items-center justify-center whitespace-pre-wrap rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
+          sx={() => ({ backgroundColor: "#daecec" })}
         >
           <Blockquote
             cite={todayWords[todayWordsId].cite || "ニーチェ"}

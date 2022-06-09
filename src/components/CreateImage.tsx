@@ -34,8 +34,8 @@ const CreateImage = ({ quote, source }: props) => {
 
   return (
     <div className="mt-10 text-center">
-      <label className="text-lg font-semibold">カラーパターン</label>
-      <Group position="center" spacing="md" className="mt-4">
+      <label className="text-lg font-semibold">Quote Card</label>
+      {/* <Group position="center" spacing="md" className="mt-4">
         {colorSwatchItem.map((item, index) => (
           <ColorSwatch
             key={index}
@@ -61,7 +61,7 @@ const CreateImage = ({ quote, source }: props) => {
             </Text>
           </ColorSwatch>
         ))}
-      </Group>
+      </Group> */}
 
       <QuoteCard
         quote={quote}
