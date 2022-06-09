@@ -41,7 +41,12 @@ module.exports = {
   theme: {
     extend: {
       boxShadow: {
-        np: "5px 5px 10px #b1bfbf,-5px -5px 10px #ffffff;",
+        npConvexButton: "5px 5px 10px #b1bfbf,-5px -5px 10px #ffffff;",
+        npConvexCard: "5px 5px 2px #6d7676,-4px -4px 2px #eeffff;",
+        npConcaveButton:
+          "inset 5px 5px 10px #99a5a5,inset -2px -2px 10px #ffffff;",
+        npConcaveText:
+          "inset 5px 5px 10px #9facac,inset -5px -5px 10px #f0ffff;",
       },
     },
     container: {

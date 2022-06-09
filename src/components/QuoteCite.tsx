@@ -30,6 +30,10 @@ const QuoteCite = ({
         size="md"
         maxLength={maxLength + 10}
         {...textCiteGetInputProps}
+        classNames={{
+          input:
+            "shadow-npConcaveText bg-[#daecec] focus:border-[#daecec] font-semibold text-gray-600",
+        }}
       />
       {!isLength ? (
         <TextRemaining color="red-500" count={maxLength - textLength} />
