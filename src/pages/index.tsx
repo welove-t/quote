@@ -3,12 +3,12 @@ import { useForm } from "@mantine/form";
 import React, { useEffect, useState } from "react";
 import Header from "src/components/Header";
 import Footer from "src/components/Footer";
-import CreateImage from "src/components/CreateImage";
 import TodayWord from "src/components/TodayWord";
 import SharePC from "src/components/SharePC";
 import ShareSM from "src/components/ShareSM";
 import QuoteText from "src/components/QuoteText";
 import QuoteCite from "src/components/QuoteCite";
+import QuoteCard from "src/components/QuoteCard";
 
 const Home: NextPage = () => {
   const form = useForm({
@@ -85,7 +85,7 @@ const Home: NextPage = () => {
           isLength={isCheckedLengthCite}
           textCiteGetInputProps={form.getInputProps("textCite")}
         />
-        <CreateImage quote={textQuote} source={textCite} />
+        <QuoteCard quote={textQuote} source={textCite} />
         <SharePC isError={isCheckedLengthQuote && isCheckedLengthCite} />
         <ShareSM isError={isCheckedLengthQuote && isCheckedLengthCite} />
       </div>

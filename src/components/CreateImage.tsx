@@ -66,8 +66,8 @@ const CreateImage = ({ quote, source }: props) => {
       <QuoteCard
         quote={quote}
         source={source}
-        bgColor={bgColor}
-        foColor={foColor}
+        // bgColor={bgColor}
+        // foColor={foColor}
       />
     </div>
   );
