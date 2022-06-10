@@ -1,5 +1,4 @@
 import React from "react";
-import html2canvas from "html2canvas";
 import { showNotification, updateNotification } from "@mantine/notifications";
 import {
   ClipboardCopyIcon,
@@ -9,18 +8,19 @@ import {
 } from "@heroicons/react/solid";
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import Buttons from "src/components/Buttons";
+import * as htmlToImage from "html-to-image";
 
 type props = {
   isError: boolean;
 };
 
 const SharePC = ({ isError }: props) => {
-  //  クリップボードにコピー
-  const getScreenShot = (Src: any) => {
+  // カードをコピー
+  const cardCopy = (Src: any) => {
     let src = document.getElementById(Src);
     src &&
-      html2canvas(src).then(function (canvas) {
-        canvas.toBlob(function (blob) {
+      htmlToImage.toCanvas(src).then((canvas) => {
+        canvas.toBlob((blob) => {
           navigator.clipboard
             .write([
               new ClipboardItem(
@@ -31,27 +31,24 @@ const SharePC = ({ isError }: props) => {
               ),
             ])
             .then(() => {
-              setTimeout(() => {
-                updateNotification({
-                  id: "load-data",
-                  color: "blue",
-                  message: "コピーしました！",
-                  icon: <CheckCircleIcon />,
-                  autoClose: 2000,
-                });
-              }, 1000);
+              updateNotification({
+                id: "load-data",
+                color: "blue",
+                message: "コピーしました！",
+                icon: <CheckCircleIcon />,
+                autoClose: 2000,
+              });
             })
             .catch((e) => {
               alert(e);
-              setTimeout(() => {
-                updateNotification({
-                  id: "load-data",
-                  color: "red",
-                  message: "カードのコピーに失敗しました...",
-                  icon: <XCircleIcon />,
-                  autoClose: 2000,
-                });
-              }, 1000);
+
+              updateNotification({
+                id: "load-data",
+                color: "red",
+                message: "カードのコピーに失敗しました...",
+                icon: <XCircleIcon />,
+                autoClose: 2000,
+              });
             });
         });
       });
@@ -65,7 +62,7 @@ const SharePC = ({ isError }: props) => {
       autoClose: false,
       disallowClose: true,
     });
-    getScreenShot("canvas");
+    cardCopy("canvas");
   };
 
   return (

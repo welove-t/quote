@@ -1,5 +1,5 @@
 import React from "react";
-import html2canvas from "html2canvas";
+import * as htmlToImage from "html-to-image";
 import { ShareIcon } from "@heroicons/react/solid";
 import Buttons from "src/components/Buttons";
 
@@ -12,7 +12,7 @@ const ShareSM = ({ isError }: props) => {
   const webShare = (Src: any) => {
     let src = document.getElementById(Src);
     src &&
-      html2canvas(src).then(function (canvas) {
+      htmlToImage.toCanvas(src).then(function (canvas) {
         canvas.toBlob(function (blob) {
           if (!blob) return;
           const image = new File([blob], "tmp.png", { type: "image/png" });
