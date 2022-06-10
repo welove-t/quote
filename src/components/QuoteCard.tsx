@@ -11,10 +11,10 @@ type props = {
 const QuoteCard = ({ quote, source }: props) => {
   return (
     <div
-      className="inline-block rounded-xl bg-[#daecec] p-2 text-center sm:w-[360px] md:w-[360px]"
+      className="inline-block max-w-[360px] rounded-xl bg-[#daecec] p-2 text-center sm:w-[360px] md:w-[360px]"
       id="canvas"
     >
-      <div className="my-4 max-w-[360px] items-center whitespace-pre-wrap rounded-xl border-2 bg-[#daecec] py-4 font-bold shadow-npConvexCard">
+      <div className="my-4 items-center whitespace-pre-wrap rounded-xl border-2 bg-[#daecec] py-4 font-bold shadow-npConvexCard">
         <Blockquote
           cite={`- ${source}`}
           styles={{
