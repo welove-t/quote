@@ -4,8 +4,6 @@ import { Box, Blockquote } from "@mantine/core";
 type props = {
   quote: string;
   source: string;
-  // bgColor: string;
-  // foColor: string;
 };
 
 const QuoteCard = ({ quote, source }: props) => {
