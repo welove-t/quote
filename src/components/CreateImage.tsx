@@ -63,12 +63,12 @@ const CreateImage = ({ quote, source }: props) => {
         ))}
       </Group> */}
 
-      <QuoteCard
+      {/* <QuoteCard
         quote={quote}
         source={source}
         // bgColor={bgColor}
         // foColor={foColor}
-      />
+      /> */}
     </div>
   );
 };
