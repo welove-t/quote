@@ -42,7 +42,7 @@ module.exports = {
     extend: {
       boxShadow: {
         npConvexButton: "6px 6px 12px #B9BCC1,-6px -6px 12px #FFFFFF;",
-        npConvexCard: "6px 6px 12px #B9BCC1,-6px -6px 12px #FFFFFF;",
+        npConvexCard: "6px 6px 12px #666666,-6px -6px 12px #FFFFFF;",
         npConcaveButton:
           "inset 5px 5px 10px #B9BCC1,inset -2px -2px 10px #FFFFFF;",
         npConcaveText:

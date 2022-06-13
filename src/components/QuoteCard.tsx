@@ -10,12 +10,12 @@ type props = {
 const QuoteCard = ({ themeColor, quote, source }: props) => {
   return (
     <div
-      className="inline-block max-w-[360px] rounded-xl p-2 text-center sm:w-[360px] md:w-[360px]"
+      className="max-w-[360px] rounded-xl p-2 text-center sm:inline-block sm:w-[360px]"
       style={{ backgroundColor: themeColor }}
       id="canvas"
     >
       <div
-        className="my-4 items-center whitespace-pre-wrap rounded-xl border-2 py-4 font-bold shadow-npConvexCard"
+        className="my-1 items-center whitespace-pre-wrap rounded-xl border-2 py-4 font-bold shadow-npConvexCard"
         style={{ backgroundColor: themeColor }}
       >
         <Blockquote
