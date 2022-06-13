@@ -11,10 +11,11 @@ import Buttons from "src/components/Buttons";
 import * as htmlToImage from "html-to-image";
 
 type props = {
+  themeColor: string;
   isError: boolean;
 };
 
-const SharePC = ({ isError }: props) => {
+const SharePC = ({ themeColor, isError }: props) => {
   // カードをコピー
   const cardCopy = (Src: any) => {
     let src = document.getElementById(Src);
@@ -69,7 +70,7 @@ const SharePC = ({ isError }: props) => {
     <div className="hidden sm:mt-8 sm:flex sm:flex-col sm:items-center sm:space-y-4">
       <Buttons
         isError={isError}
-        bgColor="blue"
+        themeColor={themeColor}
         onClickButton={() => {
           displayNotirication();
         }}
@@ -83,7 +84,7 @@ const SharePC = ({ isError }: props) => {
         hashtags={["QuoteCard"]}
         className="flex items-center space-x-1 shadow-npConvexButton hover:shadow-npConcaveButton"
         style={{
-          backgroundColor: "#daecec",
+          backgroundColor: themeColor,
           paddingTop: 2,
           paddingBottom: 2,
           paddingLeft: 32,

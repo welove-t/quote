@@ -2,17 +2,22 @@ import React from "react";
 import { Box, Blockquote } from "@mantine/core";
 
 type props = {
+  themeColor: string;
   quote: string;
   source: string;
 };
 
-const QuoteCard = ({ quote, source }: props) => {
+const QuoteCard = ({ themeColor, quote, source }: props) => {
   return (
     <div
-      className="inline-block max-w-[360px] rounded-xl bg-[#daecec] p-2 text-center sm:w-[360px] md:w-[360px]"
+      className="inline-block max-w-[360px] rounded-xl p-2 text-center sm:w-[360px] md:w-[360px]"
+      style={{ backgroundColor: themeColor }}
       id="canvas"
     >
-      <div className="my-4 items-center whitespace-pre-wrap rounded-xl border-2 bg-[#daecec] py-4 font-bold shadow-npConvexCard">
+      <div
+        className="my-4 items-center whitespace-pre-wrap rounded-xl border-2 py-4 font-bold shadow-npConvexCard"
+        style={{ backgroundColor: themeColor }}
+      >
         <Blockquote
           cite={`- ${source}`}
           styles={{
@@ -37,7 +42,7 @@ const QuoteCard = ({ quote, source }: props) => {
           <div className="italic"> {quote}</div>
         </Blockquote>
         <Box
-          className="mr-6 border-blue-500 pt-6 text-right text-sm font-light italic tracking-wider"
+          className="mr-6 pt-6 text-right text-sm font-light italic tracking-wider"
           sx={() => ({ color: "#778a99" })}
         >
           #QuoteCard

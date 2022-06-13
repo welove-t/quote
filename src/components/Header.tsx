@@ -1,8 +1,12 @@
 import React from "react";
 
-const Header = () => {
+type props = {
+  themeColor: string;
+};
+
+const Header = ({ themeColor }: props) => {
   return (
-    <div className=" bg-[#daecec]">
+    <div style={{ backgroundColor: themeColor }}>
       <header className="container m-0 flex h-16 items-center">
         <span className="text-lg font-semibold text-gray-500">Quote Card</span>
       </header>

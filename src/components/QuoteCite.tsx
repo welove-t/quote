@@ -3,6 +3,7 @@ import { TextInput } from "@mantine/core";
 import { TextRemaining } from "src/components/TextRemaining";
 
 type props = {
+  themeColor: string;
   textCite: string;
   textLength: number;
   maxLength: number;
@@ -11,6 +12,7 @@ type props = {
 };
 
 const QuoteCite = ({
+  themeColor,
   textCite,
   textLength,
   maxLength,
@@ -31,8 +33,10 @@ const QuoteCite = ({
         maxLength={maxLength + 10}
         {...textCiteGetInputProps}
         classNames={{
-          input:
-            "shadow-npConcaveText bg-[#daecec] focus:border-[#daecec] font-semibold text-gray-600",
+          input: "shadow-npConcaveText font-semibold text-gray-600",
+        }}
+        styles={{
+          input: { backgroundColor: themeColor, borderColor: themeColor },
         }}
       />
       {!isLength ? (
