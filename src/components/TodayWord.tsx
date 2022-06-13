@@ -5,6 +5,10 @@ import { todayWords } from "src/components/data/TodayWords";
 import { format } from "date-fns";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
 
+type props = {
+  themeColor: string;
+};
+
 // 確認用(後で消す)
 const date = format(new Date(), "yyyy/MM/dd");
 const standartDay = format(new Date(2021, 12, 1), "yyyy/MM/dd");
@@ -19,10 +23,11 @@ const distanceDay: number = Number(days.substring(0, days.indexOf(" ")));
 // 日付差分から今日のワードのidを生成
 const todayWordsId: number = distanceDay <= 10 ? distanceDay : distanceDay % 10;
 
-const TodayWord = () => {
+const TodayWord = ({ themeColor }: props) => {
   const [isOpened, setIsOpened] = useState(false);
   console.log(standartDay, date, days);
   console.log(distanceDay, todayWordsId);
+
   return (
     <div
       className="mx-auto mt-4 mb-4 h-96 max-w-[360px] cursor-pointer py-4 sm:w-[360px] md:w-[360px]"
@@ -33,15 +38,15 @@ const TodayWord = () => {
       {/* カード裏 */}
       <ReactCardFlip isFlipped={isOpened}>
         <Box
-          className="flex h-96 w-full items-center justify-center whitespace-normal rounded-xl bg-[#daecec] text-center font-bold shadow-npConvexCard"
-          sx={() => ({ backgroundColor: "#daecec" })}
+          className="flex h-96 w-full items-center justify-center whitespace-normal rounded-xl text-center font-bold shadow-npConvexCard"
+          sx={() => ({ backgroundColor: themeColor })}
         >
           <div className="text-xl text-gray-400">QuoteCard</div>
         </Box>
         {/* カード表 */}
         <Box
           className="flex h-96 w-full cursor-auto items-center justify-center whitespace-pre-wrap rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
-          sx={() => ({ backgroundColor: "#daecec" })}
+          sx={() => ({ backgroundColor: themeColor })}
         >
           <Blockquote
             cite={todayWords[todayWordsId].cite || "ニーチェ"}

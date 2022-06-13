@@ -4,10 +4,11 @@ import { ShareIcon } from "@heroicons/react/solid";
 import Buttons from "src/components/Buttons";
 
 type props = {
+  themeColor: string;
   isError: boolean;
 };
 
-const ShareSM = ({ isError }: props) => {
+const ShareSM = ({ themeColor, isError }: props) => {
   // web share api
   const webShare = (Src: any) => {
     let src = document.getElementById(Src);
@@ -39,7 +40,7 @@ const ShareSM = ({ isError }: props) => {
     <div className="mt-8 flex flex-col sm:hidden">
       <Buttons
         isError={isError}
-        bgColor="green"
+        themeColor={themeColor}
         onClickButton={() => {
           webShare("canvas");
         }}

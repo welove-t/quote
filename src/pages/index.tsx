@@ -11,6 +11,8 @@ import QuoteCite from "src/components/QuoteCite";
 import QuoteCard from "src/components/QuoteCard";
 
 const Home: NextPage = () => {
+  const themeColor = "#F3F3F3";
+
   const form = useForm({
     initialValues: {
       textQuote: "",
@@ -53,8 +55,8 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div className="bg-[#daecec]">
-      <Header />
+    <div style={{ backgroundColor: themeColor }}>
+      <Header themeColor={themeColor} />
       <div className="container text-center">
         {isWebAPI ? (
           <div className="font-bold text-blue-500">対応</div>
@@ -69,9 +71,10 @@ const Home: NextPage = () => {
         <br />
         <div className="text-lg font-semibold">今日のワード</div>
 
-        <TodayWord />
+        <TodayWord themeColor={themeColor} />
         <br />
         <QuoteText
+          themeColor={themeColor}
           textQuote={textQuote}
           textLength={textQuoteLength}
           maxLength={maxTextQuote}
@@ -79,15 +82,26 @@ const Home: NextPage = () => {
           textQuoteGetInputProps={form.getInputProps("textQuote")}
         />
         <QuoteCite
+          themeColor={themeColor}
           textCite={textCite}
           textLength={textCiteLength}
           maxLength={maxTextCite}
           isLength={isCheckedLengthCite}
           textCiteGetInputProps={form.getInputProps("textCite")}
         />
-        <QuoteCard quote={textQuote} source={textCite} />
-        <SharePC isError={isCheckedLengthQuote && isCheckedLengthCite} />
-        <ShareSM isError={isCheckedLengthQuote && isCheckedLengthCite} />
+        <QuoteCard
+          themeColor={themeColor}
+          quote={textQuote}
+          source={textCite}
+        />
+        <SharePC
+          themeColor={themeColor}
+          isError={isCheckedLengthQuote && isCheckedLengthCite}
+        />
+        <ShareSM
+          themeColor={themeColor}
+          isError={isCheckedLengthQuote && isCheckedLengthCite}
+        />
       </div>
       <Footer />
     </div>
