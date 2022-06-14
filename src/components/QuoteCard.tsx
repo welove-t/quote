@@ -21,7 +21,7 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
         <Blockquote
           cite={`- ${source}`}
           styles={{
-            root: { marginTop: 8, paddingRight: 16 },
+            root: { marginTop: 8, paddingRight: 12, paddingLeft: 16 },
             icon: { color: "#778a99", marginRight: 16 },
             inner: { color: "#778a99" },
             body: {
@@ -29,6 +29,7 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
               letterSpacing: 0.8,
               fontSize: 16,
               paddingTop: 2,
+              paddingRight: 8,
               minWidth: 258,
             },
             cite: {
@@ -39,7 +40,7 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
             },
           }}
         >
-          <div className="pr-3 italic"> {quote}</div>
+          <div className="pr-4 italic"> {quote}</div>
         </Blockquote>
         <Box
           className="mr-6 pt-6 text-right text-sm font-light italic tracking-wider"
