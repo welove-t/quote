@@ -40,7 +40,7 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
             },
           }}
         >
-          <div className="pr-4 italic"> {quote}</div>
+          <div className="pr-3 italic"> {quote}</div>
         </Blockquote>
         <Box
           className="mr-6 pt-6 text-right text-sm font-light italic tracking-wider"
