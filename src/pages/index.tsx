@@ -62,12 +62,14 @@ const Home: NextPage = () => {
           <div className="font-bold text-blue-500">対応</div>
         ) : (
           <div className="font-bold text-red-500">
-            お使いの端末・ブラウザは”Web Share API Level2”に対応していません。
+            お使いの端末・ブラウザではSNSシェア機能は対応しておりません。
           </div>
         )}
-        <span>メインコンポーネント</span>
+
         <br />
-        <span>あなたの琴線に触れた名言・名セリフをカード画像にしよう！</span>
+        <span className="text-2xl font-bold text-gray-500">
+          珠玉の一文をカード画像に
+        </span>
         <br />
         <div className="text-lg font-semibold">今日のワード</div>
 

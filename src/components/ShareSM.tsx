@@ -20,7 +20,7 @@ const ShareSM = ({ themeColor, isError }: props) => {
           if (navigator.canShare && navigator.canShare({ files: [image] })) {
             navigator
               .share({
-                text: "アプリ連携無しで画像がシェアできました！",
+                text: "#QuoteCard",
                 url: "/",
                 files: [image],
               })
