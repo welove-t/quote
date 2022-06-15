@@ -74,8 +74,8 @@ const Privacypolicy = () => {
 
   return (
     <div>
-      <Header themeColor="" />
-      <div className="container">
+      <Header themeColor="#F3F3F3" />
+      <div className="container pt-20">
         <h1 className="pt-8 text-xl font-bold">プライバシーポリシー</h1>
         <p className="py-8 text-sm">
           本サービスは、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。

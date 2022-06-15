@@ -57,7 +57,7 @@ const Home: NextPage = () => {
   return (
     <div style={{ backgroundColor: themeColor }}>
       <Header themeColor={themeColor} />
-      <div className="container text-center">
+      <div className="container pt-20 text-center">
         {isWebAPI ? (
           <div className="font-bold text-blue-500">対応</div>
         ) : (

@@ -117,8 +117,8 @@ export default function Terms() {
   ];
 
   return (
-    <div>
-      <Header themeColor=""></Header>
+    <div className="pt-20">
+      <Header themeColor="#F3F3F3"></Header>
       <div className="container">
         <h1 className="pt-8 text-xl font-bold">利用規約</h1>
         <p className="py-8 text-sm">
