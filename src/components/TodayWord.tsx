@@ -25,26 +25,23 @@ const distanceDay: number = Number(days.substring(0, days.indexOf(" ")));
 const todayWordsId: number = distanceDay <= 10 ? distanceDay : distanceDay % 10;
 
 const TodayWord = ({ themeColor }: props) => {
-  const [isOpened, setIsOpened] = useState(false);
   console.log(standartDay, date, days);
   console.log(distanceDay, todayWordsId);
 
   return (
-    <div
-      className="mx-auto mt-4 mb-4 h-96 max-w-[360px] cursor-pointer py-4 sm:w-[360px] md:w-[360px]"
-      onClick={() => {
-        setIsOpened(true);
-      }}
-    >
-      <Box
-        className="flex h-96 w-full cursor-auto items-center justify-center whitespace-pre-wrap rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
-        sx={() => ({ backgroundColor: themeColor })}
+    <div className="relative mx-auto mt-4 mb-4 h-96 max-w-[360px] cursor-pointer whitespace-pre-wrap py-4 sm:w-[360px] md:w-[360px]">
+      <div
+        className="flex h-96 w-full cursor-auto items-center justify-center rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
+        style={{ backgroundColor: themeColor }}
       >
         <Blockquote
           styles={{
             root: { marginTop: 4 },
             icon: { color: "#778a99", marginRight: 16 },
-            inner: { color: "#778a99", paddingRight: 24 },
+            inner: {
+              color: "#778a99",
+              paddingRight: 24,
+            },
             body: {
               color: "#778a99",
               letterSpacing: 0.8,
@@ -54,27 +51,34 @@ const TodayWord = ({ themeColor }: props) => {
             // cite: { marginTop: 8, paddingRight: 16 },
           }}
         >
-          <section id="souseki" className="italic">
+          {/* <section id="souseki" className="italic">
             <TextAnimation section="souseki">
               吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
               <br />
               <br />
               <br />- 夏目漱石 『吾輩は猫である』より
             </TextAnimation>
-          </section>
-          {/* <section id="todayword">
-            <TextAnimation section="todayword">
-              {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
-            </TextAnimation>
           </section> */}
+          <section id="todayword">
+            <TextAnimation section="todayword">
+              {/* {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
+              <br />
+              <br />
+              {`- ${todayWords[todayWordsId].cite}`} */}
+              吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+              <br />
+              <br />
+              <br />- 夏目漱石 『吾輩は猫である』より
+            </TextAnimation>
+          </section>
         </Blockquote>
-        <Box
-          className="absolute bottom-5 right-5 border-blue-500 text-right text-sm font-light italic tracking-wider"
-          sx={() => ({ color: "#778a99" })}
+        <div
+          className="absolute bottom-1 right-5 border-blue-500 text-right text-sm font-light italic tracking-wider"
+          style={{ color: "#778a99" }}
         >
           #QuoteCard
-        </Box>
-      </Box>
+        </div>
+      </div>
     </div>
   );
 };

@@ -31,18 +31,17 @@ const TextAnimation = (props: Props): ReactElement => {
         value: text,
       },
       ease: "none",
-      scrollTrigger: {
-        trigger: selector,
-        start: "top 40%",
-        end: "bottom 40%",
-      },
     });
   };
 
   return (
-    <p ref={textRef} className="animation-text">
+    <div
+      ref={textRef}
+      className="animation-text"
+      style={{ whiteSpace: "pre-wrap" }}
+    >
       {props.children}
-    </p>
+    </div>
   );
 };
 
