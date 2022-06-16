@@ -4,6 +4,7 @@ import ReactCardFlip from "react-card-flip";
 import { todayWords } from "src/components/data/TodayWords";
 import { format } from "date-fns";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
+import TextAnimation from "src/components/TextAnimation";
 
 type props = {
   themeColor: string;
@@ -35,47 +36,45 @@ const TodayWord = ({ themeColor }: props) => {
         setIsOpened(true);
       }}
     >
-      {/* カード裏 */}
-      <ReactCardFlip isFlipped={isOpened}>
-        <Box
-          className="flex h-96 w-full items-center justify-center whitespace-normal rounded-xl text-center font-bold shadow-npConvexCard"
-          sx={() => ({ backgroundColor: themeColor })}
+      <Box
+        className="flex h-96 w-full cursor-auto items-center justify-center whitespace-pre-wrap rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
+        sx={() => ({ backgroundColor: themeColor })}
+      >
+        <Blockquote
+          styles={{
+            root: { marginTop: 4 },
+            icon: { color: "#778a99", marginRight: 16 },
+            inner: { color: "#778a99", paddingRight: 24 },
+            body: {
+              color: "#778a99",
+              letterSpacing: 0.8,
+              fontSize: 15,
+              minWidth: 258,
+            },
+            // cite: { marginTop: 8, paddingRight: 16 },
+          }}
         >
-          <div className="text-xl text-gray-400">QuoteCard</div>
-        </Box>
-        {/* カード表 */}
-        <Box
-          className="flex h-96 w-full cursor-auto items-center justify-center whitespace-pre-wrap rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
-          sx={() => ({ backgroundColor: themeColor })}
-        >
-          <Blockquote
-            cite={todayWords[todayWordsId].cite || "ニーチェ"}
-            styles={{
-              root: { marginTop: 4 },
-              icon: { color: "#778a99", marginRight: 16 },
-              inner: { color: "#778a99", paddingRight: 24 },
-              body: {
-                color: "#778a99",
-                letterSpacing: 0.8,
-                fontSize: 15,
-                paddingTop: 2,
-                minWidth: 258,
-              },
-              cite: { marginTop: 40, paddingRight: 16 },
-            }}
-          >
-            <div className="italic">
+          <section id="souseki" className="italic">
+            <TextAnimation section="souseki">
+              吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
+              <br />
+              <br />
+              <br />- 夏目漱石 『吾輩は猫である』より
+            </TextAnimation>
+          </section>
+          {/* <section id="todayword">
+            <TextAnimation section="todayword">
               {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
-            </div>
-          </Blockquote>
-          <Box
-            className="absolute bottom-5 right-5 border-blue-500 text-right text-sm font-light italic tracking-wider"
-            sx={() => ({ color: "#778a99" })}
-          >
-            #QuoteCard
-          </Box>
+            </TextAnimation>
+          </section> */}
+        </Blockquote>
+        <Box
+          className="absolute bottom-5 right-5 border-blue-500 text-right text-sm font-light italic tracking-wider"
+          sx={() => ({ color: "#778a99" })}
+        >
+          #QuoteCard
         </Box>
-      </ReactCardFlip>
+      </Box>
     </div>
   );
 };
