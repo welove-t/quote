@@ -58,20 +58,10 @@ const Home: NextPage = () => {
     <div style={{ backgroundColor: themeColor }}>
       <Header themeColor={themeColor} />
       <div className="container pt-20 text-center">
-        {isWebAPI ? (
-          <div className="font-bold text-blue-500">対応</div>
-        ) : (
-          <div className="font-bold text-red-500">
-            お使いの端末・ブラウザではSNSシェア機能は対応しておりません。
-          </div>
-        )}
-
         <br />
-        <span className="text-2xl font-bold text-gray-500">
+        <span className="text-2xl font-bold tracking-widest text-gray-500">
           珠玉の一文をカード画像に
         </span>
-        <br />
-        <div className="text-lg font-semibold">今日のワード</div>
 
         <TodayWord themeColor={themeColor} />
         <br />
@@ -104,6 +94,17 @@ const Home: NextPage = () => {
           themeColor={themeColor}
           isError={isCheckedLengthQuote && isCheckedLengthCite}
         />
+        {isWebAPI ? (
+          <div className="font-bold text-blue-500">対応</div>
+        ) : (
+          <div className="font-bold text-red-500">
+            お使いの端末・ブラウザではSNSシェア機能は対応しておりません。
+          </div>
+        )}
+
+        <div className="mt-8 text-lg font-semibold">今日のワード</div>
+
+        {/* <TodayWord themeColor={themeColor} /> */}
       </div>
       <Footer />
     </div>
