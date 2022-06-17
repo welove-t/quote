@@ -22,8 +22,8 @@ const QuoteText = ({
   const errorTextquote = !isLength ? "文字数がオーバーしています" : null;
 
   return (
-    <div className="mx-auto mt-10 max-w-[400px]">
-      <label className="text-lg font-semibold">引用文</label>
+    <div className="mx-auto mt-10 max-w-[400px] font-zen">
+      <p className="mb-2 text-2xl font-semibold">引用文</p>
       <Textarea
         label="お気に入りのフレーズを書いて下さい"
         error={errorTextquote}
@@ -37,6 +37,7 @@ const QuoteText = ({
         {...textQuoteGetInputProps}
         classNames={{
           input: `shadow-npConcaveText font-semibold text-gray-600 border-none`,
+          label: "font-zen font-bold",
         }}
         styles={{
           input: { backgroundColor: themeColor },

@@ -48,6 +48,9 @@ module.exports = {
         npConcaveText:
           "inset 5px 5px 10px #B9BCC1,inset -5px -5px 10px #FFFFFF;",
       },
+      fontFamily: {
+        zen: ["Zen Maru Gothic"],
+      },
     },
     container: {
       center: true,
