@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Blockquote } from "@mantine/core";
+import { FaQuoteLeft } from "react-icons/fa";
 
 type props = {
   themeColor: string;
@@ -15,39 +15,34 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
       id="canvas"
     >
       <div
-        className="my-1 items-center whitespace-pre-wrap rounded-xl border-2 py-4 font-bold shadow-npConvexCard"
+        className="relative my-1 flex min-h-[320px] flex-col items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard"
         style={{ backgroundColor: themeColor }}
       >
-        <Blockquote
-          cite={`- ${source}`}
-          styles={{
-            root: { marginTop: 8, paddingRight: 12, paddingLeft: 16 },
-            icon: { color: "#778a99", marginRight: 16 },
-            inner: { color: "#778a99" },
-            body: {
-              color: "#778a99",
-              letterSpacing: 0.8,
-              fontSize: 16,
-              paddingTop: 2,
-              paddingRight: 8,
-              minWidth: 258,
-            },
-            cite: {
-              marginTop: 40,
-              paddingRight: 24,
-              color: "#778a99",
-              opacity: 0.85,
-            },
-          }}
+        <FaQuoteLeft
+          style={{ color: "#778a99" }}
+          className="absolute top-4 right-1/2"
+        ></FaQuoteLeft>
+        <div
+          className="mt-8 text-base font-semibold italic tracking-wider"
+          style={{ color: "#778a99" }}
         >
-          <div className="pr-3 italic"> {quote}</div>
-        </Blockquote>
-        <Box
-          className="mr-6 pt-6 text-right text-sm font-normal italic tracking-wider"
-          sx={() => ({ color: "#778a99" })}
+          {quote}
+
+          <p
+            className="font-base mt-12 text-sm tracking-wide text-opacity-20"
+            style={{ color: "#778a99", opacity: 0.8 }}
+          >
+            {`- ${source}`}
+          </p>
+        </div>
+        <br />
+
+        <div
+          className="absolute right-6 bottom-4 text-right text-sm font-normal italic tracking-wider"
+          style={{ color: "#778a99" }}
         >
           #QuoteCard
-        </Box>
+        </div>
       </div>
     </div>
   );
