@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Box, Blockquote } from "@mantine/core";
-import ReactCardFlip from "react-card-flip";
+import React from "react";
+import { Blockquote } from "@mantine/core";
 import { todayWords } from "src/components/data/TodayWords";
 import { format } from "date-fns";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
@@ -48,27 +47,14 @@ const TodayWord = ({ themeColor }: props) => {
               fontSize: 15,
               minWidth: 258,
             },
-            // cite: { marginTop: 8, paddingRight: 16 },
           }}
         >
-          {/* <section id="souseki" className="italic">
-            <TextAnimation section="souseki">
-              吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
-              <br />
-              <br />
-              <br />- 夏目漱石 『吾輩は猫である』より
-            </TextAnimation>
-          </section> */}
           <section id="todayword">
             <TextAnimation section="todayword">
-              {/* {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
+              {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
               <br />
               <br />
-              {`- ${todayWords[todayWordsId].cite}`} */}
-              吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。
-              <br />
-              <br />
-              <br />- 夏目漱石 『吾輩は猫である』より
+              {`- ${todayWords[todayWordsId].cite} ` || "デカルト"}
             </TextAnimation>
           </section>
         </Blockquote>
