@@ -9,6 +9,7 @@ import ShareSM from "src/components/ShareSM";
 import QuoteText from "src/components/QuoteText";
 import QuoteCite from "src/components/QuoteCite";
 import QuoteCard from "src/components/QuoteCard";
+import QrCode from "src/components/QrCode";
 
 const Home: NextPage = () => {
   const themeColor = "#F3F3F3";
@@ -65,6 +66,7 @@ const Home: NextPage = () => {
 
         <TodayWord themeColor={themeColor} />
         <br />
+        <QrCode />
         <QuoteText
           themeColor={themeColor}
           textQuote={textQuote}
