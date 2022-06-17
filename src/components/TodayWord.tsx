@@ -49,7 +49,7 @@ const TodayWord = ({ themeColor }: props) => {
             },
           }}
         >
-          <section id="todayword">
+          <section id="todayword" className="italic">
             <TextAnimation section="todayword">
               {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
               <br />
@@ -59,7 +59,7 @@ const TodayWord = ({ themeColor }: props) => {
           </section>
         </Blockquote>
         <div
-          className="absolute bottom-1 right-5 border-blue-500 text-right text-sm font-light italic tracking-wider"
+          className="absolute bottom-1 right-5 text-right text-sm font-normal italic tracking-wider"
           style={{ color: "#778a99" }}
         >
           #QuoteCard

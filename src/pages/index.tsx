@@ -59,7 +59,7 @@ const Home: NextPage = () => {
       <Header themeColor={themeColor} />
       <div className="container pt-20 text-center">
         <br />
-        <p className="mb-8 text-2xl font-bold tracking-widest text-gray-500 md:text-5xl">
+        <p className="mb-8 font-zen text-2xl font-bold tracking-widest text-gray-500 md:text-5xl">
           珠玉の一文をカード画像に
         </p>
 

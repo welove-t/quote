@@ -22,10 +22,10 @@ const QuoteCite = ({
   const errorTextsource = !isLength ? "文字数がオーバーしています" : null;
 
   return (
-    <div className="mx-auto mt-10 max-w-[400px]">
-      <label className="text-lg font-semibold">引用元</label>
+    <div className="mx-auto mt-10 max-w-[400px] font-zen">
+      <p className="mb-2 text-2xl font-semibold">引用元</p>
       <TextInput
-        label="上記の参照元(人名・書名・登場人物名等)を書いて下さい"
+        label="著者名・書名・登場人物名等を書いて下さい"
         error={errorTextsource}
         placeholder="(例) 夏目漱石『吾輩は猫である』より"
         className="mx-auto"
@@ -34,6 +34,7 @@ const QuoteCite = ({
         {...textCiteGetInputProps}
         classNames={{
           input: "shadow-npConcaveText font-semibold text-gray-600 border-none",
+          label: "font-zen font-bold",
         }}
         styles={{
           input: { backgroundColor: themeColor },
