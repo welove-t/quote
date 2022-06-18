@@ -10,9 +10,11 @@ import QuoteText from "src/components/QuoteText";
 import QuoteCite from "src/components/QuoteCite";
 import QuoteCard from "src/components/QuoteCard";
 import QrCode from "src/components/QrCode";
+import { useMantineColorScheme } from "@mantine/core";
 
 const Home: NextPage = () => {
-  const themeColor = "#F3F3F3";
+  const { colorScheme } = useMantineColorScheme();
+  const themeColor = colorScheme === "light" ? "#F3F3F3" : "#101113";
 
   const form = useForm({
     initialValues: {
