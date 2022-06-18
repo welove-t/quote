@@ -1,5 +1,5 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
-import { CgMoon, CgSun } from "react-icons/Cg";
+import { CgMoon, CgSun } from "react-icons/cg";
 
 export const ColorTheme = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
