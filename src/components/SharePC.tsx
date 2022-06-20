@@ -82,7 +82,7 @@ const SharePC = ({ themeColor, isError }: props) => {
       <TwitterShareButton
         url="/"
         hashtags={["QuoteCard"]}
-        className={`flex items-center space-x-1 shadow-npConvexButton hover:shadow-npConcaveButton ${themeColor}`}
+        className={`flex items-center space-x-1 shadow-npConvexButton hover:shadow-npConcaveButton ${themeColor} dark:shadow-darkConvexButton dark:hover:shadow-darkConcaveButton`}
         style={{
           paddingTop: 2,
           paddingBottom: 2,
