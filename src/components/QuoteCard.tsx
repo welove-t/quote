@@ -16,29 +16,17 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
       <div
         className={`relative my-1 flex min-h-[320px] flex-col items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
       >
-        <FaQuoteLeft
-          style={{ color: "#778a99" }}
-          className="absolute top-4 right-1/2"
-        ></FaQuoteLeft>
-        <div
-          className="mt-8 text-base font-semibold italic tracking-wider"
-          style={{ color: "#778a99" }}
-        >
+        <FaQuoteLeft className="absolute top-5 text-xl text-green-600"></FaQuoteLeft>
+        <div className="mt-12 text-base font-semibold italic tracking-wider text-slate-500 dark:text-slate-300">
           {quote}
 
-          <p
-            className="font-base mt-12 text-sm tracking-wide text-opacity-20"
-            style={{ color: "#778a99", opacity: 0.8 }}
-          >
+          <p className="font-base mt-12 text-sm tracking-wide text-slate-500 opacity-80 dark:text-slate-300">
             {`- ${source}`}
           </p>
         </div>
         <br />
 
-        <div
-          className="absolute right-6 bottom-4 text-right text-sm font-normal italic tracking-wider"
-          style={{ color: "#778a99" }}
-        >
+        <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-500 opacity-80 dark:text-slate-300">
           #QuoteCard
         </div>
       </div>
