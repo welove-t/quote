@@ -33,11 +33,8 @@ const QuoteCite = ({
         maxLength={maxLength + 10}
         {...textCiteGetInputProps}
         classNames={{
-          input: "shadow-npConcaveText font-semibold text-gray-600 border-none",
+          input: `shadow-npConcaveText font-semibold text-gray-600 border-none ${themeColor}`,
           label: "font-zen font-bold",
-        }}
-        styles={{
-          input: { backgroundColor: themeColor },
         }}
       />
       {!isLength ? (

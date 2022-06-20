@@ -10,13 +10,11 @@ type props = {
 const QuoteCard = ({ themeColor, quote, source }: props) => {
   return (
     <div
-      className="max-w-[360px] rounded-xl p-2 text-center sm:inline-block sm:w-[360px]"
-      style={{ backgroundColor: themeColor }}
+      className={`max-w-[360px] rounded-xl p-2 text-center sm:inline-block sm:w-[360px] ${themeColor}`}
       id="canvas"
     >
       <div
-        className="relative my-1 flex min-h-[320px] flex-col items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard"
-        style={{ backgroundColor: themeColor }}
+        className={`relative my-1 flex min-h-[320px] flex-col items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard ${themeColor}`}
       >
         <FaQuoteLeft
           style={{ color: "#778a99" }}

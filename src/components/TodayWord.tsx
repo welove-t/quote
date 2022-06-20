@@ -29,10 +29,7 @@ const TodayWord = ({ themeColor }: props) => {
 
   return (
     <div className="relative mx-auto mt-4 mb-4 h-96 max-w-[360px] cursor-pointer whitespace-pre-wrap py-4 sm:w-[360px] md:w-[360px]">
-      <div
-        className="flex h-96 w-full cursor-auto items-center justify-center rounded-xl border-hidden text-center font-bold shadow-npConvexCard"
-        style={{ backgroundColor: themeColor }}
-      >
+      <div className="flex h-96 w-full cursor-auto items-center justify-center rounded-xl border-hidden text-center font-bold shadow-npConvexCard">
         <Blockquote
           styles={{
             root: { marginTop: 4 },
