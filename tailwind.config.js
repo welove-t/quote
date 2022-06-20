@@ -47,6 +47,12 @@ module.exports = {
           "inset 5px 5px 10px #B9BCC1,inset -2px -2px 10px #FFFFFF;",
         npConcaveText:
           "inset 5px 5px 10px #B9BCC1,inset -5px -5px 10px #FFFFFF;",
+        darkConvexButton: "6px 6px 12px #0F172A,-6px -6px 12px #334154;",
+        darkConvexCard: "2px 2px 4px #0F172A,-4px -4px 8px #334154;",
+        darkConcaveButton:
+          "inset 5px 5px 10px #0F172A,inset -2px -2px 10px #334154;",
+        darkConcaveText:
+          "inset 5px 5px 10px #0F172A,inset -5px -5px 10px #334154;",
       },
       fontFamily: {
         zen: ["Zen Maru Gothic"],
@@ -63,4 +69,5 @@ module.exports = {
     },
   },
   plugins: [rotateY, backfaceVisibility, transform3d],
+  darkMode: "class",
 };

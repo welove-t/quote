@@ -36,7 +36,7 @@ const QuoteText = ({
         maxLength={maxLength + 30}
         {...textQuoteGetInputProps}
         classNames={{
-          input: `shadow-npConcaveText font-semibold text-gray-600 border-none ${themeColor}`,
+          input: `shadow-npConcaveText font-semibold text-gray-600 border-none ${themeColor} dark:shadow-darkConcaveText dark:text-gray-200`,
           label: "font-zen font-bold",
         }}
       />

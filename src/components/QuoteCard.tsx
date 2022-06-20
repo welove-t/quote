@@ -14,7 +14,7 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
       id="canvas"
     >
       <div
-        className={`relative my-1 flex min-h-[320px] flex-col items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard ${themeColor}`}
+        className={`relative my-1 flex min-h-[320px] flex-col items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
       >
         <FaQuoteLeft
           style={{ color: "#778a99" }}
