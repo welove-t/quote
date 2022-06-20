@@ -14,7 +14,7 @@ import { useMantineColorScheme } from "@mantine/core";
 
 const Home: NextPage = () => {
   const { colorScheme } = useMantineColorScheme();
-  const themeColor = colorScheme === "light" ? "#F3F3F3" : "#101113";
+  const themeColor = colorScheme === "light" ? "bg-gray-100" : "bg-slate-900";
 
   const form = useForm({
     initialValues: {
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
   }, []);
 
   return (
-    <div style={{ backgroundColor: themeColor }}>
+    <div className={themeColor}>
       <Header themeColor={themeColor} />
       <div className="container pt-20 text-center">
         <br />
