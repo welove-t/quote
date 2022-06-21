@@ -17,53 +17,82 @@ type props = {
 
 const SharePC = ({ themeColor, isError }: props) => {
   // カードをコピー
-  const cardCopy = (Src: any) => {
+  const clipboardCopy = (Src: string) => {
     let src = document.getElementById(Src);
-    src &&
-      htmlToImage.toCanvas(src).then((canvas) => {
-        canvas.toBlob((blob) => {
+
+    // htmlToImage.toCanvas(src).then((canvas) => {
+    //   canvas.toBlob((blob) => {
+    //     navigator.clipboard
+    //       .write([
+    //         new ClipboardItem(
+    //           Object.defineProperty({}, blob!.type, {
+    //             value: blob,
+    //             enumerable: true,
+    //           })
+    //         ),
+    //       ])
+    //       .then(() => {
+    //         console.log("コピー成功！");
+    //       })
+    //       .catch((e) => {
+    //         console.log("コピー失敗...");
+    //       });
+    //   });
+    // });
+
+    try {
+      // chrome仕様
+      src &&
+        htmlToImage.toCanvas(src).then((canvas) => {
+          canvas.toBlob((blob) => {
+            navigator.clipboard
+              .write([
+                new ClipboardItem(
+                  Object.defineProperty({}, blob!.type, {
+                    value: blob,
+                    enumerable: true,
+                  })
+                ),
+              ])
+              .then(() => {
+                console.log("コピー成功！");
+              })
+              .catch((e) => {
+                console.log("コピー失敗...");
+              });
+          });
+        });
+    } catch {
+      // safari仕様
+      src &&
+        htmlToImage.toSvg(src).then((svg) => {
           navigator.clipboard
             .write([
-              new ClipboardItem(
-                Object.defineProperty({}, blob!.type, {
-                  value: blob,
-                  enumerable: true,
-                })
-              ),
+              new ClipboardItem({
+                "text/plain": new Promise(async (resolve) => {
+                  resolve(new Blob([svg], { type: "text/plain" }));
+                }),
+              }),
             ])
             .then(() => {
-              updateNotification({
-                id: "load-data",
-                color: "blue",
-                message: "コピーしました！",
-                icon: <CheckCircleIcon />,
-                autoClose: 2000,
-              });
+              console.log("コピー成功！");
             })
             .catch((e) => {
-              alert(e);
-
-              updateNotification({
-                id: "load-data",
-                color: "red",
-                message: "カードのコピーに失敗しました...",
-                icon: <XCircleIcon />,
-                autoClose: 2000,
-              });
+              console.log("コピー失敗...");
             });
         });
-      });
+    }
   };
 
   const displayNotirication = () => {
-    showNotification({
-      id: "load-data",
-      loading: true,
-      message: "カードをコピーしています...",
-      autoClose: false,
-      disallowClose: true,
-    });
-    cardCopy("canvas");
+    // showNotification({
+    //   id: "load-data",
+    //   loading: true,
+    //   message: "カードをコピーしています...",
+    //   autoClose: false,
+    //   disallowClose: true,
+    // });
+    clipboardCopy("canvas");
   };
 
   return (
