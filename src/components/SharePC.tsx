@@ -17,53 +17,36 @@ type props = {
 
 const SharePC = ({ themeColor, isError }: props) => {
   // カードをコピー
-  const cardCopy = (Src: any) => {
+  const clipboardCopy = (Src: string) => {
     let src = document.getElementById(Src);
     src &&
       htmlToImage.toCanvas(src).then((canvas) => {
-        canvas.toBlob((blob) => {
-          navigator.clipboard
-            .write([
-              new ClipboardItem(
-                Object.defineProperty({}, blob!.type, {
-                  value: blob,
-                  enumerable: true,
-                })
-              ),
-            ])
+        canvas.toBlob(async (blob) => {
+          if (!blob) return;
+          let clipboardItem = await new ClipboardItem({
+            ["image/png"]: Promise.resolve(blob),
+          });
+          let response = await navigator.clipboard
+            .write([clipboardItem])
             .then(() => {
-              updateNotification({
-                id: "load-data",
-                color: "blue",
-                message: "コピーしました！",
-                icon: <CheckCircleIcon />,
-                autoClose: 2000,
-              });
+              console.log("コピー成功！", response);
             })
             .catch((e) => {
-              alert(e);
-
-              updateNotification({
-                id: "load-data",
-                color: "red",
-                message: "カードのコピーに失敗しました...",
-                icon: <XCircleIcon />,
-                autoClose: 2000,
-              });
+              console.log("コピー失敗...", e);
             });
         });
       });
   };
 
   const displayNotirication = () => {
-    showNotification({
-      id: "load-data",
-      loading: true,
-      message: "カードをコピーしています...",
-      autoClose: false,
-      disallowClose: true,
-    });
-    cardCopy("canvas");
+    // showNotification({
+    //   id: "load-data",
+    //   loading: true,
+    //   message: "カードをコピーしています...",
+    //   autoClose: false,
+    //   disallowClose: true,
+    // });
+    clipboardCopy("canvas");
   };
 
   return (
