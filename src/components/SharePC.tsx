@@ -19,40 +19,69 @@ const SharePC = ({ themeColor, isError }: props) => {
   // カードをコピー
   const cardCopy = (Src: any) => {
     let src = document.getElementById(Src);
-    src &&
-      htmlToImage.toCanvas(src).then((canvas) => {
-        canvas.toBlob((blob) => {
-          navigator.clipboard
-            .write([
-              new ClipboardItem(
-                Object.defineProperty({}, blob!.type, {
-                  value: blob,
-                  enumerable: true,
-                })
-              ),
-            ])
-            .then(() => {
-              updateNotification({
-                id: "load-data",
-                color: "blue",
-                message: "コピーしました！",
-                icon: <CheckCircleIcon />,
-                autoClose: 2000,
-              });
-            })
-            .catch((e) => {
-              alert(e);
 
-              updateNotification({
-                id: "load-data",
-                color: "red",
-                message: "カードのコピーに失敗しました...",
-                icon: <XCircleIcon />,
-                autoClose: 2000,
-              });
-            });
-        });
+    // htmlToImage.toCanvas(src).then((canvas) => {
+    //   canvas.toBlob((blob) => {
+    //     navigator.clipboard
+    //       .write([
+    //         new ClipboardItem(
+    //           Object.defineProperty({}, blob!.type, {
+    //             value: blob,
+    //             enumerable: true,
+    //           })
+    //         ),
+    //       ])
+    //       .then(() => {
+    //         console.log("コピー成功！");
+    //       })
+    //       .catch((e) => {
+    //         console.log("コピー失敗...");
+    //       });
+    //   });
+    // });
+
+    // try {
+    //   // chrome仕様
+    //   src &&
+    //     htmlToImage.toCanvas(src).then((canvas) => {
+    //       canvas.toBlob((blob) => {
+    //         navigator.clipboard
+    //           .write([
+    //             new ClipboardItem(
+    //               Object.defineProperty({}, blob!.type, {
+    //                 value: blob,
+    //                 enumerable: true,
+    //               })
+    //             ),
+    //           ])
+    //           .then(() => {
+    //             console.log("コピー成功！");
+    //           })
+    //           .catch((e) => {
+    //             console.log("コピー失敗...", e);
+    //           });
+    //       });
+    //     });
+    // } catch {
+    // safari仕様
+    src &&
+      htmlToImage.toSvg(src).then((svg) => {
+        navigator.clipboard
+          .write([
+            new ClipboardItem({
+              "text/plain": new Promise(async (resolve) => {
+                resolve(new Blob([svg], { type: "text/plain" }));
+              }),
+            }),
+          ])
+          .then(() => {
+            console.log("コピー成功！");
+          })
+          .catch((e) => {
+            console.log("コピー失敗...", e);
+          });
       });
+    // }
   };
 
   const displayNotirication = () => {
