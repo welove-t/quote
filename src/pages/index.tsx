@@ -90,25 +90,17 @@ const Home: NextPage = () => {
           quote={textQuote}
           source={textCite}
         />
-        <SharePC
-          themeColor={themeColor}
-          isError={isCheckedLengthQuote && isCheckedLengthCite}
-        />
-        <ShareSM
-          themeColor={themeColor}
-          isError={isCheckedLengthQuote && isCheckedLengthCite}
-        />
         {isWebAPI ? (
-          <div className="mt-4 font-bold text-blue-500">対応</div>
+          <ShareSM
+            themeColor={themeColor}
+            isError={isCheckedLengthQuote && isCheckedLengthCite}
+          />
         ) : (
-          <div className="mt-4 font-bold text-red-500">
-            お使いの端末・ブラウザではSNSシェア機能は対応しておりません。
-          </div>
+          <SharePC
+            themeColor={themeColor}
+            isError={isCheckedLengthQuote && isCheckedLengthCite}
+          />
         )}
-
-        {/* <div className="mt-8 text-lg font-semibold">今日のワード</div> */}
-
-        {/* <TodayWord themeColor={themeColor} /> */}
       </div>
       <Footer />
     </div>

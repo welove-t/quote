@@ -37,7 +37,7 @@ const ShareSM = ({ themeColor, isError }: props) => {
       });
   };
   return (
-    <div className="mt-8 flex flex-col sm:hidden">
+    <div className="mt-8 flex flex-col">
       <Buttons
         isError={isError}
         themeColor={themeColor}
