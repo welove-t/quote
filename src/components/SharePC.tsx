@@ -67,34 +67,39 @@ const SharePC = ({ themeColor, isError }: props) => {
   };
 
   return (
-    <div className="hidden sm:mt-8 sm:flex sm:flex-col sm:items-center sm:space-y-4">
-      <Buttons
-        isError={isError}
-        themeColor={themeColor}
-        onClickButton={() => {
-          displayNotirication();
-        }}
-      >
-        <ClipboardCopyIcon className="w-6" />
-        <p>カードをコピーする</p>
-      </Buttons>
-      <ChevronDoubleDownIcon className="w-6 animate-pulse text-gray-500" />
-      <TwitterShareButton
-        url="/"
-        hashtags={["QuoteCard"]}
-        className={`flex items-center space-x-1 shadow-npConvexButton hover:shadow-npConcaveButton ${themeColor} dark:shadow-darkConvexButton dark:hover:shadow-darkConcaveButton`}
-        style={{
-          paddingTop: 2,
-          paddingBottom: 2,
-          paddingLeft: 32,
-          paddingRight: 32,
-          borderRadius: 9999,
-        }}
-        disabled={!isError}
-      >
-        <TwitterIcon size={32} round={true} />
-        <p className="font-semibold text-gray-400">Twitterで共有する</p>
-      </TwitterShareButton>
+    <div>
+      <div className="hidden sm:mt-8 sm:flex sm:flex-col sm:items-center sm:space-y-4">
+        <Buttons
+          isError={isError}
+          themeColor={themeColor}
+          onClickButton={() => {
+            displayNotirication();
+          }}
+        >
+          <ClipboardCopyIcon className="w-6" />
+          <p>カードをコピーする</p>
+        </Buttons>
+        <ChevronDoubleDownIcon className="w-6 animate-pulse text-gray-500" />
+        <TwitterShareButton
+          url="/"
+          hashtags={["QuoteCard"]}
+          className={`flex items-center space-x-1 shadow-npConvexButton hover:shadow-npConcaveButton ${themeColor} dark:shadow-darkConvexButton dark:hover:shadow-darkConcaveButton`}
+          style={{
+            paddingTop: 2,
+            paddingBottom: 2,
+            paddingLeft: 32,
+            paddingRight: 32,
+            borderRadius: 9999,
+          }}
+          disabled={!isError}
+        >
+          <TwitterIcon size={32} round={true} />
+          <p className="font-semibold text-gray-400">Twitterで共有する</p>
+        </TwitterShareButton>
+      </div>
+      <div className="mt-4 font-bold text-red-500 sm:hidden">
+        お使いの端末・ブラウザではSNSシェア機能は対応しておりません。
+      </div>
     </div>
   );
 };
