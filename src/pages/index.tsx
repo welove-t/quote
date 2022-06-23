@@ -102,7 +102,7 @@ const Home: NextPage = () => {
           />
         )}
       </div>
-      <Footer />
+      <Footer themeColor={themeColor} />
     </div>
   );
 };
