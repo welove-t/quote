@@ -1,5 +1,4 @@
 import React from "react";
-import { Blockquote } from "@mantine/core";
 import { todayWords } from "src/components/data/TodayWords";
 import { format } from "date-fns";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
@@ -28,24 +27,19 @@ const TodayWord = ({ themeColor }: props) => {
   console.log(distanceDay, todayWordsId);
 
   return (
-    <div className="relative mx-auto mt-4 mb-4 h-96 max-w-[360px] cursor-pointer whitespace-pre-wrap py-4 sm:w-[360px] md:w-[360px]">
-      <div className="flex h-96 w-full cursor-auto items-center justify-center rounded-xl border-hidden text-center font-bold shadow-npConvexCard dark:shadow-darkConvexCard">
-        <Blockquote
-          styles={{
-            root: { marginTop: 4 },
-            icon: { color: "#778a99", marginRight: 16 },
-            inner: {
-              color: "#778a99",
-              paddingRight: 24,
-            },
-            body: {
-              color: "#778a99",
-              letterSpacing: 0.8,
-              fontSize: 15,
-              minWidth: 258,
-            },
-          }}
+    <div
+      className={`mt-10 h-96 max-w-[360px] p-2 text-center sm:inline-block sm:w-[360px] ${themeColor}`}
+      id="canvas"
+    >
+      <div
+        className={`relative my-1 flex h-96 min-h-[320px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 py-4 px-6 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
+      >
+        <div
+          className={`${themeColor} absolute top-[-24px] flex h-12 w-12 items-center justify-center rounded-full border-2 shadow-npConvexCard dark:shadow-darkConvexCard sm:top-[-36px] sm:h-16 sm:w-16`}
         >
+          <p className="text-2xl">Q</p>
+        </div>
+        <div className="mt-2 text-sm font-semibold italic tracking-wider text-slate-500 dark:text-slate-300 sm:text-base">
           <section id="todayword" className="italic">
             <TextAnimation section="todayword">
               {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
@@ -54,11 +48,10 @@ const TodayWord = ({ themeColor }: props) => {
               {`- ${todayWords[todayWordsId].cite} ` || "デカルト"}
             </TextAnimation>
           </section>
-        </Blockquote>
-        <div
-          className="absolute bottom-1 right-5 text-right text-sm font-normal italic tracking-wider"
-          style={{ color: "#778a99" }}
-        >
+        </div>
+        <br />
+
+        <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-500 opacity-80 dark:text-slate-300">
           #QuoteCard
         </div>
       </div>
