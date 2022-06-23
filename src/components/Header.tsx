@@ -1,5 +1,3 @@
-import { useMantineTheme } from "@mantine/core";
-import { useColorScheme } from "@mantine/hooks";
 import React from "react";
 import { ColorTheme } from "src/components/ColorTheme";
 
@@ -7,7 +5,7 @@ type props = {
   themeColor: string;
 };
 
-const Header = ({ themeColor }: props) => {
+export const Header = ({ themeColor }: props) => {
   return (
     <div
       className={`fixed -inset-x-0 top-0 left-0 z-50 border-b border-solid  border-gray-200 ${themeColor} dark:border-gray-700`}
@@ -19,5 +17,3 @@ const Header = ({ themeColor }: props) => {
     </div>
   );
 };
-
-export default Header;

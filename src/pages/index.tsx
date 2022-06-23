@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import { useForm } from "@mantine/form";
 import React, { useEffect, useState } from "react";
-import Header from "src/components/Header";
-import Footer from "src/components/Footer";
 import TodayWord from "src/components/TodayWord";
 import SharePC from "src/components/SharePC";
 import ShareSM from "src/components/ShareSM";
@@ -10,11 +8,11 @@ import QuoteText from "src/components/QuoteText";
 import QuoteCite from "src/components/QuoteCite";
 import QuoteCard from "src/components/QuoteCard";
 import QrCode from "src/components/QrCode";
-import { useMantineColorScheme } from "@mantine/core";
+import { ThemeColor } from "src/components/utils/ThemeColor";
+import { MainLayout } from "src/components/layouts/MainLayout";
 
 const Home: NextPage = () => {
-  const { colorScheme } = useMantineColorScheme();
-  const themeColor = colorScheme === "light" ? "bg-gray-100" : "bg-slate-800";
+  const themeColor = ThemeColor();
 
   const form = useForm({
     initialValues: {
@@ -59,50 +57,50 @@ const Home: NextPage = () => {
 
   return (
     <div className={themeColor}>
-      <Header themeColor={themeColor} />
-      <div className="container pt-20 text-center">
-        <br />
-        <p className="mb-8 font-zen text-2xl font-bold tracking-widest text-gray-500 md:text-5xl">
-          珠玉の一文をカード画像に
-        </p>
+      <MainLayout themeColor={themeColor}>
+        <div className="container pt-20 text-center">
+          <br />
+          <p className="mb-8 font-zen text-2xl font-bold tracking-widest text-gray-500 md:text-5xl">
+            珠玉の一文をカード画像に
+          </p>
 
-        <TodayWord themeColor={themeColor} />
-        <br />
-        <QrCode />
-        <QuoteText
-          themeColor={themeColor}
-          textQuote={textQuote}
-          textLength={textQuoteLength}
-          maxLength={maxTextQuote}
-          isLength={isCheckedLengthQuote}
-          textQuoteGetInputProps={form.getInputProps("textQuote")}
-        />
-        <QuoteCite
-          themeColor={themeColor}
-          textCite={textCite}
-          textLength={textCiteLength}
-          maxLength={maxTextCite}
-          isLength={isCheckedLengthCite}
-          textCiteGetInputProps={form.getInputProps("textCite")}
-        />
-        <QuoteCard
-          themeColor={themeColor}
-          quote={textQuote}
-          source={textCite}
-        />
-        {isWebAPI ? (
-          <ShareSM
+          <TodayWord themeColor={themeColor} />
+          <br />
+          <QrCode />
+          <QuoteText
             themeColor={themeColor}
-            isError={isCheckedLengthQuote && isCheckedLengthCite}
+            textQuote={textQuote}
+            textLength={textQuoteLength}
+            maxLength={maxTextQuote}
+            isLength={isCheckedLengthQuote}
+            textQuoteGetInputProps={form.getInputProps("textQuote")}
           />
-        ) : (
-          <SharePC
+          <QuoteCite
             themeColor={themeColor}
-            isError={isCheckedLengthQuote && isCheckedLengthCite}
+            textCite={textCite}
+            textLength={textCiteLength}
+            maxLength={maxTextCite}
+            isLength={isCheckedLengthCite}
+            textCiteGetInputProps={form.getInputProps("textCite")}
           />
-        )}
-      </div>
-      <Footer />
+          <QuoteCard
+            themeColor={themeColor}
+            quote={textQuote}
+            source={textCite}
+          />
+          {isWebAPI ? (
+            <ShareSM
+              themeColor={themeColor}
+              isError={isCheckedLengthQuote && isCheckedLengthCite}
+            />
+          ) : (
+            <SharePC
+              themeColor={themeColor}
+              isError={isCheckedLengthQuote && isCheckedLengthCite}
+            />
+          )}
+        </div>
+      </MainLayout>
     </div>
   );
 };

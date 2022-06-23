@@ -1,9 +1,10 @@
 import React from "react";
-import Footer from "src/components/Footer";
-import Header from "src/components/Header";
 import TermsPrivacypolicy from "src/components/layouts/TermsPrivacypolicy";
+import { MainLayout } from "src/components/layouts/MainLayout";
+import { ThemeColor } from "src/components/utils/ThemeColor";
 
 export default function Terms() {
+  const themeColor = ThemeColor();
   const terms = [
     {
       title: "第1条（適用）",
@@ -117,23 +118,23 @@ export default function Terms() {
   ];
 
   return (
-    <div className="pt-20">
-      <Header themeColor="#F3F3F3"></Header>
-      <div className="container">
-        <h1 className="pt-8 text-xl font-bold">利用規約</h1>
-        <p className="py-8 text-sm">
-          この利用規約（以下「本規約」）は、本サービス運営者（以下「運営者」）がこのウェブサイト上で
-          提供するサービス（以下「本サービス」）の利用条件を定めるものです。本サービスに登録
-          および本サービスを閲覧されるご利用者（以下「ユーザー」）には、本規約に則って本サービスを
-          ご利用いただきます。
-        </p>
-        {terms.map((term) => (
-          <div key={term.title}>
-            <TermsPrivacypolicy title={term.title} contents={term.contents} />
-          </div>
-        ))}
-      </div>
-      <Footer />
+    <div className={`pt-20 ${themeColor}`}>
+      <MainLayout themeColor={themeColor}>
+        <div className="container">
+          <h1 className="pt-8 text-xl font-bold">利用規約</h1>
+          <p className="py-8 text-sm">
+            この利用規約（以下「本規約」）は、本サービス運営者（以下「運営者」）がこのウェブサイト上で
+            提供するサービス（以下「本サービス」）の利用条件を定めるものです。本サービスに登録
+            および本サービスを閲覧されるご利用者（以下「ユーザー」）には、本規約に則って本サービスを
+            ご利用いただきます。
+          </p>
+          {terms.map((term) => (
+            <div key={term.title}>
+              <TermsPrivacypolicy title={term.title} contents={term.contents} />
+            </div>
+          ))}
+        </div>
+      </MainLayout>
     </div>
   );
 }

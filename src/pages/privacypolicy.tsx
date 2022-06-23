@@ -1,9 +1,10 @@
 import React from "react";
-import Footer from "src/components/Footer";
-import Header from "src/components/Header";
 import TermsPrivacypolicy from "../components/layouts/TermsPrivacypolicy";
+import { MainLayout } from "src/components/layouts/MainLayout";
+import { ThemeColor } from "src/components/utils/ThemeColor";
 
 const Privacypolicy = () => {
+  const themeColor = ThemeColor();
   const terms = [
     {
       title: "第1条（個人情報を収集・利用する目的）",
@@ -73,21 +74,21 @@ const Privacypolicy = () => {
   ];
 
   return (
-    <div>
-      <Header themeColor="#F3F3F3" />
-      <div className="container pt-20">
-        <h1 className="pt-8 text-xl font-bold">プライバシーポリシー</h1>
-        <p className="py-8 text-sm">
-          本サービスは、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。
-        </p>
-        {terms.map((term) => (
-          <div key={term.title}>
-            <TermsPrivacypolicy title={term.title} contents={term.contents} />
-          </div>
-        ))}
-        <p className="pt-4">以上</p>
-      </div>
-      <Footer />
+    <div className={themeColor}>
+      <MainLayout themeColor={themeColor}>
+        <div className="container pt-20">
+          <h1 className="pt-8 text-xl font-bold">プライバシーポリシー</h1>
+          <p className="py-8 text-sm">
+            本サービスは、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。
+          </p>
+          {terms.map((term) => (
+            <div key={term.title}>
+              <TermsPrivacypolicy title={term.title} contents={term.contents} />
+            </div>
+          ))}
+          <p className="pt-4">以上</p>
+        </div>
+      </MainLayout>
     </div>
   );
 };

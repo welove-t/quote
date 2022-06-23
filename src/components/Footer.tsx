@@ -1,16 +1,22 @@
 import React from "react";
 import Link from "next/link";
 
-const Footer = () => {
+type props = {
+  themeColor: string;
+};
+
+export const Footer = ({ themeColor }: props) => {
   return (
-    <div className="mt-40 bg-gray-100 pt-10 pb-20">
+    <div className={`mt-40 bg-gray-100 pt-10 pb-20 ${themeColor}`}>
       <div className="container text-center">
         <div className="flex justify-center space-x-4">
           <Link href="/terms">
-            <a className="text-gray-600">利用規約</a>
+            <a className="text-gray-600 dark:text-gray-100">利用規約</a>
           </Link>
           <Link href="/privacypolicy">
-            <a className="text-gray-600">プライバシーポリシー</a>
+            <a className="text-gray-600 dark:text-gray-100">
+              プライバシーポリシー
+            </a>
           </Link>
         </div>
 
@@ -20,7 +26,7 @@ const Footer = () => {
             href="https://twitter.com/welove_tk"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline"
+            className="text-gray-600 underline dark:text-gray-100"
           >
             @welove_tk
           </a>
@@ -31,5 +37,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;
