@@ -5,7 +5,7 @@ type props = {
   themeColor: string;
 };
 
-const Footer = ({ themeColor }: props) => {
+export const Footer = ({ themeColor }: props) => {
   return (
     <div className={`mt-40 bg-gray-100 pt-10 pb-20 ${themeColor}`}>
       <div className="container text-center">
@@ -37,5 +37,3 @@ const Footer = ({ themeColor }: props) => {
     </div>
   );
 };
-
-export default Footer;
