@@ -1,4 +1,4 @@
-import { ReactElement, useCallback } from "react";
+import { ReactElement, useCallback, useState } from "react";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/dist/TextPlugin";
 
@@ -7,7 +7,7 @@ type Props = {
   section: string;
 };
 
-const TextAnimation = ({ children, section }: Props): ReactElement => {
+export const TextAnimation = ({ children, section }: Props): ReactElement => {
   const textRef = useCallback((node) => {
     if (node !== null) {
       const text = node.innerHTML; //テキストを読み込む
@@ -43,7 +43,3 @@ const TextAnimation = ({ children, section }: Props): ReactElement => {
     </div>
   );
 };
-
-export default TextAnimation;
-
-export const test = () => {};

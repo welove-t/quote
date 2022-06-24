@@ -1,4 +1,4 @@
-export const todayWords = [
+export const words = [
   {
     id: 1,
     quote:

@@ -1,8 +1,8 @@
-import React from "react";
-import { todayWords } from "src/components/data/TodayWords";
+import React, { useEffect, useState } from "react";
+import { words } from "src/components/data/TodayWords";
 import { format } from "date-fns";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
-import TextAnimation from "src/components/TextAnimation";
+import { TextAnimation } from "src/components/TextAnimation";
 
 type props = {
   themeColor: string;
@@ -23,6 +23,15 @@ const distanceDay: number = Number(days.substring(0, days.indexOf(" ")));
 const todayWordsId: number = distanceDay <= 10 ? distanceDay : distanceDay % 10;
 
 const TodayWord = ({ themeColor }: props) => {
+  const [todayWords, setTodayWords] = useState<{
+    id: number;
+    quote: string;
+    cite: string;
+  }>({ id: 0, quote: "", cite: "" });
+
+  useEffect(() => {
+    setTodayWords(words[todayWordsId]);
+  }, [todayWords]);
   console.log(standartDay, date, days);
   console.log(distanceDay, todayWordsId);
 
@@ -40,14 +49,18 @@ const TodayWord = ({ themeColor }: props) => {
           <p className="text-2xl">Q</p>
         </div>
         <div className="mt-2 text-sm font-semibold italic tracking-wider text-slate-500 dark:text-slate-300 sm:text-base">
-          <section id="todayword" className="italic">
-            <TextAnimation section="todayword">
-              {todayWords[todayWordsId].quote || "我思う。故に我あり。"}
-              <br />
-              <br />
-              {`- ${todayWords[todayWordsId].cite} ` || "デカルト"}
-            </TextAnimation>
-          </section>
+          {todayWords.quote && todayWords.cite ? (
+            <section id="todayword" className="italic">
+              <TextAnimation section="todayword">
+                {todayWords.quote}
+                <br />
+                <br />
+                {`- ${todayWords.cite} `}
+              </TextAnimation>
+            </section>
+          ) : (
+            <div></div>
+          )}
         </div>
         <br />
 
