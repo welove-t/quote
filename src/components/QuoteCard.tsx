@@ -14,7 +14,7 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
       id="canvas"
     >
       <div
-        className={`relative my-1 flex min-h-[320px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
+        className={`relative my-1 flex min-h-[312px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 p-4 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
       >
         <div
           className={`${themeColor} absolute top-[-24px] flex h-12 w-12 items-center justify-center rounded-full border-2 shadow-npConvexCard dark:shadow-darkConvexCard sm:top-[-36px] sm:h-16 sm:w-16`}
