@@ -1,3 +1,4 @@
+import { Blockquote } from "@mantine/core";
 import React from "react";
 import { FaQuoteLeft } from "react-icons/fa";
 
@@ -21,14 +22,17 @@ const QuoteCard = ({ themeColor, quote, source }: props) => {
         >
           <p className="my-auto text-2xl">Q</p>
         </div>
-        <div className="mt-12 text-base font-semibold italic tracking-wider text-slate-500 dark:text-slate-300">
+        <Blockquote
+          classNames={{
+            root: "my-auto py-8",
+            body: "text-base font-semibold italic tracking-wider text-slate-500 dark:text-slate-300",
+            cite: "mt-4 text-sm tracking-wide text-slate-500 opacity-80 dark:text-slate-300",
+            icon: "hidden",
+          }}
+          cite={`- ${source}`}
+        >
           {quote}
-
-          <p className="font-base mt-16 mb-8 text-sm tracking-wide text-slate-500 opacity-80 dark:text-slate-300">
-            {`- ${source}`}
-          </p>
-        </div>
-        <br />
+        </Blockquote>
 
         <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-500 opacity-80 dark:text-slate-300">
           #QuoteCard
