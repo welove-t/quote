@@ -10,7 +10,7 @@ type props = {
 const QuoteCard = ({ themeColor, quote, source }: props) => {
   return (
     <div
-      className={`mx-auto max-w-[360px] px-2 pt-10 pb-1 text-center sm:inline-block sm:w-[360px] ${themeColor}`}
+      className={`mx-auto max-w-[360px] px-2 pt-8 pb-1 text-center sm:inline-block sm:w-[360px] ${themeColor}`}
       id="canvas"
     >
       <div
