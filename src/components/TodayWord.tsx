@@ -38,7 +38,6 @@ const TodayWord = ({ themeColor }: props) => {
   return (
     <div
       className={`mx-auto mt-10 max-w-[360px] p-2 text-center sm:inline-block sm:w-[360px] ${themeColor}`}
-      id="canvas"
     >
       <div
         className={`relative my-1 flex h-96 min-h-[320px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 py-4 px-6 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
