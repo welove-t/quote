@@ -6,10 +6,10 @@ import SharePC from "src/components/SharePC";
 import ShareSM from "src/components/ShareSM";
 import QuoteText from "src/components/QuoteText";
 import QuoteCite from "src/components/QuoteCite";
-import QuoteCard from "src/components/QuoteCard";
 import QrCode from "src/components/QrCode";
 import { ThemeColor } from "src/components/utils/ThemeColor";
 import { MainLayout } from "src/components/layouts/MainLayout";
+import CreateImage from "src/components/CreateImage";
 
 const Home: NextPage = () => {
   const themeColor = ThemeColor();
@@ -68,6 +68,7 @@ const Home: NextPage = () => {
           <TodayWord themeColor={themeColor} />
           <br />
           <QrCode />
+
           <QuoteText
             themeColor={themeColor}
             textQuote={textQuote}
@@ -84,11 +85,12 @@ const Home: NextPage = () => {
             isLength={isCheckedLengthCite}
             textCiteGetInputProps={form.getInputProps("textCite")}
           />
-          <QuoteCard
+          <CreateImage
             themeColor={themeColor}
             quote={textQuote}
             source={textCite}
-          />
+          ></CreateImage>
+
           {isWebAPI ? (
             <ShareSM
               themeColor={themeColor}
