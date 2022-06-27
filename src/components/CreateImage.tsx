@@ -10,12 +10,30 @@ type props = {
 
 // カラーパターン（文字色：背景色）
 const colorSwatchItem = [
-  { foColor: "text-[#778a99]", bgColor: "bg-[#f1f4f7]" }, // 薄黒：薄灰
-  { foColor: "text-[#141517]", bgColor: "bg-[#DBC47B]" }, // 黒：薄黄
-  { foColor: "text-[#141517]", bgColor: "bg-[#FCA393]" }, // 黒：薄赤
-  { foColor: "text-[#FFFFFF]", bgColor: "bg-[#1864AB]" }, // 白：濃青
-  { foColor: "text-[#FFFFFF]", bgColor: "bg-[#087F5B]" }, // 白：濃緑
-  { foColor: "text-[#FFFFFF]", bgColor: "bg-[#141517]" }, // 白：黒
+  {
+    foColor: "text-[#778a99]",
+    bgColor: "bg-[#f3f4f6]",
+  }, // 薄黒：薄灰
+  {
+    foColor: "text-[#141517]",
+    bgColor: "bg-[#DBC47B]",
+  }, // 黒：薄黄
+  {
+    foColor: "text-[#141517]",
+    bgColor: "bg-[#FCA393]",
+  }, // 黒：薄赤
+  {
+    foColor: "text-[#FFFFFF]",
+    bgColor: "bg-[#1864AB]",
+  }, // 白：濃青
+  {
+    foColor: "text-[#FFFFFF]",
+    bgColor: "bg-[#087F5B]",
+  }, // 白：濃緑
+  {
+    foColor: "text-[#FFFFFF]",
+    bgColor: "bg-[#1e293b]",
+  }, // 白：黒
 ];
 
 const CreateImage = ({ themeColor, quote, source }: props) => {
@@ -30,10 +48,10 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
   ]);
 
   // canvas用
-  const [CardBgColor, setCardBgColor] = useState<string>(
+  const [cardBgColor, setCardBgColor] = useState<string>(
     colorSwatchItem[0].bgColor
   );
-  const [CardFoColor, setCardFoColor] = useState<string>(
+  const [cardFoColor, setCardFoColor] = useState<string>(
     colorSwatchItem[0].foColor
   );
 
@@ -46,7 +64,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
         {colorSwatchItem.map((item, index) => (
           <ColorSwatch
             classNames={{
-              root: "",
+              root: "mb-4",
             }}
             key={index}
             component="button"
@@ -80,8 +98,8 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
 
       <QuoteCard
         themeColor={themeColor}
-        CardBgColor={CardBgColor}
-        CardFoColor={CardFoColor}
+        cardBgColor={cardBgColor}
+        cardFoColor={cardFoColor}
         quote={quote}
         source={source}
       />
