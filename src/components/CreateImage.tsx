@@ -3,21 +3,22 @@ import QuoteCard from "src/components/QuoteCard";
 import { ColorSwatch, Group, Text } from "@mantine/core";
 
 type props = {
+  themeColor: string;
   quote: string;
   source: string;
 };
 
 // カラーパターン（文字色：背景色）
 const colorSwatchItem = [
-  { foColor: "#778a99", bgColor: "#f1f4f7" }, // 薄黒：薄灰
-  { foColor: "#141517", bgColor: "#DBC47B" }, // 黒：薄黄
-  { foColor: "#141517", bgColor: "#FCA393" }, // 黒：薄赤
-  { foColor: "#FFFFFF", bgColor: "#1864AB" }, // 白：濃青
-  { foColor: "#FFFFFF", bgColor: "#087F5B" }, // 白：濃緑
-  { foColor: "#FFFFFF", bgColor: "#141517" }, // 白：黒
+  { foColor: "text-[#778a99]", bgColor: "bg-[#f1f4f7]" }, // 薄黒：薄灰
+  { foColor: "text-[#141517]", bgColor: "bg-[#DBC47B]" }, // 黒：薄黄
+  { foColor: "text-[#141517]", bgColor: "bg-[#FCA393]" }, // 黒：薄赤
+  { foColor: "text-[#FFFFFF]", bgColor: "bg-[#1864AB]" }, // 白：濃青
+  { foColor: "text-[#FFFFFF]", bgColor: "bg-[#087F5B]" }, // 白：濃緑
+  { foColor: "text-[#FFFFFF]", bgColor: "bg-[#141517]" }, // 白：黒
 ];
 
-const CreateImage = ({ quote, source }: props) => {
+const CreateImage = ({ themeColor, quote, source }: props) => {
   // ColorSwatch用
   const [checked, setChecked] = useState<boolean[]>([
     true,
@@ -29,46 +30,61 @@ const CreateImage = ({ quote, source }: props) => {
   ]);
 
   // canvas用
-  const [bgColor, setBgColor] = useState<string>(colorSwatchItem[0].bgColor);
-  const [foColor, setFoColor] = useState<string>(colorSwatchItem[0].foColor);
+  const [CardBgColor, setCardBgColor] = useState<string>(
+    colorSwatchItem[0].bgColor
+  );
+  const [CardFoColor, setCardFoColor] = useState<string>(
+    colorSwatchItem[0].foColor
+  );
 
   return (
     <div className="mt-10 text-center">
-      <label className="text-lg font-semibold">Quote Card</label>
-      {/* <Group position="center" spacing="md" className="mt-4">
+      <label className="mb-2 font-zen text-2xl font-semibold">
+        カラーパターン
+      </label>
+      <Group position="center" spacing="md" className="mt-4">
         {colorSwatchItem.map((item, index) => (
           <ColorSwatch
+            classNames={{
+              root: "",
+            }}
             key={index}
             component="button"
             radius={"md"}
-            size={checked[index] ? 48 : 40}
-            color={item.bgColor}
+            size={40}
+            color={item.bgColor.substring(4, 11)}
             onClick={() => {
               setChecked((checked) =>
                 !checked[index]
                   ? checked.map((c, i) => index === i && !c)
                   : checked
               );
-              setFoColor(item.foColor);
-              setBgColor(item.bgColor);
+
+              setCardBgColor(item.bgColor);
+              setCardFoColor(item.foColor);
             }}
             styles={() => ({
               root: { cursor: "pointer" },
             })}
           >
-            <Text color={item.foColor} size={"lg"} weight={500}>
+            <Text
+              color={item.foColor.substring(6, 13)}
+              size={"lg"}
+              weight={500}
+            >
               A
             </Text>
           </ColorSwatch>
         ))}
-      </Group> */}
+      </Group>
 
-      {/* <QuoteCard
+      <QuoteCard
+        themeColor={themeColor}
+        CardBgColor={CardBgColor}
+        CardFoColor={CardFoColor}
         quote={quote}
         source={source}
-        // bgColor={bgColor}
-        // foColor={foColor}
-      /> */}
+      />
     </div>
   );
 };
