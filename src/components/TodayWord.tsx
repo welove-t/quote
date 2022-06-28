@@ -42,11 +42,6 @@ const TodayWord = ({ themeColor }: props) => {
       <div
         className={`relative my-1 flex h-96 min-h-[320px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 py-4 px-6 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
       >
-        <div
-          className={`${themeColor} absolute top-[-24px] flex h-12 w-12 items-center justify-center rounded-full border-2 shadow-npConvexCard dark:shadow-darkConvexCard sm:top-[-36px] sm:h-16 sm:w-16`}
-        >
-          <p className="text-2xl">Q</p>
-        </div>
         <div className="mt-2 text-sm font-semibold italic tracking-wider text-slate-500 dark:text-slate-300 sm:text-base">
           {todayWords.quote && todayWords.cite ? (
             <section id="todayword" className="italic">
