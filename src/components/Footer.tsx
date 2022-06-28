@@ -11,10 +11,12 @@ export const Footer = ({ themeColor }: props) => {
       <div className="container text-center">
         <div className="flex justify-center space-x-4">
           <Link href="/terms">
-            <a className="text-gray-600 dark:text-gray-100">利用規約</a>
+            <a className="font-semibold text-gray-700 no-underline hover:underline dark:text-gray-100">
+              利用規約
+            </a>
           </Link>
           <Link href="/privacypolicy">
-            <a className="text-gray-600 dark:text-gray-100">
+            <a className="font-semibold text-gray-700 no-underline hover:underline dark:text-gray-100">
               プライバシーポリシー
             </a>
           </Link>
@@ -26,7 +28,7 @@ export const Footer = ({ themeColor }: props) => {
             href="https://twitter.com/welove_tk"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 underline dark:text-gray-100"
+            className="font-semibold text-gray-700 no-underline hover:underline dark:text-gray-100"
           >
             @welove_tk
           </a>
