@@ -53,6 +53,9 @@ module.exports = {
           "inset 5px 5px 10px #0F172A,inset -2px -2px 10px #334154;",
         darkConcaveText:
           "inset 5px 5px 10px #0F172A,inset -5px -5px 10px #334154;",
+        yellowConvexButton: "2px 2px 0px #c1ac6c;",
+        yellowConcaveButton:
+          "inset 10px 10px 20px #ccb672 inset -10px -10px 20px #ead284;",
       },
       fontFamily: {
         zen: ["Zen Maru Gothic"],
