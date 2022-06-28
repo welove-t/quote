@@ -66,7 +66,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
             }}
           >
             <div
-              className={`h-7 w-7 rounded-full ${item.bgColor} ${item.foColor} border-none`}
+              className={`mx-auto h-7 w-7 rounded-full ${item.bgColor} ${item.foColor} border-none`}
             ></div>
           </button>
         ))}
