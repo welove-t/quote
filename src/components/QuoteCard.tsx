@@ -30,7 +30,7 @@ const QuoteCard = ({
           classNames={{
             root: "my-auto py-8",
             body: `text-base font-semibold italic tracking-wider ${cardFoColor}`,
-            cite: `mt-4 text-sm tracking-wide opacity-80 ${cardFoColor}`,
+            cite: `mt-6 text-sm tracking-wide opacity-80 ${cardFoColor}`,
             icon: "hidden",
           }}
           cite={`- ${source}`}
