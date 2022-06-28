@@ -5,7 +5,7 @@ type props = {
 
 export const TextRemaining = ({ color, count }: props) => {
   return (
-    <p className={`mx-auto text-right text-sm text-${color}`}>
+    <p className={`mx-auto text-right text-sm font-semibold text-${color}`}>
       あと {count} 文字
     </p>
   );
