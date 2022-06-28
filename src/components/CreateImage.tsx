@@ -52,7 +52,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
               checked[index]
                 ? `shadow-npConcaveButton dark:shadow-darkConcaveButton`
                 : `shadow-npConvexButton dark:shadow-darkConvexButton`,
-              ` h-10 w-10 rounded-full border-none ${themeColor} cursor-pointer`
+              ` relative h-10 w-10 rounded-full border-none ${themeColor} cursor-pointer`
             )}
             onClick={() => {
               setChecked((checked) =>
@@ -66,7 +66,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
             }}
           >
             <div
-              className={`mx-auto h-7 w-7 rounded-full ${item.bgColor} ${item.foColor} border-none`}
+              className={`absolute top-0 left-0 right-0 bottom-0 m-auto h-7 w-7 rounded-full ${item.bgColor} ${item.foColor} border-none`}
             ></div>
           </button>
         ))}
