@@ -19,6 +19,7 @@ export const ColorTheme = () => {
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
       className="fixed top-5 right-8"
+      size={"md"}
     >
       {dark ? (
         <SunIcon className="h-6 w-6" />
