@@ -19,7 +19,7 @@ const QuoteCite = ({
   isLength,
   textCiteGetInputProps,
 }: props) => {
-  const errorTextsource = !isLength ? "文字数がオーバーしています" : null;
+  const errorTextsource = !isLength ? "文字数が上限を超えています！" : null;
 
   return (
     <div className="mx-auto mt-10 max-w-[400px] font-zen">
