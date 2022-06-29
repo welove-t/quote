@@ -18,6 +18,16 @@ type props = {
 const SharePC = ({ themeColor, isError }: props) => {
   // カードをコピー
   const cardCopy = (Src: any) => {
+    if (!isError) {
+      updateNotification({
+        id: "load-data",
+        color: "red",
+        message: "文字数が上限を超えています！",
+        autoClose: 2000,
+        disallowClose: true,
+      });
+      return;
+    }
     let src = document.getElementById(Src);
     src &&
       htmlToImage.toCanvas(src).then((canvas) => {
@@ -42,7 +52,6 @@ const SharePC = ({ themeColor, isError }: props) => {
             })
             .catch((e) => {
               alert(e);
-
               updateNotification({
                 id: "load-data",
                 color: "red",
@@ -70,7 +79,6 @@ const SharePC = ({ themeColor, isError }: props) => {
     <div>
       <div className="hidden sm:mt-8 sm:flex sm:flex-col sm:items-center sm:space-y-4">
         <Buttons
-          isError={isError}
           themeColor={themeColor}
           onClickButton={() => {
             displayNotirication();

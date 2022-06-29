@@ -2,6 +2,7 @@ import React from "react";
 import * as htmlToImage from "html-to-image";
 import { ShareIcon } from "@heroicons/react/solid";
 import Buttons from "src/components/Buttons";
+import { showNotification } from "@mantine/notifications";
 
 type props = {
   themeColor: string;
@@ -11,6 +12,16 @@ type props = {
 const ShareSM = ({ themeColor, isError }: props) => {
   // web share api
   const webShare = (Src: any) => {
+    if (!isError) {
+      showNotification({
+        id: "load-data",
+        color: "red",
+        message: "文字数が上限を超えています！",
+        autoClose: 2000,
+        disallowClose: true,
+      });
+      return;
+    }
     let src = document.getElementById(Src);
     src &&
       htmlToImage.toCanvas(src).then(function (canvas) {
@@ -39,7 +50,6 @@ const ShareSM = ({ themeColor, isError }: props) => {
   return (
     <div className="mt-8 flex flex-col">
       <Buttons
-        isError={isError}
         themeColor={themeColor}
         onClickButton={() => {
           webShare("canvas");
