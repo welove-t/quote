@@ -13,22 +13,14 @@ export const ColorTheme = () => {
     }
   }, [colorScheme]);
   return (
-    // <ActionIcon
-    //   variant="outline"
-    //   color={dark ? "yellow" : "blue"}
-    //   onClick={() => toggleColorScheme()}
-    //   title="Toggle color scheme"
-    //   className="fixed top-5 right-8"
-    //   size={"md"}
-    // >
     <a
       className="fixed top-5 right-8 cursor-pointer border-none bg-none"
       onClick={() => toggleColorScheme()}
     >
       {dark ? (
-        <SunIcon className="h-7 w-7 rounded-md border-solid border-yellow-500 text-yellow-500" />
+        <SunIcon className="h-7 w-7 rounded-md border-[1px] border-solid border-yellow-500 text-yellow-500" />
       ) : (
-        <MoonIcon className="h-7 w-7 rounded-md border-solid border-blue-500 text-blue-500" />
+        <MoonIcon className="h-7 w-7 rounded-md border-[1px] border-solid border-blue-500 text-blue-500" />
       )}
     </a>
     // </ActionIcon>
