@@ -18,9 +18,13 @@ export const ColorTheme = () => {
       color={dark ? "yellow" : "blue"}
       onClick={() => toggleColorScheme()}
       title="Toggle color scheme"
-      className="fixed top-5 right-8 h-6 w-6"
+      className="fixed top-5 right-8"
     >
-      {dark ? <SunIcon /> : <MoonIcon />}
+      {dark ? (
+        <SunIcon className="h-6 w-6" />
+      ) : (
+        <MoonIcon className="h-6 w-6" />
+      )}
     </ActionIcon>
   );
 };
