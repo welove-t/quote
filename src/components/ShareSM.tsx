@@ -58,11 +58,6 @@ const ShareSM = ({ themeColor, isError }: props) => {
         <ShareIcon className="w-6" />
         <p>カードをシェアする</p>
       </Buttons>
-      <p className="mt-8">
-        ※Twitterで共有する場合、ツイート前の画面ではカード画像が見切れていることもありますが、ツイート後は正常に表示されます。
-        <br />
-        見切れてしまったらごめんなさい...。
-      </p>
     </div>
   );
 };
