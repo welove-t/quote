@@ -1,6 +1,6 @@
 import { ActionIcon, useMantineColorScheme } from "@mantine/core";
 import { useEffect } from "react";
-import { CgMoon, CgSun } from "react-icons/cg";
+import { MoonIcon, SunIcon } from "@heroicons/react/outline";
 
 export const ColorTheme = () => {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -20,7 +20,11 @@ export const ColorTheme = () => {
       title="Toggle color scheme"
       className="fixed top-5 right-8"
     >
-      {dark ? <CgSun size={18} /> : <CgMoon size={18} />}
+      {dark ? (
+        <SunIcon className="h-8 w-8" />
+      ) : (
+        <MoonIcon className="h-8 w-8" />
+      )}
     </ActionIcon>
   );
 };
