@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Labels } from "src/components/Labels";
 import QuoteCard from "src/components/QuoteCard";
 import { SwatchColor } from "src/components/utils/SwatchColor";
 
@@ -40,9 +41,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
 
   return (
     <div className="mt-10 text-center">
-      <label className="mb-2 font-zen text-2xl font-semibold">
-        カラーパターン
-      </label>
+      <Labels>カラーパターン</Labels>
 
       <div className="my-4 flex items-center justify-center space-x-6">
         {colorSwatchItem.map((item, index) => (
