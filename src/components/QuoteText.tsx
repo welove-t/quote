@@ -1,6 +1,7 @@
 import React from "react";
 import { Textarea } from "@mantine/core";
 import { TextRemaining } from "src/components/TextRemaining";
+import { Labels } from "src/components/Labels";
 
 type props = {
   themeColor: string;
@@ -22,10 +23,9 @@ const QuoteText = ({
   const errorTextquote = !isLength ? "文字数が上限を超えています！" : null;
 
   return (
-    <div className="mx-auto mt-10 max-w-[400px] font-zen">
-      <p className="mb-2 text-2xl font-semibold">引用文</p>
+    <div className="mx-auto mt-10 max-w-[400px]">
+      <Labels>引用文</Labels>
       <Textarea
-        label="お気に入りのフレーズを書いて下さい"
         error={errorTextquote}
         placeholder="(例) 吾輩は猫である。名前はまだ無い。"
         className="mx-auto"
@@ -37,7 +37,6 @@ const QuoteText = ({
         {...textQuoteGetInputProps}
         classNames={{
           input: `text-gray-700 font-medium border-none ${themeColor} shadow-npConcaveText dark:text-gray-200 dark:shadow-darkConcaveText`,
-          label: "font-zen font-bold",
         }}
       />
       {!isLength ? (

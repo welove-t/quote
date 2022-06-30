@@ -54,9 +54,6 @@ module.exports = {
         darkConcaveText:
           "inset 5px 5px 10px #111822,inset -5px -5px 10px #2b3a54;",
       },
-      fontFamily: {
-        zen: ["Zen Maru Gothic"],
-      },
     },
     container: {
       center: true,
