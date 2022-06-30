@@ -25,7 +25,6 @@ const QuoteText = ({
     <div className="mx-auto mt-10 max-w-[400px] font-zen">
       <p className="mb-2 text-2xl font-semibold">引用文</p>
       <Textarea
-        label="お気に入りのフレーズを書いて下さい"
         error={errorTextquote}
         placeholder="(例) 吾輩は猫である。名前はまだ無い。"
         className="mx-auto"

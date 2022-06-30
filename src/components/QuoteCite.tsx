@@ -25,7 +25,6 @@ const QuoteCite = ({
     <div className="mx-auto mt-10 max-w-[400px] font-zen">
       <p className="mb-2 text-2xl font-semibold">引用元</p>
       <TextInput
-        label="著者名・書名・登場人物名等を書いて下さい"
         error={errorTextsource}
         placeholder="(例) 夏目漱石『吾輩は猫である』より"
         className="mx-auto"
