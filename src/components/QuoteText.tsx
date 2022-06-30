@@ -37,7 +37,6 @@ const QuoteText = ({
         {...textQuoteGetInputProps}
         classNames={{
           input: `text-gray-700 font-medium border-none ${themeColor} shadow-npConcaveText dark:text-gray-200 dark:shadow-darkConcaveText`,
-          label: "font-zen font-bold",
         }}
       />
       {!isLength ? (

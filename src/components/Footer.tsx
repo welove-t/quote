@@ -11,30 +11,32 @@ export const Footer = ({ themeColor }: props) => {
       <div className="container text-center">
         <div className="flex justify-center space-x-4">
           <Link href="/terms">
-            <a className="font-semibold text-gray-700 no-underline hover:underline dark:text-gray-100">
+            <a className="text-gray-500 no-underline hover:underline dark:text-gray-100">
               利用規約
             </a>
           </Link>
           <Link href="/privacypolicy">
-            <a className="font-semibold text-gray-700 no-underline hover:underline dark:text-gray-100">
+            <a className="text-gray-500 no-underline hover:underline dark:text-gray-100">
               プライバシーポリシー
             </a>
           </Link>
         </div>
 
-        <p className="mt-4 text-center">
+        <p className="mt-4 text-center text-gray-500 dark:text-gray-100">
           このサービスは
           <a
             href="https://twitter.com/welove_tk"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-gray-700 no-underline hover:underline dark:text-gray-100"
+            className="text-gray-500 no-underline hover:underline dark:text-gray-100"
           >
             @welove_tk
           </a>
           が作成しました
         </p>
-        <p className="pt-4">&copy; QuoteCard</p>
+        <p className="pt-4 text-gray-500 dark:text-gray-100 ">
+          &copy; QuoteCard
+        </p>
       </div>
     </div>
   );

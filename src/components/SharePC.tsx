@@ -102,7 +102,9 @@ const SharePC = ({ themeColor, isError }: props) => {
           disabled={!isError}
         >
           <TwitterIcon size={32} round={true} />
-          <p className="font-semibold text-gray-400">Twitterで共有する</p>
+          <p className="font-normal tracking-wider text-gray-500 dark:text-gray-100">
+            Twitterで共有する
+          </p>
         </TwitterShareButton>
       </div>
       <div className="mt-4 font-bold text-red-500 sm:hidden">
