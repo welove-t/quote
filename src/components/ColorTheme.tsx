@@ -13,7 +13,7 @@ export const ColorTheme = () => {
     }
   }, [colorScheme]);
   return (
-    <a
+    <ActionIcon
       className="fixed top-5 right-8 cursor-pointer border-none bg-none"
       onClick={() => toggleColorScheme()}
     >
@@ -22,7 +22,6 @@ export const ColorTheme = () => {
       ) : (
         <MoonIcon className="h-7 w-7 rounded-md border-[1px] border-solid border-blue-500 text-blue-500" />
       )}
-    </a>
-    // </ActionIcon>
+    </ActionIcon>
   );
 };
