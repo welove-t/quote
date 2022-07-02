@@ -58,7 +58,7 @@ const TodayWord = ({ themeColor }: props) => {
         </div>
         <br />
 
-        <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-600 opacity-80 dark:text-slate-300">
+        <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-600 opacity-90 dark:text-slate-300">
           #QuoteCard
         </div>
       </div>

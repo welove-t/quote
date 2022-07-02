@@ -47,6 +47,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
         {colorSwatchItem.map((item, index) => (
           <button
             key={index}
+            aria-label="color-pattern"
             className={classNamesColorSwatch(
               checked[index]
                 ? `shadow-npConcaveButton dark:shadow-darkConcaveButton`
