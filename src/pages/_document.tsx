@@ -4,7 +4,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja">
-        <Head></Head>
+        <Head>
+          <meta
+            property="description"
+            content="本の引用文・漫画のセリフ・お気に入りの格言などを画像化してSNSにシェアできるサイトです！"
+          ></meta>
+        </Head>
         <body>
           <Main />
           <NextScript />
