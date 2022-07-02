@@ -59,9 +59,7 @@ const Home: NextPage = () => {
   return (
     <div className={themeColor}>
       <Head>
-        <title>
-          本の引用文・漫画のセリフ・格言・金言などを画像化してSNSにシェアできるサイトです
-        </title>
+        <title>QuoteCard - お気に入りの引用文を画像化してシェアしよう！</title>
       </Head>
       <MainLayout themeColor={themeColor}>
         <div className="container pt-6 text-center md:pt-16">
