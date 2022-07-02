@@ -39,7 +39,7 @@ const QuoteCard = ({
         </Blockquote>
 
         <div
-          className={`absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider ${cardFoColor} opacity-80`}
+          className={`absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider ${cardFoColor} opacity-90`}
         >
           #QuoteCard
         </div>
