@@ -10,6 +10,7 @@ import QrCode from "src/components/QrCode";
 import { ThemeColor } from "src/components/utils/ThemeColor";
 import { MainLayout } from "src/components/layouts/MainLayout";
 import CreateImage from "src/components/CreateImage";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const themeColor = ThemeColor();
@@ -57,10 +58,15 @@ const Home: NextPage = () => {
 
   return (
     <div className={themeColor}>
+      <Head>
+        <title>
+          本の引用文・漫画のセリフ・格言・金言などを画像化してSNSにシェアできるサイトです
+        </title>
+      </Head>
       <MainLayout themeColor={themeColor}>
         <div className="container pt-6 text-center md:pt-16">
           <br />
-          <p className="mb-8 text-4xl font-extralight leading-relaxed tracking-widest text-gray-500 dark:text-gray-100 sm:flex sm:items-center sm:justify-center sm:text-5xl">
+          <p className="mb-8 text-4xl font-extralight leading-relaxed tracking-widest text-gray-600 dark:text-gray-100 sm:flex sm:items-center sm:justify-center sm:text-5xl">
             珠玉の一文を
             <br className="sm:hidden" />
             カード画像に

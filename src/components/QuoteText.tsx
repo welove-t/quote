@@ -40,9 +40,9 @@ const QuoteText = ({
         }}
       />
       {!isLength ? (
-        <TextRemaining color="red-500" count={maxLength - textLength} />
+        <TextRemaining color="red-600" count={maxLength - textLength} />
       ) : (
-        <TextRemaining color="gray-500" count={maxLength - textLength} />
+        <TextRemaining color="gray-600" count={maxLength - textLength} />
       )}
     </div>
   );

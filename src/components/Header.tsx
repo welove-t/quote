@@ -13,7 +13,7 @@ export const Header = ({ themeColor }: props) => {
     >
       <header className="container flex h-16 items-center justify-center space-x-8">
         <Link href="/">
-          <a className="text-2xl font-semibold text-gray-500 no-underline dark:text-gray-100">
+          <a className="text-2xl font-semibold text-gray-600 no-underline dark:text-gray-100">
             Quote Card
           </a>
         </Link>
