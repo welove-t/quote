@@ -87,7 +87,7 @@ const SharePC = ({ themeColor, isError }: props) => {
           <ClipboardCopyIcon className="w-6" />
           <p>カードをコピーする</p>
         </Buttons>
-        <ChevronDoubleDownIcon className="w-6 animate-pulse text-gray-500" />
+        <ChevronDoubleDownIcon className="w-6 animate-pulse text-gray-600" />
         <TwitterShareButton
           url="/"
           hashtags={["QuoteCard"]}
@@ -102,7 +102,7 @@ const SharePC = ({ themeColor, isError }: props) => {
           disabled={!isError}
         >
           <TwitterIcon size={32} round={true} />
-          <p className="font-normal tracking-wider text-gray-500 dark:text-gray-100">
+          <p className="font-normal tracking-wider text-gray-600 dark:text-gray-100">
             Twitterで共有する
           </p>
         </TwitterShareButton>

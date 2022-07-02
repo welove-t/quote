@@ -6,7 +6,7 @@ type props = {
 export const TextRemaining = ({ color, count }: props) => {
   return (
     <p
-      className={`mx-auto text-right text-sm font-light text-gray-500 dark:text-gray-100 text-${color}`}
+      className={`mx-auto text-right text-sm font-light text-gray-600 dark:text-gray-100 text-${color}`}
     >
       あと {count} 文字
     </p>

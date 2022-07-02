@@ -42,7 +42,7 @@ const TodayWord = ({ themeColor }: props) => {
       <div
         className={`relative my-1 flex h-96 min-h-[320px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 py-4 px-6 font-bold shadow-npConvexCard ${themeColor} dark:shadow-darkConvexCard`}
       >
-        <div className="mt-2 text-sm font-semibold italic tracking-wider text-slate-500 dark:text-slate-300 sm:text-base">
+        <div className="mt-2 text-sm font-semibold italic tracking-wider text-slate-600 dark:text-slate-300 sm:text-base">
           {todayWords.quote && todayWords.cite ? (
             <section id="todayword" className="italic">
               <TextAnimation section="todayword">
@@ -58,7 +58,7 @@ const TodayWord = ({ themeColor }: props) => {
         </div>
         <br />
 
-        <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-500 opacity-80 dark:text-slate-300">
+        <div className="absolute right-6 bottom-4 text-right text-sm font-normal tracking-wider text-slate-600 opacity-80 dark:text-slate-300">
           #QuoteCard
         </div>
       </div>

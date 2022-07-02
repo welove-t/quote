@@ -66,7 +66,7 @@ const Home: NextPage = () => {
       <MainLayout themeColor={themeColor}>
         <div className="container pt-6 text-center md:pt-16">
           <br />
-          <p className="mb-8 text-4xl font-extralight leading-relaxed tracking-widest text-gray-500 dark:text-gray-100 sm:flex sm:items-center sm:justify-center sm:text-5xl">
+          <p className="mb-8 text-4xl font-extralight leading-relaxed tracking-widest text-gray-600 dark:text-gray-100 sm:flex sm:items-center sm:justify-center sm:text-5xl">
             珠玉の一文を
             <br className="sm:hidden" />
             カード画像に
