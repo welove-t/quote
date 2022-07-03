@@ -107,7 +107,7 @@ const SharePC = ({ themeColor, isError }: props) => {
           </p>
         </TwitterShareButton>
       </div>
-      <div className="mt-4 font-bold text-red-600 sm:hidden">
+      <div className="mt-4 font-bold text-red-700 sm:hidden">
         お使いの端末・ブラウザではSNSシェア機能は対応しておりません。
       </div>
     </div>

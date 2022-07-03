@@ -16,6 +16,7 @@ export const ColorTheme = () => {
     <ActionIcon
       className="fixed top-5 right-8 cursor-pointer border-none bg-none"
       onClick={() => toggleColorScheme()}
+      aria-label="colorThemeButton"
     >
       {dark ? (
         <SunIcon className="h-7 w-7 rounded-md border-[1px] border-solid border-yellow-500 text-yellow-500" />
