@@ -71,6 +71,9 @@ const Home: NextPage = () => {
           </p>
           <TodayWord themeColor={themeColor} />
           <br />
+          <p className="text-sm text-gray-600 dark:text-gray-100">
+            引用文・引用元を書いて上記のようなカード画像を作成＆SNS上でシェアできます！
+          </p>
           <QrCode />
 
           <QuoteText
