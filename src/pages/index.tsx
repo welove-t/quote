@@ -48,7 +48,6 @@ const Home: NextPage = () => {
 
   // WebAPIShareに対応しているかどうか検知
   useEffect(() => {
-    console.log(!navigator.canShare);
     if (!navigator.canShare) {
       setIsWebAPI(false);
     } else {
@@ -78,7 +77,6 @@ const Home: NextPage = () => {
 
           <QuoteText
             themeColor={themeColor}
-            textQuote={textQuote}
             textLength={textQuoteLength}
             maxLength={maxTextQuote}
             isLength={isCheckedLengthQuote}
@@ -86,7 +84,6 @@ const Home: NextPage = () => {
           />
           <QuoteCite
             themeColor={themeColor}
-            textCite={textCite}
             textLength={textCiteLength}
             maxLength={maxTextCite}
             isLength={isCheckedLengthCite}

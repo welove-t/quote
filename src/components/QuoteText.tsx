@@ -5,7 +5,6 @@ import { Labels } from "src/components/Labels";
 
 type props = {
   themeColor: string;
-  textQuote: string;
   textLength: number;
   maxLength: number;
   isLength: boolean;
@@ -14,7 +13,6 @@ type props = {
 
 const QuoteText = ({
   themeColor,
-  textQuote,
   textLength,
   maxLength,
   isLength,
