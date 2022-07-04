@@ -8,10 +8,6 @@ type props = {
   themeColor: string;
 };
 
-// 確認用(後で消す)
-const date = format(new Date(), "yyyy/MM/dd");
-const standartDay = format(new Date(2021, 12, 1), "yyyy/MM/dd");
-
 // 日付差分
 const days: string = formatDistanceToNowStrict(new Date(2021, 12, 1), {
   unit: "day",
@@ -32,8 +28,6 @@ const TodayWord = ({ themeColor }: props) => {
   useEffect(() => {
     setTodayWords(words[todayWordsId]);
   }, [todayWords]);
-  console.log(standartDay, date, days);
-  console.log(distanceDay, todayWordsId);
 
   return (
     <div
