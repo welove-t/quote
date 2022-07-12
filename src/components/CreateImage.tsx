@@ -77,7 +77,7 @@ const CreateImage = ({ themeColor, quote, source }: props) => {
         cardBgColor={cardBgColor}
         cardFoColor={cardFoColor}
         quote={quote}
-        source={source}
+        cite={source}
       />
     </div>
   );
