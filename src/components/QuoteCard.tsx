@@ -33,7 +33,7 @@ const QuoteCard = ({
       <div
         className={`relative my-1 flex min-h-[320px] items-center justify-center whitespace-pre-wrap rounded-xl border-2 py-4 px-8 font-bold ${cardBgColor} shadow-npConvexCard dark:shadow-darkConvexCard`}
       >
-        <div className="mt-12 text-base font-semibold italic tracking-wider text-slate-500 dark:text-slate-300">
+        <div className="my-auto pt-12 align-middle text-base font-semibold italic tracking-wider text-slate-500 dark:text-slate-300">
           {rquote}
           <p className="font-base mt-16 mb-8 text-sm tracking-wide text-slate-500 opacity-80 dark:text-slate-300">
             {`- ${rcite}`}
