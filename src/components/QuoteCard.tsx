@@ -20,7 +20,7 @@ const QuoteCard = ({
   const [rquote, setRquote] = useState(quote);
   const [rcite, setRcite] = useState(quote);
   useEffect(() => {
-    setRquote(quote.replace(/\n/g, " \n"));
+    setRquote(quote.replace(/\n/g, " \n") + " ");
   }, [quote]);
   useEffect(() => {
     setRcite(cite + " ");
