@@ -17,16 +17,18 @@ export const Header = ({ themeColor }: props) => {
     >
       <header className="container flex h-16 items-center justify-center space-x-8">
         <div className="w-40 cursor-pointer md:w-80">
-          {colorScheme && (
-            <Image
-              src={`/images/logo-quotecard-${colorScheme}.png`}
-              height={48}
-              width={320}
-              layout="responsive"
-              alt=""
-              onClick={() => router.push("/")}
-            ></Image>
-          )}
+          <Image
+            src={
+              colorScheme
+                ? `/images/logo-quotecard-${colorScheme}.png`
+                : `/images/logo-quotecard-light.png`
+            }
+            height={48}
+            width={320}
+            layout="responsive"
+            alt=""
+            onClick={() => router.push("/")}
+          ></Image>
         </div>
       </header>
       <ColorTheme />
