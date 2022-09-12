@@ -16,7 +16,7 @@ const days: string = formatDistanceToNowStrict(new Date(2021, 12, 1), {
 const distanceDay: number = Number(days.substring(0, days.indexOf(" ")));
 
 // 日付差分から今日のワードのidを生成
-const todayWordsId: number = distanceDay <= 10 ? distanceDay : distanceDay % 10;
+const todayWordsId: number = distanceDay <= 25 ? distanceDay : distanceDay % 25;
 
 const TodayWord = ({ themeColor }: props) => {
   const [todayWords, setTodayWords] = useState<{
