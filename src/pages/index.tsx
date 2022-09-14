@@ -71,21 +71,21 @@ const Home: NextPage = () => {
           description: "お気に入りの引用文を画像化してシェアしよう！",
           images: [
             {
-              url: "/images/q-ogp.png",
+              url: "https://quote-card.com/images/logo-quotecard-light.png",
               width: 800,
               height: 600,
               alt: "Og Image Alt",
               type: "image/jpeg",
             },
             {
-              url: "/images/q-ogp.png",
+              url: "https://quote-card.com/images/logo-quotecard-light.png",
               width: 900,
               height: 800,
               alt: "Og Image Alt Second",
               type: "image/jpeg",
             },
-            { url: "/images/q-ogp.png" },
-            { url: "/images/q-ogp.png" },
+            { url: "https://quote-card.com/images/logo-quotecard-light.png" },
+            { url: "https://quote-card.com/images/logo-quotecard-light.png" },
           ],
           site_name: "QuoteCard",
         }}
