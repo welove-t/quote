@@ -72,15 +72,15 @@ const Home: NextPage = () => {
           images: [
             {
               url: "https://quote-card.com/images/logo-quotecard-light.png",
-              width: 800,
-              height: 600,
+              width: 1200,
+              height: 630,
               alt: "Og Image Alt",
               type: "image/jpeg",
             },
             {
-              url: "https://quote-card.com/images/logo-quotecard-light.png",
-              width: 900,
-              height: 800,
+              url: "https://quote-card.com/images/q-ogp.png",
+              width: 630,
+              height: 630,
               alt: "Og Image Alt Second",
               type: "image/jpeg",
             },
