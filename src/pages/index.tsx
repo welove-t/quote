@@ -11,6 +11,7 @@ import { ThemeColor } from "src/components/utils/ThemeColor";
 import { MainLayout } from "src/components/layouts/MainLayout";
 import CreateImage from "src/components/CreateImage";
 import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 const Home: NextPage = () => {
   const themeColor = ThemeColor();
@@ -60,6 +61,40 @@ const Home: NextPage = () => {
       <Head>
         <title>QuoteCard - お気に入りの引用文を画像化してシェアしよう！</title>
       </Head>
+      <NextSeo
+        title="QuoteCard"
+        description="お気に入りの引用文を画像化してシェアしよう！"
+        canonical="https://quote-card.com/"
+        openGraph={{
+          url: "https://quote-card.com/",
+          title: "QuoteCard",
+          description: "お気に入りの引用文を画像化してシェアしよう！",
+          images: [
+            {
+              url: "/images/q-ogp.png",
+              width: 800,
+              height: 600,
+              alt: "Og Image Alt",
+              type: "image/jpeg",
+            },
+            {
+              url: "/images/q-ogp.png",
+              width: 900,
+              height: 800,
+              alt: "Og Image Alt Second",
+              type: "image/jpeg",
+            },
+            { url: "/images/q-ogp.png" },
+            { url: "/images/q-ogp.png" },
+          ],
+          site_name: "QuoteCard",
+        }}
+        twitter={{
+          handle: "@welove-tk",
+          site: "@welove-tk",
+          cardType: "summary_large_image",
+        }}
+      />
       <MainLayout themeColor={themeColor}>
         <div className="container pt-6 text-center md:pt-16">
           <br />
