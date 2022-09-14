@@ -71,7 +71,7 @@ const Home: NextPage = () => {
           description: "お気に入りの引用文を画像化してシェアしよう！",
           images: [
             {
-              url: "https://quote-card.com/images/logo-quotecard-light.png",
+              url: "https://quote-card.com/images/ogp-quotecard.jpg",
               width: 1200,
               height: 630,
               alt: "Og Image Alt",
@@ -84,8 +84,8 @@ const Home: NextPage = () => {
               alt: "Og Image Alt Second",
               type: "image/jpeg",
             },
-            { url: "https://quote-card.com/images/logo-quotecard-light.png" },
-            { url: "https://quote-card.com/images/logo-quotecard-light.png" },
+            { url: "https://quote-card.com/images/ogp-quotecard.jpg" },
+            { url: "https://quote-card.com/images/ogp-quotecard.jpg" },
           ],
           site_name: "QuoteCard",
         }}
